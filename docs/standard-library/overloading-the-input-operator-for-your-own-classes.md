@@ -7,14 +7,14 @@ helpviewer_keywords:
 - operator>>, overloading for your own classes
 - operator >>, overloading for your own classes
 ms.assetid: 40dab4e0-3f97-4745-9cc8-b86e740fa246
-ms.openlocfilehash: 4de7c16dd1c42f85f169da50f11a514eb245b47c
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: d1b89c94a87e94a5bab255ffafb2b049bad4356d
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97340848"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099477"
 ---
-# <a name="overloading-the-gtgt-operator-for-your-own-classes"></a>为自己的类重载 &gt;&gt; 运算符
+# <a name="overloading-the--operator-for-your-own-classes"></a>为自己的类重载 `>>` 运算符
 
 输出流使用标准类型的提取 (`>>`) 运算符。 你可以为自己的类型编写相似的提取运算符；成功与否取决于对空格的精确使用。
 
@@ -28,6 +28,6 @@ istream& operator>> (istream& is, Date& dt)
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [输入流](../standard-library/input-streams.md)

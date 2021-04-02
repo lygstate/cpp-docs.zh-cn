@@ -8,25 +8,25 @@ helpviewer_keywords:
 - libraries, Standard C++
 - C++ Standard Library, headers
 ms.assetid: 7acb83a4-da73-4ad3-bc30-a71289db7f60
-ms.openlocfilehash: 25cc206c6990e3dbe75c0a3b703766ab0c0e34ce
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: ad17dbb7494d38958fc8864b482876ad1efe6cc8
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97324756"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099685"
 ---
 # <a name="c-standard-library-overview"></a>C++ 标准库概述
 
-所有 C++ 库实体都在在一个或多个标准标头中声明或定义。 此实现包括 C++ 标准版不需要的两个额外标头：\<hash_map> 和 \<hash_set>。 有关此实现支持的标头的完整列表，请参阅[头文件参考](../standard-library/cpp-standard-library-header-files.md)。
+所有 C++ 库实体都在在一个或多个标准标头中声明或定义。 此实现包括 C++ 标准版不需要的两个额外标头：`<hash_map>` 和 `<hash_set>`。 有关此实现支持的标头的完整列表，请参阅[头文件参考](../standard-library/cpp-standard-library-header-files.md)。
 
 C++ 库的独立式实现仅提供了这些标头的一个子集：
 
-[\<cstdarg>](../standard-library/cstdarg.md)\
-[\<cstddef>](../standard-library/cstddef.md)\
-[\<cstdlib>](../standard-library/cstdlib.md) (至少声明函数 `abort` 、 `atexit` 和 `exit`) \
-[\<exception>](../standard-library/exception.md)\
-[\<limits>](../standard-library/limits.md)\
-[\<new>](../standard-library/new.md)
+[`<cstdarg>`](../standard-library/cstdarg.md)\
+[`<cstddef>`](../standard-library/cstddef.md)\
+[`<cstdlib>`](../standard-library/cstdlib.md) (至少声明函数 `abort` 、 `atexit` 和 `exit`) \
+[`<exception>`](../standard-library/exception.md)\
+[`<limits>`](../standard-library/limits.md)\
+[`<new>`](../standard-library/new.md)
 
 C++ 库标头有两个更广泛的细分：
 
@@ -60,6 +60,6 @@ C++ 库标头有两个更广泛的细分：
 
 有关 Visual C++ 运行时库的详细信息，请参阅 [CRT 库功能](../c-runtime-library/crt-library-features.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [C++ 标准库](../standard-library/cpp-standard-library-reference.md)

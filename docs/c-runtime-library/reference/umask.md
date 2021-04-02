@@ -32,12 +32,12 @@ helpviewer_keywords:
 - file permissions [C++]
 - files [C++], permission settings for
 ms.assetid: 5e9a13ba-5321-4536-8721-6afb6f4c8483
-ms.openlocfilehash: 3735ecd7ba194009945d3717982d7828ecee3c1e
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: 8923e2a9ef489d35d1e7f55b91bfb632c0d22580
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554924"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099295"
 ---
 # <a name="_umask"></a>_umask
 
@@ -56,21 +56,21 @@ int _umask( int pmode );
 
 ## <a name="return-value"></a>返回值
 
-**_umask** 返回 *pmode*以前的值。 无错误返回。
+**_umask** 返回 *pmode* 以前的值。 无错误返回。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-**_Umask**函数将当前进程的文件权限掩码设置为*pmode*指定的模式。 文件权限掩码修改 **_creat**、 **_open**或 **_sopen**创建的新文件的权限设置。 如果掩码中的一位是 1，则将文件的请求权限值中相应的一位设置为 0 (不允许)。 如果掩码中的一位是 0，则相应的一位保留不变。 直至首次关闭新文件时才会设置新文件的权限设置。
+**_Umask** 函数将当前进程的文件权限掩码设置为 *pmode* 指定的模式。 文件权限掩码修改 **_creat**、 **_open** 或 **_sopen** 创建的新文件的权限设置。 如果掩码中的一位是 1，则将文件的请求权限值中相应的一位设置为 0 (不允许)。 如果掩码中的一位是 0，则相应的一位保留不变。 直至首次关闭新文件时才会设置新文件的权限设置。
 
 整数表达式 *pmode* 包含在 SYS\STAT. 中定义的以下一个或两个清单常量。高
 
-|*pmode*| |
+|*pmode*|说明|
 |-|-|
 | **_S_IWRITE** | 允许写入。 |
 | **_S_IREAD** | 允许读取。 |
 | **_S_IREAD** &#124; **_S_IWRITE** | 允许读取和写入。 |
 
-当同时提供两个常量时，它们将与按位 "或" 运算符联接 ( **&#124;** ) 。 如果 _S_IREAD *pmode*参数， **_S_IREAD**则不允许读取 (文件是只写) 。 如果 _S_IWRITE *pmode*参数， **_S_IWRITE**则不允许写入 (文件为只读) 。 例如，如果掩码中设置了写入位，则任何新文件都将为只读。 请注意在 MS-DOS 和 Windows 操作系统下，所有文件均可读；不可能提供只写权限。 因此，将读取位设置 **_umask** 不会影响文件的模式。
+当同时提供两个常量时，它们将与按位 "或" 运算符联接 ( **&#124;** ) 。 如果 _S_IREAD *pmode* 参数， 则不允许读取 (文件是只写) 。 如果 _S_IWRITE *pmode* 参数， 则不允许写入 (文件为只读) 。 例如，如果掩码中设置了写入位，则任何新文件都将为只读。 请注意在 MS-DOS 和 Windows 操作系统下，所有文件均可读；不可能提供只写权限。 因此，将读取位设置 **_umask** 不会影响文件的模式。
 
 如果 *pmode* 不是清单常量之一的组合或包含一组备用常量，则该函数将直接忽略这些常量。
 

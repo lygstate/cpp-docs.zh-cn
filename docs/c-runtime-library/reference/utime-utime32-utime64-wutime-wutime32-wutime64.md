@@ -67,12 +67,12 @@ helpviewer_keywords:
 - tutime64 function
 - tutime32 function
 ms.assetid: 8d482d40-19b9-4591-bfee-5d7f601d1a9e
-ms.openlocfilehash: 7ec25f60c508464abf8232419f8867bc3f0a20fb
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 82e8180b21a0de19134673d362989b4ca371dbc2
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97299340"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099334"
 ---
 # <a name="_utime-_utime32-_utime64-_wutime-_wutime32-_wutime64"></a>_utime、_utime32、_utime64、_wutime、_wutime32、_wutime64
 
@@ -107,7 +107,7 @@ int _wutime64(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *filename*<br/>
 指向包含路径或文件名的字符串的指针。
@@ -130,13 +130,13 @@ int _wutime64(
 
 如果更改日期在 1970 年 1 月 1 日午夜之后且在所使用的函数的结束日期之前，则可以更改文件的日期。 **_utime** 和 **_wutime** 使用64位时间值，因此结束日期为23:59:59，12月31日3000，UTC。 如果 **_USE_32BIT_TIME_T** 定义为强制旧行为，则结束日期为23:59:59 年1月 2038 18 日，UTC。 **_utime32** 或 **_wutime32** 使用32位时间类型，而不管是否定义 **_USE_32BIT_TIME_T** ，并且始终具有更早的结束日期。 **_utime64** 或 **_wutime64** 始终使用64位时间类型，因此这些函数始终支持更晚的结束日期。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Utime** 函数为 *filename* 指定的文件设置修改时间。 进程必须拥有文件的写入权限才能更改时间。 在 Windows 操作系统中，可以更改 **_utimbuf** 结构中的访问时间和修改时间。 如果 time 为 **空** 指针 *，则将* 修改时间设置为当前的本地时间。 否则， *时间* 必须指向在 SYS\UTIME.H. 中定义的类型 **_utimbuf** 的结构。
 
 **_Utimbuf** 结构存储 **_utime** 用于更改文件修改日期的文件访问时间和修改时间。 结构具有以下字段，它们均为 **time_t** 类型：
 
-| 字段 |   |
+| 字段 | 说明 |
 |-------|---|
 | **actime** | 文件访问时间 |
 | **modtime** | 文件修改时间 |
@@ -238,7 +238,7 @@ Directory of C:\test
                0 Dir(s)  20,742,955,008 bytes free
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [时间管理](../../c-runtime-library/time-management.md)<br/>
 [asctime、_wasctime](asctime-wasctime.md)<br/>

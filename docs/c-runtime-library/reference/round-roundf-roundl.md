@@ -35,12 +35,12 @@ helpviewer_keywords:
 - round function
 - roundf function
 ms.assetid: 6be90877-193c-4b80-a32b-c3eca33f9c6f
-ms.openlocfilehash: 2e51eb375ab814119dcf34d85c7f5aff11559784
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: e677f372c87446c66e3404419220527a24de63ea
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91499178"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099724"
 ---
 # <a name="round-roundf-roundl"></a>round、roundf、roundl
 
@@ -74,7 +74,7 @@ long double roundl(
 
 ## <a name="return-value"></a>返回值
 
-**Round**函数返回表示最接近*x*的整数的浮点值。 中间值从零舍入，这与浮点舍入模式的设置无关。 无错误返回。
+**Round** 函数返回表示最接近 *x* 的整数的浮点值。 中间值从零舍入，这与浮点舍入模式的设置无关。 无错误返回。
 
 |输入|SEH 异常|Matherr 异常|
 |-----------|-------------------|-----------------------|
@@ -93,7 +93,7 @@ long double roundl(
 |例程所返回的值|必需的标头|
 |-------------|---------------------|
 |**round**、 **roundf**、 **roundl**|\<math.h>|
-|**循环** 宏 | \<tgmath.h> ||
+|**循环** 宏 | \<tgmath.h> |
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
@@ -147,7 +147,7 @@ roundl(2.499999900000000163657887242152355611324310302734375) is 2
 roundl(-2.499999900000000163657887242152355611324310302734375) is -2
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [浮点支持](../../c-runtime-library/floating-point-support.md)\
 [ceil、ceilf、ceill](ceil-ceilf-ceill.md)\

@@ -119,12 +119,12 @@ helpviewer_keywords:
 - _tstat64 function
 - files [C++], getting status information
 ms.assetid: 99a75ae6-ff26-47ad-af70-5ea7e17226a5
-ms.openlocfilehash: c0aa9c825821608aaf7f71bc9e3d8331efea8a82
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 572e1d5f2f1c4eadf5f78c696c78630b84b90791
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97171252"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099217"
 ---
 # <a name="_stat-_stat32-_stat64-_stati64-_stat32i64-_stat64i32-_wstat-_wstat32-_wstat64-_wstati64-_wstat32i64-_wstat64i32"></a>_stat、_stat32、_stat64、_stati64、_stat32i64、_stat64i32、_wstat、_wstat32、_wstat64、_wstati64、_wstat32i64、_wstat64i32
 
@@ -183,7 +183,7 @@ int _wstat64i32(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *路径*<br/>
 指向字符串的指针，该字符串包含现有文件或目录的路径。
@@ -199,7 +199,7 @@ int _wstat64i32(
 
 如果文件的日期戳晚于1970年1月1日午夜、23:59:59 到12月 3000 31 日之前的日期戳，则为，除非你使用 **_stat32** 或 **_wstat32**，或者定义了 **_USE_32BIT_TIME_T**，在这种情况下，日期只能在年1月 2038 18 日23:59:59 之前表示。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Stat** 函数获取有关 *路径* 指定的文件或目录的信息，并将其存储在 *缓冲区* 指向的结构中。 **_stat** 会根据需要自动处理多字节字符串参数，根据当前使用的多字节代码页识别多字节字符序列。
 
@@ -241,7 +241,7 @@ int _wstat64i32(
 
 在 SYS\STAT. 中定义的 **_stat** 结构H 包含以下字段。
 
-|字段||
+|字段|说明|
 |-|-|
 | **st_gid** | 拥有此文件的组的数字标识符（针对 UNIX）。在 Windows 系统上此字段始终为 0。 重定向的文件分类为 Windows 文件。 |
 | **st_atime** | 上次访问文件的时间。 在 NTFS 上有效，但在 FAT 格式的磁盘驱动器上无效。 |
@@ -329,7 +329,7 @@ Drive         : C:
 Time modified : Thu Feb 07 14:39:36 2002
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [文件处理](../../c-runtime-library/file-handling.md)<br/>
 [_access、_waccess](access-waccess.md)<br/>

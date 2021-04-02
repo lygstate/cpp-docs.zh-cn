@@ -33,12 +33,12 @@ helpviewer_keywords:
 - umask_s function
 - files [C++], permission settings for
 ms.assetid: 70898f61-bf2b-4d8d-8291-0ccaa6d33145
-ms.openlocfilehash: 2a6877b656b17f38dfdf09419da5b64115575a9a
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 8a87d924073d5e13d8c5ce0377276cf10a9e0798
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97239930"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099308"
 ---
 # <a name="_umask_s"></a>_umask_s
 
@@ -74,13 +74,13 @@ errno_t _umask_s(
 
 发生上述情况中的任何一个，都会调用无效参数处理程序，如[参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许继续执行， **_umask_s** 将返回 **EINVAL** ，并将 **errno** 设置为 **EINVAL**。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Umask_s** 函数将当前进程的文件权限掩码设置为 *mode* 指定的模式。 文件权限掩码修改 **_creat**、 **_open** 或 **_sopen** 创建的新文件的权限设置。 如果掩码中的一位是 1，则将文件的请求权限值中相应的一位设置为 0 (不允许)。 如果掩码中的一位是 0，则相应的一位保留不变。 直至首次关闭新文件时才会设置新文件的权限设置。
 
 整数表达式 *pmode* 包含在 SYS\STAT. 中定义的以下一个或两个清单常量。高
 
-|*pmode*||
+|*pmode*|说明|
 |-|-|
 |**_S_IWRITE**|允许写入。|
 |**_S_IREAD**|允许读取。|
@@ -134,7 +134,7 @@ int main( void )
 Oldmask = 0x0000
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [文件处理](../../c-runtime-library/file-handling.md)<br/>
 [低级别 i/o](../../c-runtime-library/low-level-i-o.md)<br/>

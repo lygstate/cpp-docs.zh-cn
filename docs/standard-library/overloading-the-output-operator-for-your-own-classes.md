@@ -6,14 +6,14 @@ helpviewer_keywords:
 - operator<<, overloading for your own classes
 - operator <<, overloading for your own classes
 ms.assetid: ad1d2c49-d84e-48a8-9c09-121f28b10bf0
-ms.openlocfilehash: 206d6ccb50c7cb3706c66adeb6c1429a04775fc1
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 10b5191c291676319ff461932e595811744a384d
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97340835"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099204"
 ---
-# <a name="overloading-the-ltlt-operator-for-your-own-classes"></a>为自己的类重载 &lt;&lt; 运算符
+# <a name="overloading-the--operator-for-your-own-classes"></a>为自己的类重载 `<<` 运算符
 
 输出流使用标准类型的插入 (`<<`) 运算符。 还可以为自己的类重载 `<<` 运算符。
 
@@ -63,7 +63,7 @@ int main()
 5/6/92
 ```
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 重载的运算符将返回原始 `ostream` 对象的引用，这意味着你可以合并插入：
 
@@ -71,6 +71,6 @@ int main()
 cout <<"The date is" <<dt <<flush;
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [输出流](../standard-library/output-streams.md)

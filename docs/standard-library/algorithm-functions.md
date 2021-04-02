@@ -201,16 +201,16 @@ helpviewer_keywords:
 - std::count_if [C++]
 - std::partition_copy [C++]
 - std::swap [C++]
-ms.openlocfilehash: dd008215a737313ec8600fa64ac64aa9339b5334
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 6ac0ef7aa62de43f3e8df44c802052f12fe14cda
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97163803"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099581"
 ---
 # <a name="ltalgorithmgt-functions"></a>&lt;algorithm&gt; 函数
 
-## <a name="adjacent_find"></a><a name="adjacent_find"></a> adjacent_find
+## <a name="adjacent_find"></a><a name="adjacent_find"></a> `adjacent_find`
 
 搜索相等或满足指定条件的两个相邻元素。
 
@@ -240,25 +240,25 @@ ForwardIterator adjacent_find(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*pred*\
+*`pred`*\
 给定要搜索范围内相邻元素的值需满足的条件的二元谓词。
 
 ### <a name="return-value"></a>返回值
 
 指向第一个版本中的第一个元素的向前迭代器，该迭代器等于第一个版本中的每个 () 或满足第二个版本) 中的二元谓词 (的条件，前提是找到此类元素对。 否则，将返回指向 *最后* 一个的迭代器。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `adjacent_find` 算法是不改变顺序的算法。 要搜索的范围必须是有效的；所有指针必须是可解除引用的，并且最后一个位置可从第一个位置通过递增到达。 算法的时间复杂性在范围所包含的元素数目上呈线性。
 
@@ -328,7 +328,7 @@ There are two adjacent elements where the second is twice the first.
 They have values of 10 & 20.
 ```
 
-## <a name="all_of"></a><a name="all_of"></a> all_of
+## <a name="all_of"></a><a name="all_of"></a> `all_of`
 
 **`true`** 当给定范围内的每个元素都存在条件时返回。
 
@@ -347,25 +347,25 @@ bool all_of(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指示检查条件的起始位置。 该迭代器将标记元素范围的起始位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指示在元素范围内检查条件的结束位置。
 
-*pred*\
+*`pred`*\
 要测试的条件。 这是用户定义的谓词函数对象，定义被检查元素要满足的条件。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果在指示范围内的每个元素上检测到条件，则返回; **`false`** 否则返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 **`true`** 仅当（对于范围中的每个 `N` `[0, last - first)` ）谓词 `pred(*(first + N))` 为时 **`true`** ，模板函数才返回。
 
@@ -404,7 +404,7 @@ li = ( 50 40 10 20 20 )
 All the elements are even numbers.
 ```
 
-## <a name="any_of"></a><a name="any_of"></a> any_of
+## <a name="any_of"></a><a name="any_of"></a> `any_of`
 
 **`true`** 如果在指定的元素范围内至少出现一次条件，则返回。
 
@@ -423,25 +423,25 @@ bool any_of(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指示在元素范围内检查条件的起始位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指示在元素范围内检查条件的结束位置。
 
-*pred*\
+*`pred`*\
 要测试的条件。 这是由用户定义的谓词函数对象提供的。 谓词定义所测试的元素应满足的条件。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 如果在 **`true`** 指示范围内至少检测到条件，则返回， **`false`** 如果从未检测到条件，则返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 **`true`** 仅当（对于范围中的某些），模板函数才返回 `N`
 
@@ -481,7 +481,7 @@ li = ( 51 41 11 21 20 )
 There's an even element in li.
 ```
 
-## <a name="binary_search"></a><a name="binary_search"></a> binary_search
+## <a name="binary_search"></a><a name="binary_search"></a> `binary_search`
 
 测试已排序的范围中是否有等于指定值的元素，或在二元谓词指定的意义上与指定值等效的元素。
 
@@ -500,25 +500,25 @@ bool binary_search(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*负值*\
+*`value`*\
 需要与元素的值匹配或者必须满足元素值由二元谓词指定这一条件的值。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果在与指定的值相等或等效的范围内找到元素，则为; 否则为。否则为 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -620,7 +620,7 @@ Ordered using mod_lesser, vector v1 = ( 0 -1 1 -2 2 3 4 )
 There is an element with a value equivalent to -3 under mod_lesser.
 ```
 
-## <a name="clamp"></a><a name="clamp"></a> 固定
+## <a name="clamp"></a><a name="clamp"></a> `clamp`
 
 将值与上限和下限进行比较，并返回对边界之间的值的引用，如果值高于或低于这些值，则返回对上限或下限的引用。
 
@@ -639,29 +639,29 @@ constexpr const Type& clamp(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*负值*\
-要与 *上限* 和 *下限* 进行比较的值。
+*`value`*\
+要与和比较的 *`upper`* 值 *`lower`* 。
 
-*下移*\
-值与夹具 *值* 的下限。
+*`lower`*\
+要连接到的值的下限 *`value`* 。
 
-*左上*\
-值到夹具 *值* 的上限。
+*`upper`*\
+要连接到的值的上限 *`value`* 。
 
-*pred*\
-用于比较 *值* 为 *lower* *或下限的谓词*。 比较谓词采用两个参数， **`true`** 如果第一个参数的意义小于第二个参数，则返回; 否则返回 **`false`** 。
+*`pred`*\
+用于与或进行比较的谓词 *`value`* *`lower`* *`upper`* 。 比较谓词采用两个参数， **`true`** 如果第一个参数的意义小于第二个参数，则返回; 否则返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
-如果为，则返回对 *lower* 的引用 `value < lower` ; 如果为，则返回对 *upper* 的引用 `upper < value` 。 否则，它将返回对 *值* 的引用。
+返回对 if 的引用; 如果为，则返回对 *`lower`* `value < lower` 的引用 *`upper`* `upper < value` 。 否则，它将返回对的引用 *`value`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-如果 *上限* 小于 *下限*，则行为是不确定的。
+如果小于，则行为是不确定的 *`upper`* *`lower`* 。
 
-## <a name="copy"></a><a name="copy"></a> 复本
+## <a name="copy"></a><a name="copy"></a> `copy`
 
 将一个源范围中的元素值分配到目标范围，循环访问元素的源序列并将它们分配在一个向前方向的新位置。
 
@@ -680,29 +680,29 @@ ForwardIterator2 copy(
     ForwardIterator2 result);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 发现源范围内的第一个元素的位置的输入迭代器。
 
-*时间*\
+*`last`*\
 一个输入迭代器，用于确定源范围内最后一个元素之后下一个元素的位置。
 
-*destBeg*\
+*`destBeg`*\
 一种输出迭代器，用于定址目标范围内第一个元素的位置。
 
 ### <a name="return-value"></a>返回值
 
-一种输出迭代器，用于确定目标范围中最后一个元素之后的位置，即迭代器地址 `result` + (*最后*  -  *一个*) 。
+一个输出迭代器，用于确定目标范围中最后一个元素之后的位置，即迭代器解决 `result` + (*`last`*  -  *`first`*) 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 源范围必须有效，且必须具有足够的空间来保存所有要复制的元素。
 
-由于算法从第一个元素开始按顺序复制源元素，因此，如果源范围的 *最后一个* 位置未包含在目标范围内，则目标范围可以与源范围重叠。 `copy` 可用于将元素向左移动，而不是向右移位，除非源范围和目标范围之间不存在重叠。 若要向右移动任意数量的位置，请使用 [copy_backward](algorithm-functions.md#copy_backward) 算法。
+由于算法从第一个元素开始按顺序复制源元素，因此，如果源范围的 *最后一个* 位置未包含在目标范围内，则目标范围可以与源范围重叠。 `copy` 可用于将元素向左移动，而不是向右移位，除非源范围和目标范围之间不存在重叠。 若要向右移动任意数量的位置，请使用 [`copy_backward`](algorithm-functions.md#copy_backward) 算法。
 
 `copy` 算法只修改由迭代器指向的值，并为目标范围内的元素赋予新值。 它不能用来创建新元素，也无法直接将元素插入到空容器。
 
@@ -764,7 +764,7 @@ v2 with v1 insert = ( 0 3 6 9 0 10 20 21 24 27 30 )
 v2 with shifted insert = ( 0 3 0 10 20 10 20 21 24 27 30 )
 ```
 
-## <a name="copy_backward"></a><a name="copy_backward"></a> copy_backward
+## <a name="copy_backward"></a><a name="copy_backward"></a> `copy_backward`
 
 将一个源范围中的元素值分配到目标范围，循环访问元素的源序列并将它们分配在一个向后方向的新位置。
 
@@ -776,30 +776,30 @@ BidirectionalIterator2 copy_backward(
     BidirectionalIterator2 destEnd);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种双向迭代器，用于定址源范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，用于定址源范围内最后元素之后下一个元素的位置。
 
-*destEnd*\
+*`destEnd`*\
 一种双向迭代器，用于定址目标范围内最后元素之后下一个元素的位置。
 
 ### <a name="return-value"></a>返回值
 
-一种输出迭代器，用于确定目标范围中最后一个元素之后的位置，即迭代器解决 *destEnd* - (*最后*  -  *一次*) 。
+一个输出迭代器，用于确定目标范围中最后一个元素之后的位置，即迭代器地址 *`destEnd`* (*`last`*  -  *`first`*) 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 源范围必须有效，且必须具有足够的空间来保存所有要复制的元素。
 
 `copy_backward`算法的要求比算法更严格 `copy` 。 它的输入和输出迭代器都必须是双向的。
 
-`copy_backward` 和 [move_backward](algorithm-functions.md#move_backward) 算法是唯一的 C++ 标准库算法，这些算法使用指向目标范围末尾的迭代器来指定输出范围。
+`copy_backward`和 [`move_backward`](algorithm-functions.md#move_backward) 算法是唯一的 c + + 标准库算法，该算法使用指向目标范围末尾的迭代器来指定输出范围。
 
-由于算法从最后一个元素开始按顺序复制源元素，因此，如果源范围的 *第一个* 位置未包含在目标范围内，则目标范围可以与源范围重叠。 `copy_backward` 可用来将元素移动到右侧，但不能移动到左侧，除非源范围和目标范围之间不存在重叠。 若要向左移动任意数量的位置，请使用 [copy](algorithm-functions.md#copy) 算法。
+由于算法从最后一个元素开始按顺序复制源元素，因此，如果源范围的 *第一个* 位置未包含在目标范围内，则目标范围可以与源范围重叠。 `copy_backward` 可用来将元素移动到右侧，但不能移动到左侧，除非源范围和目标范围之间不存在重叠。 若要向左移动任意数量的位置，请使用 [`copy`](algorithm-functions.md#copy) 算法。
 
 `copy_backward` 算法只修改由迭代器指向的值，并为目标范围内的元素赋予新值。 它不能用来创建新元素，也无法直接将元素插入到空容器。
 
@@ -861,7 +861,7 @@ v2 with v1 insert = ( 0 3 6 9 0 10 20 21 24 27 30 )
 v2 with shifted insert = ( 0 3 6 9 0 10 0 10 20 27 30 )
 ```
 
-## <a name="copy_if"></a><a name="copy_if"></a> copy_if
+## <a name="copy_if"></a><a name="copy_if"></a> `copy_if`
 
 在一系列元素中，复制指定条件的元素 **`true`** 。
 
@@ -882,34 +882,34 @@ ForwardIterator2 copy_if(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指示在一个范围内检查条件的开始位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指示范围的结束位置。
 
-*目的*\
+*`dest`*\
 输出迭代器，指示复制元素的目标。
 
-*pred*\
+*`pred`*\
 在范围内每个元素对其进行测试的条件。 由用户定义的谓词函数对象提供这一条件。 一元谓词采用一个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
-对于满足条件的每个元素，等于 *dest* 的输出迭代器递增一次。 换言之，返回值减去 *dest* 等于复制的元素数。
+一个输出迭代器，该迭代器 *`dest`* 对于满足此条件的每个元素，等于一次递增。 换言之，返回值减去 *`dest`* 等于复制的元素数。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 该模板函数为范围  中的每个  求值
 
 `if (pred(*first + N)) * dest++ = *(first + N))`
 
-一次，从最低值开始严格递增 `N` 的值。 如果 *目标* 和 *首次* 指定存储区域，则 *目标* 不能在范围内 `[ first, last )` 。
+一次，从最低值开始严格递增 `N` 的值。 如果 *`dest`* 和 *`first`* 指定存储区域，则 *`dest`* 不能在范围内 `[ first, last )` 。
 
 ### <a name="example"></a>示例
 
@@ -966,7 +966,7 @@ Even numbers are le = ( 46 88 72 60 40 84 )
 Odd numbers are lo = ( 59 79 71 5 )
 ```
 
-## <a name="copy_n"></a><a name="copy_n"></a> copy_n
+## <a name="copy_n"></a><a name="copy_n"></a> `copy_n`
 
 复制指定数量的元素。
 
@@ -985,27 +985,27 @@ ForwardIterator2 copy_n(
     ForwardIterator2 dest);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 指示复制元素的位置的输入迭代器。
 
-*计*\
+*`count`*\
 指定要复制的元素的数目的有符号或无符号整数类型。
 
-*目的*\
+*`dest`*\
 指示将元素复制到的位置的输出迭代器。
 
 ### <a name="return-value"></a>返回值
 
-返回元素已被复制到的输出迭代器。 它与 *dest* 参数的返回值相同。
+返回元素已被复制到的输出迭代器。 它与参数返回的值相同 *`dest`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-该模板函数针对范围  中的每个  进行一次 `*(dest + N) = *(first + N))``N``[0, count)` 求值，从而从最低值开始严格递增 `N` 的值。 然后返回 `dest + N`。 如果 *目标* 和 *首次* 指定存储区域，则 *目标* 不能在范围内 `[first, last)` 。
+该模板函数针对范围  中的每个  进行一次 `*(dest + N) = *(first + N))``N``[0, count)` 求值，从而从最低值开始严格递增 `N` 的值。 然后返回 `dest + N`。 如果 *`dest`* 和 *`first`* 指定存储区域，则 *`dest`* 不能在范围内 `[first, last)` 。
 
 ### <a name="example"></a>示例
 
@@ -1036,7 +1036,7 @@ int main()
 dandelion + badger = danger
 ```
 
-## <a name="count"></a><a name="count"></a> 计
+## <a name="count"></a><a name="count"></a> `count`
 
 返回范围中其值与指定值匹配的元素的数量。
 
@@ -1056,29 +1056,29 @@ count(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，用于寻址要遍历的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，用于寻址要遍历的范围中最后元素之后下一个元素的位置。
 
-*负值*\
+*`value`*\
 要计算的元素的值。
 
 ### <a name="return-value"></a>返回值
 
-的不同类型 `InputIterator` ，它对具有值的范围 [*first*， *last*) 中的元素数进行计数。 
+的不同类型 `InputIterator` ，它对具有值的范围 [，) 中的元素数进行计数 *`first`* *`last`* *`value`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `operator==` 用于确定元素与指定值之间的匹配必须在其操作数之间施加等效关系。
 
-此算法已泛化，可使用模版函数 [count_if](algorithm-functions.md#count_if) 计入满足任何谓词的元素。
+此算法通用化，可对满足具有模板函数的任何谓词的元素进行计数 [`count_if`](algorithm-functions.md#count_if) 。
 
 ### <a name="example"></a>示例
 
@@ -1117,7 +1117,7 @@ v1 = ( 10 20 10 40 10 )
 The number of 10s in v2 is: 3.
 ```
 
-## <a name="count_if"></a><a name="count_if"></a> count_if
+## <a name="count_if"></a><a name="count_if"></a> `count_if`
 
 返回范围中其值满足指定条件的元素的数量。
 
@@ -1137,27 +1137,27 @@ count_if(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 用于确定要搜索范围中的第一个元素的位置的输入迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义如果计入元素要满足的条件。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 满足谓词指定的条件的元素数目。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-此模板函数是算法 [count](algorithm-functions.md#count) 的泛化，它将“等于指定值”谓词替换为任何谓词。
+此模板函数是算法的泛化，它将 [`count`](algorithm-functions.md#count) "等于特定值" 谓词替换为任何谓词。
 
 ### <a name="example"></a>示例
 
@@ -1202,7 +1202,7 @@ v1 = ( 10 20 10 40 10 )
 The number of elements in v1 greater than 10 is: 2.
 ```
 
-## <a name="equal"></a><a name="equal"></a> =
+## <a name="equal"></a><a name="equal"></a> `equal`
 
 逐个元素比较两个范围是否相等或是否在二元谓词指定的意义上等效。
 
@@ -1272,31 +1272,31 @@ bool equal(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 用于确定要测试的第一个范围中第一个元素的位置的输入迭代器。
 
-*last1*\
+*`last1`*\
 用于确定要测试的第一个范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*first2*\
+*`first2`*\
 用于确定要测试的第二个范围中第一个元素的位置的输入迭代器。
 
-*last2*\
+*`last2`*\
 用于确定要测试的第二个范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 当且仅当在按元素进行比较时，如果范围完全相同或在二元谓词下等效，则为; 否则为。否则为 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 要搜索的范围必须是有效的；所有迭代器必须是可解除引用的，并且最后一个位置可从第一个位置通过递增到达。
 
@@ -1337,7 +1337,7 @@ int main()
 }
 ```
 
-## <a name="equal_range"></a><a name="equal_range"></a> equal_range
+## <a name="equal_range"></a><a name="equal_range"></a> `equal_range`
 
 在给定的排序范围中，查找其中所有元素都等效于给定值的子范围。
 
@@ -1356,35 +1356,35 @@ pair<ForwardIterator, ForwardIterator> equal_range(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*负值*\
+*`value`*\
 在已排序范围中搜索的值。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
-一对前向迭代器，用于指定搜索范围内包含的子范围，其中的所有元素都等效于 (*pred* 或默认的小于) 所使用的二元谓词所定义的含义中的 *值*。
+一对前向迭代器，用于指定搜索范围内包含的子范围，其中所有元素都等效于 *`value`* 使用 (*`pred`* 或默认小于) 的二进制谓词所定义的意义。
 
-如果该范围中的任何元素都不等于 *值*，则返回对中的正向迭代器是相等的，并指定可以在其中插入 *值* 而不影响范围顺序的点。
+如果该范围中的任何元素都不等效 *`value`* ，则返回对中的正向迭代器是相等的，并指定可以插入的点， *`value`* 而不影响范围的顺序。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-该算法返回的一对迭代器中，第一个迭代器是 [lower_bound](algorithm-functions.md#lower_bound)，第二个迭代器是 [upper_bound](algorithm-functions.md#upper_bound)。
+算法返回的对的第一个迭代器是 [`lower_bound`](algorithm-functions.md#lower_bound) ，第二个迭代器为 [`upper_bound`](algorithm-functions.md#upper_bound) 。
 
 必须根据提供给 `equal_range` 的谓词排序范围。 例如，如果你打算使用“大于”谓词，则必须按降序排序范围。
 
 由返回的一对迭代器定义的可能为空的子范围中的元素 `equal_range` 将等效于所使用的谓词所定义的意义中的 *值* 。
 
-算法的复杂性是随机访问迭代器和线性的对数，否则，步骤数与 (*最后*  -  *一个*) 成正比。
+算法的复杂性是随机访问迭代器和线性的对数，否则，步骤数与 () 成正比 *`last`*  -  *`first`* 。
 
 ### <a name="example"></a>示例
 
@@ -1503,7 +1503,7 @@ int main()
 }
 ```
 
-## <a name="fill"></a><a name="fill"></a> 适合
+## <a name="fill"></a><a name="fill"></a> `fill`
 
 将相同的新值分配给指定范围中的每个元素。
 
@@ -1522,21 +1522,21 @@ void fill(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种向前迭代器，用于寻址要遍历的范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种向前迭代器，用于寻址要遍历的范围内最后一个元素之后下一个元素的位置。
 
-*负值*\
-要分配给范围 [*first*， *last*) 中的元素的值。
+*`value`*\
+要分配给范围 [，) 中的元素的 *`first`* 值 *`last`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 目标范围必须是有效的；所有指针必须是可取消引用的，并且最后一个位置可从第一个位置通过递增到达。 其复杂性与该范围的大小呈线性关系。
 
@@ -1581,7 +1581,7 @@ Vector v1 = ( 0 5 10 15 20 25 30 35 40 45 )
 Modified v1 = ( 0 5 10 15 20 2 2 2 2 2 )
 ```
 
-## <a name="fill_n"></a><a name="fill_n"></a> fill_n
+## <a name="fill_n"></a><a name="fill_n"></a> `fill_n`
 
 将新值分配给以特定元素开始的范围中指定数量的元素。
 
@@ -1600,25 +1600,25 @@ ForwardIterator fill_n(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
-一个输出迭代器，用于确定要为其分配值 *值* 的范围中第一个元素的位置。
+*`first`*\
+一个输出迭代器，用于寻址要分配值的范围中第一个元素的位置 *`value`* 。
 
-*计*\
+*`count`*\
 指定要分配该值的元素数目的有符号或无符号整数类型。
 
-*负值*\
-要分配给 [*first*， *first + count*) 范围内的元素的值。
+*`value`*\
+要分配给范围 [，) 中的元素的 *`first`* 值 *`first + count`* 。
 
 ### <a name="return-value"></a>返回值
 
-一个迭代器，该迭代器指向在 *count* > 为零时，最后一个元素之后的元素，否则为第一个元素。
+如果 > 零，则为指向最后一个元素之后的元素的迭代器 *`count`* ，否则为第一个元素。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 目标范围必须是有效的；所有指针必须是可取消引用的，并且最后一个位置可从第一个位置通过递增到达。 其复杂性与该范围的大小呈线性关系。
 
@@ -1670,7 +1670,7 @@ int main()
 }
 ```
 
-## <a name="find"></a><a name="find"></a> 查找
+## <a name="find"></a><a name="find"></a> `find`
 
 在范围中找到具有指定值的元素的第一个匹配项位置。
 
@@ -1689,31 +1689,31 @@ ForwardIterator find(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 用于确定要在范围中搜索其指定值的第一个元素的位置的输入迭代器。
 
-*时间*\
+*`last`*\
 用于确定要在范围中搜索其指定值的最后一个元素之后下一个元素的位置的输入迭代器。
 
-*负值*\
+*`value`*\
 要搜索的值。
 
 ### <a name="return-value"></a>返回值
 
-用于确定要在范围中搜索的指定值第一次出现的位置的输入迭代器。 如果找不到具有等效值的元素，则返回 *last*。
+用于确定要在范围中搜索的指定值第一次出现的位置的输入迭代器。 如果找不到具有等效值的元素，则返回 *`last`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `operator==` 用于确定元素与指定值之间的匹配必须在其操作数之间施加等效关系。
 
-有关使用 `find()` 的代码示例，请参阅 [find_if](algorithm-functions.md#find_if)。
+有关使用的代码示例 `find()` ，请参见 [`find_if`](algorithm-functions.md#find_if) 。
 
-## <a name="find_end"></a><a name="find_end"></a> find_end
+## <a name="find_end"></a><a name="find_end"></a> `find_end`
 
 在范围中查找与指定序列相同的最后一个序列，或在二元谓词指定的意义上等效的最后一个序列。
 
@@ -1754,28 +1754,28 @@ find_end(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*first1*\
+*`first1`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*last1*\
+*`last1`*\
 用于确定要搜索范围中最后一个元素之后下一个元素的位置的前向迭代器。
 
-*first2*\
+*`first2`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*last2*\
+*`last2`*\
 用于确定要搜索范围中最后一个元素之后下一个元素的位置的前向迭代器。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 一个向前迭代器，用于寻址 [first1，last1) 中与指定序列 [first2，last2) 匹配的最后一个子序列的第一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `operator==` 用于确定元素与指定值之间的匹配必须在其操作数之间施加等效关系。
 
@@ -1877,7 +1877,7 @@ There is a sequence of elements in v1 that are equivalent to those
 in v2 under the binary predicate twice and that begins at position 8.
 ```
 
-## <a name="find_first_of"></a><a name="find_first_of"></a> find_first_of
+## <a name="find_first_of"></a><a name="find_first_of"></a> `find_first_of`
 
 在目标范围中搜索若干值中任意值的第一个匹配项，或搜索在二元谓词指定的意义上等效于指定元素集的若干元素中任意元素的第一个匹配项。
 
@@ -1918,28 +1918,28 @@ find_first_of(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*first1*\
+*`first1`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*last1*\
+*`last1`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*first2*\
+*`first2`*\
 用于确定要匹配范围中的第一个元素的位置的前向迭代器。
 
-*last2*\
+*`last2`*\
 用于确定要匹配范围中的最后元素之后的位置的前向迭代器。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 用于确定第一个子序列的第一个元素的位置的前向迭代器，这个子序列与指定序列匹配或在二元谓词所指定的某个条件下等效。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `operator==` 用于确定元素与指定值之间的匹配必须在其操作数之间施加等效关系。
 
@@ -2044,7 +2044,7 @@ to those in v2 under the binary predicate twice
 and the first one begins at position 2.
 ```
 
-## <a name="find_if"></a><a name="find_if"></a> find_if
+## <a name="find_if"></a><a name="find_if"></a> `find_if`
 
 在范围中找到满足指定条件的元素的第一个匹配项位置。
 
@@ -2062,24 +2062,24 @@ ForwardIterator find_if(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 用于确定要搜索范围中的第一个元素的位置的输入迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*pred*\
-用户定义的谓词函数对象或 [lambda 表达式](../cpp/lambda-expressions-in-cpp.md)，用于定义要搜索的元素应满足的条件。 一元谓词采用单个参数并在 **`true`** 满足时返回，如果不满足，则返回 **`false`** 。 *Pred* 的签名必须有效地为 `bool pred(const T& arg);` ，其中 `T` 是在取消 `InputIterator` 引用时可隐式转换为的类型。 **`const`** 只显示关键字以说明函数对象或 lambda 不应修改参数。
+*`pred`*\
+用户定义的谓词函数对象或 [lambda 表达式](../cpp/lambda-expressions-in-cpp.md)，用于定义要搜索的元素应满足的条件。 一元谓词采用单个参数并在 **`true`** 满足时返回，如果不满足，则返回 **`false`** 。 的签名 *`pred`* 必须有效地为 `bool pred(const T& arg);` ，其中 `T` 是在取消 `InputIterator` 引用时可隐式转换为的类型。 **`const`** 只显示关键字以说明函数对象或 lambda 不应修改参数。
 
 ### <a name="return-value"></a>返回值
 
-一种输入迭代器，该迭代器引用范围中满足谓词所指定条件的第一个元素， (谓词会导致 **`true`**) 。 如果找不到满足谓词的元素，则返回 *last*。
+一种输入迭代器，该迭代器引用范围中满足谓词所指定条件的第一个元素， (谓词会导致 **`true`**) 。 如果找不到满足谓词的元素，则返回 *`last`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-此模板函数是算法 [find](algorithm-functions.md#find) 的泛化，它将“等于指定值”谓词替换为任何谓词。 有关相反逻辑（找到不满足谓词的第一个元素），请参阅 [find_if_not](algorithm-functions.md#find_if_not)。
+此模板函数是算法的泛化，它将 [`find`](algorithm-functions.md#find) "等于特定值" 谓词替换为任何谓词。 对于逻辑相反的 (查找第一个不满足谓词) 的元素，请参阅 [`find_if_not`](algorithm-functions.md#find_if_not) 。
 
 ### <a name="example"></a>示例
 
@@ -2166,7 +2166,7 @@ int main()
 }
 ```
 
-## <a name="find_if_not"></a><a name="find_if_not"></a> find_if_not
+## <a name="find_if_not"></a><a name="find_if_not"></a> `find_if_not`
 
 返回指示的范围中不满足条件的第一个元素。
 
@@ -2184,28 +2184,28 @@ ForwardIterator find_if_not(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 用于确定要搜索范围中的第一个元素的位置的输入迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*pred*\
-用户定义谓词函数对象或 [lambda 表达式](../cpp/lambda-expressions-in-cpp.md)，用于定义要搜索的元素不满足的条件。 一元谓词采用单个参数并在 **`true`** 满足时返回，如果不满足，则返回 **`false`** 。 *Pred* 的签名必须有效地为 `bool pred(const T& arg);` ，其中 `T` 是在取消 `InputIterator` 引用时可隐式转换为的类型。 **`const`** 只显示关键字以说明函数对象或 lambda 不应修改参数。
+*`pred`*\
+用户定义谓词函数对象或 [lambda 表达式](../cpp/lambda-expressions-in-cpp.md)，用于定义要搜索的元素不满足的条件。 一元谓词采用单个参数并在 **`true`** 满足时返回，如果不满足，则返回 **`false`** 。 的签名 *`pred`* 必须有效地为 `bool pred(const T& arg);` ，其中 `T` 是在取消 `InputIterator` 引用时可隐式转换为的类型。 **`const`** 只显示关键字以说明函数对象或 lambda 不应修改参数。
 
 ### <a name="return-value"></a>返回值
 
-引用范围中不满足谓词指定的条件的第一个元素的输入迭代器 (会导致 **`false`**) 。 如果所有元素都满足谓词 (谓词将 **`true`** 为每个元素生成) ，返回 *last*。
+引用范围中不满足谓词指定的条件的第一个元素的输入迭代器 (会导致 **`false`**) 。 如果所有元素都满足谓词 (谓词会导致 **`true`** 每个元素) ，则返回 *`last`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-此模板函数是算法 [find](algorithm-functions.md#find) 的泛化，它将“等于指定值”谓词替换为任何谓词。 有关相反逻辑（找到满足谓词的第一个元素），请参阅 [find_if](algorithm-functions.md#find_if)。
+此模板函数是算法的泛化，它将 [`find`](algorithm-functions.md#find) "等于特定值" 谓词替换为任何谓词。 对于逻辑相反 (查找满足谓词) 的第一个元素，请参见 [`find_if`](algorithm-functions.md#find_if) 。
 
-有关易于适应 `find_if_not()` 的代码示例的信息，请参阅 [find_if](algorithm-functions.md#find_if)。
+有关易于适应的代码示例 `find_if_not()` ，请参阅 [`find_if`](algorithm-functions.md#find_if) 。
 
-## <a name="for_each"></a><a name="for_each"></a> for_each
+## <a name="for_each"></a><a name="for_each"></a> `for_each`
 
 将指定的函数对象按向前顺序应用于范围中的每个元素并返回此函数对象。
 
@@ -2224,28 +2224,28 @@ void for_each(
     Function func);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种输入迭代器，用于寻址要操作的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，用于寻址要操作的范围中最后一个元素之后下一个元素的位置。
 
-*求*\
+*`func`*\
 用户定义的应用于范围内每个元素的函数对象。
 
 ### <a name="return-value"></a>返回值
 
 函数对象应用到范围内所有元素后的副本。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 算法 `for_each` 非常灵活，允许以用户指定的不同方式修改范围内的每个元素。 模板化函数可能通过传递不同的参数在已修改的窗体中重用。 用户定义的函数可能会累积该算法在处理范围中所有元素后可能返回的内部状态中的信息。
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，通过递增必须可从第一个位置到达最后一个位置。
 
-复杂性是线性的，最多 (*最后*  -  *一次*) 比较。
+复杂性是线性的，最多 (*`last`*  -  *`first`*) 比较。
 
 ### <a name="example"></a>示例
 
@@ -2360,7 +2360,7 @@ The average of the elements of v1 is:
 Average ( v1mod2 ) = 10.
 ```
 
-## <a name="for_each_n"></a><a name="for_each_n"></a> for_each_n
+## <a name="for_each_n"></a><a name="for_each_n"></a> `for_each_n`
 
 ```cpp
 template<class InputIterator, class Size, class Function>
@@ -2377,7 +2377,7 @@ ForwardIterator for_each_n(
     Function f);
 ```
 
-## <a name="generate"></a><a name="generate"></a> 带来
+## <a name="generate"></a><a name="generate"></a> `generate`
 
 将函数对象生成的值分配给范围中的每个元素。
 
@@ -2395,18 +2395,18 @@ void generate(
     Generator gen);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种前向迭代器，用于寻址要分配值的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种前向迭代器，用于寻址要分配值的范围中最后一个元素之后下一个元素的位置。
 
-*常规*\
+*`gen`*\
 用于生成要分配到范围中的每个元素的值的未使用任何自变量调用的函数对象。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 为范围中的每个元素调用函数对象，并且每次调用它时，都无需返回相同的值。 例如，它可能会读取文件或引用和修改本地状态。 生成器的结果类型必须可以转换为范围中转发迭代器的值类型。
 
@@ -2457,7 +2457,7 @@ Vector v1 is ( 41 18467 6334 26500 19169 ).
 Deque deq1 is ( 15724 11478 29358 26962 24464 ).
 ```
 
-## <a name="generate_n"></a><a name="generate_n"></a> generate_n
+## <a name="generate_n"></a><a name="generate_n"></a> `generate_n`
 
 将函数对象生成的值分配给范围中指定数量的元素，并返回到超出最后一个分配值的下一位置。
 
@@ -2476,21 +2476,21 @@ ForwardIterator generate_n(
     Generator gen);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 寻址要分配值的范围中的第一个元素位置的输出迭代器。
 
-*计*\
+*`count`*\
 指定生成器函数要将值分配到的元素数的有符号或无符号整型。
 
-*常规*\
+*`gen`*\
 用于生成要分配到范围中的每个元素的值的未使用任何自变量调用的函数对象。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 为范围中的每个元素调用函数对象，并且每次调用它时，都无需返回相同的值。 例如，它可能会读取文件或引用和修改本地状态。 生成器的结果类型必须可以转换为范围中转发迭代器的值类型。
 
@@ -2543,7 +2543,7 @@ int main()
 }
 ```
 
-## <a name="includes"></a><a name="includes"></a> 涵盖
+## <a name="includes"></a><a name="includes"></a> `includes`
 
 测试一个排序的范围是否包含另一排序范围中的所有元素，其中元素之间的排序或等效条件可通过二元谓词指定。
 
@@ -2581,31 +2581,31 @@ bool includes(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一种输入迭代器，用于寻址第一个元素在两个已排序源范围的第一个中的位置，以便测试第二个已排序源范围的所有元素是否包含在第一个中。
 
-*last1*\
+*`last1`*\
 一种输入迭代器，用于寻址在两个已排序源范围的第一个中最后一个元素之后下一个元素的位置，以便测试第二个已排序源范围中的所有元素是否包含在第一个中。
 
-*first2*\
+*`first2`*\
 一种输入迭代器，用于寻址第一个元素在两个连续已排序源范围的第二个中的位置，以便测试第二个已排序源范围中的所有元素是否包含在第一个中。
 
-*last2*\
+*`last2`*\
 一种输入迭代器，用于寻址在两个连续已排序源范围的第二个中最后一个元素之后的下一个元素的位置，以便测试第二个已排序源范围中的所有元素是否包含在第一个中。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果第一个已排序范围包含第二个排序范围中的所有元素，则为; 否则为。否则为 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 考虑这种测试的另一种方式是，它确定第二个源范围是否为第一个源范围的子集。
 
@@ -2768,7 +2768,7 @@ At least one of the elements in vector v2b is not contained in vector v2a.
 At least one of the elements in vector v3b is not contained under mod_lesser in vector v3a.
 ```
 
-## <a name="inplace_merge"></a><a name="inplace_merge"></a> inplace_merge
+## <a name="inplace_merge"></a><a name="inplace_merge"></a> `inplace_merge`
 
 将两个连续的排序范围中的元素合并为一个排序范围，其中排序条件可通过二元谓词指定。
 
@@ -2802,30 +2802,30 @@ void inplace_merge(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种双向迭代器，用于寻址要合并且排序为一个范围的两个连续已排序源范围中，第一个源范围内第一个元素的位置。
 
-*过程*\
+*`middle`*\
 一种双向迭代器，用于寻址要合并且排序为一个范围的两个连续已排序源范围中，第二个源范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，用于寻址要合并且排序为一个范围的两个连续已排序源范围中，第二个源范围内最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回，否则应返回 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序连续范围必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。
 
 必须按照 `inplace_merge` 算法对合并范围排序时要使用的相同顺序对已排序连续范围分别进行排列，作为应用该算法的前置条件。 该操作保持不变，因为每个范围内元素的相对顺序均已保留。 当两个源范围中有相等的元素时，在合并范围中，第一个范围中的元素优先于第二个范围中的元素。
 
-因为该算法会向临时缓冲区分配内存，所以复杂性取决于可用内存。 如果有足够的内存可用，则最佳情况是线性和 `(last - first) - 1` 比较; 如果没有可用的辅助内存，最坏的情况是 `N log(N)` ，其中 *N* 是  =  *最后*  -  *一个*。
+因为该算法会向临时缓冲区分配内存，所以复杂性取决于可用内存。 如果有足够的内存可用，则最佳情况是线性和 `(last - first) - 1` 比较; 如果没有可用的辅助内存，最坏的情况是 `N log(N)` ，其中 *`N`*  =  *`last`*  -  *`first`* 。
 
 ### <a name="example"></a>示例
 
@@ -2968,27 +2968,27 @@ bool is_heap(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种随机访问迭代器，指示在一个范围内检查堆的开始位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，指示一个范围内的结束位置。
 
-*pred*\
+*`pred`*\
 要测试或者排序元素的条件。 比较谓词采用两个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果指定范围中的元素形成堆，则返回; **`false`** 否则返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-第一个模板函数返回[is_heap_until](algorithm-functions.md#is_heap_until) `(first , last) == last` 。
+第一个模板函数返回 [`is_heap_until`](algorithm-functions.md#is_heap_until) `(first , last) == last` 。
 
 第二个模板函数返回
 
@@ -2996,7 +2996,7 @@ bool is_heap(
 
 ## <a name="is_heap_until"></a><a name="is_heap_until"></a> is_heap_until
 
-返回一个迭代器，该迭代器位于范围 [，) 中的第一个元素 `first` `last` ，该范围不满足堆排序条件，或在范围形成堆时 *结束* 。
+返回一个迭代器，该迭代器位于范围 [，) 中的第一个元素 `first` `last` ，该范围不满足堆排序条件，或者 *`end`* 范围形成堆。
 
 ```cpp
 template<class RandomAccessIterator>
@@ -3024,29 +3024,29 @@ RandomAccessIterator is_heap_until(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个随机访问迭代器，它为堆指定范围中要检查的第一个元素。
 
-*时间*\
+*`last`*\
 一个随机访问迭代器，它为堆指定要检查的范围的末尾。
 
-*pred*\
-一个二元谓词，它指定定义堆的严格弱排序条件。 `std::less<>`当未指定 *pred* 时，默认谓词为。
+*`pred`*\
+一个二元谓词，它指定定义堆的严格弱排序条件。 `std::less<>`当未指定时，默认谓词为 *`pred`* 。
 
 ### <a name="return-value"></a>返回值
 
-如果指定的范围形成堆或包含一个或更少元素，则返回 *last* 。 否则，为找到的不满足该堆条件的第一个元素返回迭代器。
+*`last`* 如果指定的范围形成堆或包含一个或更少元素，则返回。 否则，为找到的不满足该堆条件的第一个元素返回迭代器。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-第一个模板函数返回 `[first, last)` 中的最后一个迭代器 `next`，其中 `[first, next)` 是由函数对象 `std::less<>` 排序的一个堆。 如果距离 `last - first` 小于2，则函数返回 *last*。
+第一个模板函数返回 `[first, last)` 中的最后一个迭代器 `next`，其中 `[first, next)` 是由函数对象 `std::less<>` 排序的一个堆。 如果距离 `last - first` 小于2，则函数返回 *`last`* 。
 
-第二个模板函数的行为与第一个相同，只不过它使用谓词 *pred* 而不是 `std::less<>` 作为堆排序条件。
+第二个模板函数的行为与第一个相同，只不过它使用谓词 *`pred`* 而不是 `std::less<>` 作为堆排序条件。
 
 ## <a name="is_partitioned"></a><a name="is_partitioned"></a> is_partitioned
 
@@ -3067,29 +3067,29 @@ bool is_partitioned(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指示一个范围开始检查条件的位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指示范围的结束位置。
 
-*pred*\
+*`pred`*\
 要测试的条件。 由用户定义的谓词函数对象提供，用于定义被搜索元素要满足的条件。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 当给定范围中测试条件的所有元素 **`true`** 都在测试的任何元素之前 **`false`** ，否则返回 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 **`true`** 仅当中的所有元素都按 pred 分区时，模板函数才返回; 也就是说，中的所有元素都将在的 `[first, last)`  `X` `[first, last)` `pred (X)` 所有元素之前发生 `Y` `pred (Y)` **`false`** 。
 
-## <a name="is_permutation"></a><a name="is_permutation"></a> is_permutation
+## <a name="is_permutation"></a><a name="is_permutation"></a> `is_permutation`
 
 如果这两个范围包含相同元素（无论元素是否处于相同顺序），则返回 true。 在 C++14 代码中使用双范围重载，因为对第二个范围仅采用单个迭代器的重载在第二个范围长于第一个范围时不会检测到差异，并且会在第二个范围短于第一个范围时导致未定义的行为。
 
@@ -3124,32 +3124,32 @@ bool is_permutation(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*first1*\
+*`first1`*\
 引用范围的第一个元素的向前迭代器。
 
-*last1*\
+*`last1`*\
 引用范围最后一个元素过去一个元素的向前迭代器。
 
-*first2*\
+*`first2`*\
 引用第二个范围的第一个元素的向前迭代器（用于比较）。
 
-*last2*\
+*`last2`*\
 引用第二个范围最后一个元素过去一个元素的向前迭代器（用于比较）。
 
-*pred*\
+*`pred`*\
 测试等效性并返回的谓词 **`bool`** 。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 当范围可以重新排列以便根据比较运算符谓词相同时;否则为 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `is_permutation` 在最坏情况下具有二次复杂性。
 
-第一个模板函数假设范围中的元素数从 *first2* 开始，与指定范围中的元素相同 `[first1, last1)` 。 如果第二个范围中存在更多元素，则忽略它们；如果元素更少，则会发生未定义的行为。 第三个模板函数（C++14 及更高版本）不会进行此假设。 这两种情况都只返回： **`true`** 对于指定范围内的每个元素 x，在 `[first1, last1)` x = = Y 的相同范围内，x = = y 与从 *first2* 或开始的范围中的元素 y 数量相同 `[first2, last2)` 。 此处， `operator==` 必须在其操作数之间执行成对比较。
+第一个模板函数假设范围中的元素数从 *first2* 开始，与指定范围中的元素相同 `[first1, last1)` 。 如果第二个范围中存在更多元素，则忽略它们；如果元素更少，则会发生未定义的行为。 第三个模板函数（C++14 及更高版本）不会进行此假设。 这两种 **`true`** 情况都仅在：对于指定范围内的每个元素 x， `[first1, last1)` x = = y 的相同范围内，x = = y 与从或开始的范围中的元素 y 一样多 *`first2`* `[first2, last2)` 。 此处， `operator==` 必须在其操作数之间执行成对比较。
 
 第二个和第四个模板函数的行为相同，只不过它们会将 `operator==(X, Y)` 替换为 `Pred(X, Y)`。 若要行为正确，谓词必须是对称、自反且可传递。
 
@@ -3209,7 +3209,7 @@ int main()
 }
 ```
 
-## <a name="is_sorted"></a><a name="is_sorted"></a> is_sorted
+## <a name="is_sorted"></a><a name="is_sorted"></a> `is_sorted`
 
 **`true`** 如果指定范围中的元素按排序顺序返回，则返回。
 
@@ -3239,27 +3239,27 @@ bool is_sorted(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种前向迭代器，指示范围开始检查的位置。
 
-*时间*\
+*`last`*\
 一种前向迭代器，指示范围的结束位置。
 
-*pred*\
+*`pred`*\
 要进行测试以确定两个元素之间顺序的条件。 比较谓词采用两个参数并返回 **`true`** 或 **`false`** 。 此设置执行与 `operator<` 相同的任务。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-第一个模板函数返回[is_sorted_until](#is_sorted_until) `( first, last ) == last` 。 `operator<`函数执行顺序比较。
+第一个模板函数返回 [`is_sorted_until`](#is_sorted_until) `( first, last ) == last` 。 `operator<`函数执行顺序比较。
 
-第二个模板函数返回 `is_sorted_until( first, last , pred ) == last`。 *Pred* 谓词函数执行顺序比较。
+第二个模板函数返回 `is_sorted_until( first, last , pred ) == last`。 *`pred`* 谓词函数执行顺序比较。
 
-## <a name="is_sorted_until"></a><a name="is_sorted_until"></a> is_sorted_until
+## <a name="is_sorted_until"></a><a name="is_sorted_until"></a> `is_sorted_until`
 
 返回一个 `ForwardIterator`，设置为指定范围中按顺序排序的最后一个元素。
 
@@ -3291,31 +3291,31 @@ ForwardIterator is_sorted_until(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种前向迭代器，指示范围开始检查的位置。
 
-*时间*\
+*`last`*\
 一种前向迭代器，指示范围的结束位置。
 
-*pred*\
+*`pred`*\
 要进行测试以确定两个元素之间顺序的条件。 比较谓词采用两个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
-返回 `ForwardIterator`，设置为最后一个元素按顺序排序。 排序序列从 *第一个* 开始。
+返回 `ForwardIterator`，设置为最后一个元素按顺序排序。 排序序列从开始 *`first`* 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-第一个模板函数返回 `[first, last]` 中的最后一个迭代器 `next`，以便 `[first, next)` 是由 `operator<` 排序的一个排序序列。 如果 `distance()` 小于2，则函数返回 *last*。
+第一个模板函数返回 `[first, last]` 中的最后一个迭代器 `next`，以便 `[first, next)` 是由 `operator<` 排序的一个排序序列。 如果 `distance()` 小于2，则函数返回 *`last`* 。
 
 第二个模板函数的行为相同，只不过它将 `operator<(X, Y)` 替换为 `pred(X, Y)`。
 
-## <a name="iter_swap"></a><a name="iter_swap"></a> iter_swap
+## <a name="iter_swap"></a><a name="iter_swap"></a> `iter_swap`
 
 交换由一对指定迭代器引用的两个值。
 
@@ -3324,15 +3324,15 @@ template<class ForwardIterator1, class ForwardIterator2>
 void iter_swap( ForwardIterator1 left, ForwardIterator2 right );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*左中*\
+*`left`*\
 其值将进行交换的其中一个前向迭代器。
 
-*然后*\
+*`right`*\
 其值将进行交换的前向迭代器中的第二个前向迭代器。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `swap` 应优先使用来 **iter_swap**，它包含在 c + + 标准中，以便向后兼容。 如果 `Fit1` 和 `Fit2` 是向前迭代器，则 `iter_swap( Fit1, Fit2 )` 等效于 `swap( *Fit1, *Fit2 )` 。
 
@@ -3471,7 +3471,7 @@ vector v1 is: v1 = ( 4 1 2 3 ).
 & deque deq2 is: deq2 = ( 0 5 ).
 ```
 
-## <a name="lexicographical_compare"></a><a name="lexicographical_compare"></a> lexicographical_compare
+## <a name="lexicographical_compare"></a><a name="lexicographical_compare"></a> `lexicographical_compare`
 
 逐个元素比较两个序列以确定其中的较小序列。
 
@@ -3509,31 +3509,31 @@ bool lexicographical_compare(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一种输入迭代器，用于寻址要比较的第一个范围中第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一种输入迭代器，用于寻址要比较的第一个范围中最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一种输入迭代器，用于寻址要比较的第二个范围中第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一种输入迭代器，用于寻址要比较的第二个范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果第一个范围按字典顺序小于第二个范围，则为; 否则为。否则为 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 序列之间按字典顺序进行的比较将逐个比较元素，直到：
 
@@ -3638,7 +3638,7 @@ Vector v1 is lexicographically_less than L1.
 Vector v1 is not lexicographically_less than v2 under twice.
 ```
 
-## <a name="lower_bound"></a><a name="lower_bound"></a> lower_bound
+## <a name="lower_bound"></a><a name="lower_bound"></a> `lower_bound`
 
 在排序的范围中查找其值大于或等效于指定值的第一个元素的位置，其中排序条件可通过二元谓词指定。
 
@@ -3657,25 +3657,25 @@ ForwardIterator lower_bound(
     BinaryPredicate pred );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*时间*\
+*`last`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*负值*\
+*`value`*\
 正在已排序范围中搜索其第一个位置或可能的第一个位置的值。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 已排序范围中其值大于或等效于指定值的第一个元素位置处的前向迭代器，其中等效性通过二元谓词指定。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有迭代器必须可取消引用，并且在序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -3777,7 +3777,7 @@ int main()
 }
 ```
 
-## <a name="make_heap"></a><a name="make_heap"></a> make_heap
+## <a name="make_heap"></a><a name="make_heap"></a> `make_heap`
 
 将指定范围中的元素转换到第一个元素是最大元素的堆中，其中排序条件可通过二元谓词指定。
 
@@ -3794,18 +3794,18 @@ void make_heap(
     BinaryPredicate pred );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址要转换为堆的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于寻址要转换为堆的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 堆有两个属性：
 
@@ -3859,7 +3859,7 @@ int main() {
 }
 ```
 
-## <a name="max"></a><a name="max"></a> 数量
+## <a name="max"></a><a name="max"></a> `max`
 
 比较两个对象并返回较大对象，其中排序条件可通过二元谓词指定。
 
@@ -3882,27 +3882,27 @@ constexpr Type& max(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*左中*\
+*`left`*\
 要比较的两个对象中的第一个对象。
 
-*然后*\
+*`right`*\
 要比较的两个对象中的第二个对象。
 
-*pred*\
+*`pred`*\
 用于比较两个对象的二元谓词。
 
-*inlist*\
+*`inlist`*\
 包含要比较的对象的初始值设定项列表。
 
 ### <a name="return-value"></a>返回值
 
-两个对象中的较大者，除非两个对象都不大；在此情况下，它将返回两个对象中的第一个对象。 在 initializer_list 中，它将返回列表中的最大对象。
+两个对象中的较大者，除非两个对象都不大；在此情况下，它将返回两个对象中的第一个对象。 对于 `initializer_list` ，它将返回列表中最大的对象。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-`max` 算法很少将对象作为参数传递。 大多数 C++ 标准库算法对一系列其位置由作为参数传递的迭代器指定的元素进行操作。 如果你需要一个对一系列元素进行操作的函数，请改用 [max_element](algorithm-functions.md#max_element)。 Visual Studio 2017 **`constexpr`** 在采用 initializer_list 的重载上启用。
+`max` 算法很少将对象作为参数传递。 大多数 C++ 标准库算法对一系列其位置由作为参数传递的迭代器指定的元素进行操作。 如果需要对一系列元素进行操作的函数，请改用 [`max_element`](algorithm-functions.md#max_element) 。 Visual Studio 2017 启用 **`constexpr`** 了采用的重载 `initializer_list` 。
 
 ### <a name="example"></a>示例
 
@@ -4072,7 +4072,7 @@ Vector v4 = max (v1,v2) is ( 0 1 2 ).
 Vector v5 = max (v1,v3) is ( 0 2 4 ).
 ```
 
-## <a name="max_element"></a><a name="max_element"></a> max_element
+## <a name="max_element"></a><a name="max_element"></a> `max_element`
 
 在指定范围中查找最大元素的第一个匹配项，其中排序条件可通过二元谓词指定。
 
@@ -4102,25 +4102,25 @@ ForwardIterator max_element(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个前向迭代器，用于确定要在其中搜索最大元素的范围中的第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个前向迭代器，用于确定要在其中搜索最大元素的范围中的最后一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回，否则应返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一个前向迭代器，用于确定搜索范围内的最大元素的第一个匹配项的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用范围必须是有效的；所有指针必须是可解除引用的，在每个序列中，最后一个位置可从第一个位置通过递增到达。
 
@@ -4226,7 +4226,7 @@ int main()
 }
 ```
 
-## <a name="merge"></a><a name="merge"></a> merge
+## <a name="merge"></a><a name="merge"></a> `merge`
 
 将两个已排序源范围中的所有元素合并为一个已排序目标范围，其中排序条件可通过二元谓词指定。
 
@@ -4268,34 +4268,34 @@ ForwardIterator merge(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一个输入迭代器，用于确定要合并且排序为一个范围的两个已排序源范围中第一个源范围内第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一个输入迭代器，用于确定要合并且排序为一个范围的两个已排序源范围中第一个源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一个输入迭代器，用于确定要合并且排序为一个范围的两个连续已排序源范围中第二个源范围内第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一个输入迭代器，用于确定要合并且排序为一个范围的两个连续已排序源范围中第二个源范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于确定要将两个源范围合并为一个已排序范围的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回， **`false`** 否则返回。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于确定已排序目标范围中最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -4309,7 +4309,7 @@ ForwardIterator merge(
 
 算法的复杂性是线性的，最多进行 `(last1 - first1) - (last2 - first2) - 1` 比较。
 
-[list 类](list-class.md)提供成员函数“merge”来合并两个列表的元素。
+[ `list` 类](list-class.md)提供成员函数 `merge` 以合并两个列表的元素。
 
 ### <a name="example"></a>示例
 
@@ -4421,7 +4421,7 @@ int main() {
 }
 ```
 
-## <a name="min"></a><a name="min"></a> 分钟
+## <a name="min"></a><a name="min"></a> `min`
 
 比较两个对象并返回较小对象，其中排序条件可通过二元谓词指定。
 
@@ -4447,27 +4447,27 @@ constexpr Type min(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*左中*\
+*`left`*\
 要比较的两个对象中的第一个对象。
 
-*然后*\
+*`right`*\
 要比较的两个对象中的第二个对象。
 
-*pred*\
+*`pred`*\
 用于比较两个对象的二元谓词。
 
-*inlist*\
+*`inlist`*\
 `initializer_list`包含要比较的成员的。
 
 ### <a name="return-value"></a>返回值
 
 两个对象中的较小者，除非两个对象都不小；在此情况下，它将返回两个对象中的第一个对象。 对于 `initializer_list` ，它将返回列表中最少的对象。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-`min` 算法很少将对象作为参数传递。 大多数 C++ 标准库算法对一系列其位置由作为参数传递的迭代器指定的元素进行操作。 如果你需要一个使用一系列元素的函数，请使用 [min_element](algorithm-functions.md#min_element)。 [](../cpp/constexpr-cpp.md)在 `initializer_list` Visual Studio 2017 中对重载启用了 constexpr。
+`min` 算法很少将对象作为参数传递。 大多数 C++ 标准库算法对一系列其位置由作为参数传递的迭代器指定的元素进行操作。 如果需要使用一系列元素的函数，请使用 [`min_element`](algorithm-functions.md#min_element) 。 [`constexpr`](../cpp/constexpr-cpp.md) 已对 `initializer_list` Visual Studio 2017 中的重载启用。
 
 ### <a name="example"></a>示例
 
@@ -4636,7 +4636,7 @@ Vector v4 = min ( v1,v2 ) is ( 0 1 2 ).
 Vector v5 = min ( v1,v3 ) is ( 0 1 2 ).
 ```
 
-## <a name="min_element"></a><a name="min_element"></a> min_element
+## <a name="min_element"></a><a name="min_element"></a> `min_element`
 
 在指定范围中查找最小元素的第一个匹配项，其中排序条件可通过二元谓词指定。
 
@@ -4666,25 +4666,25 @@ ForwardIterator min_element(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种前向迭代器，用于寻址要在其中搜索最小元素的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种前向迭代器，用于寻址要在其中搜索最小元素的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回， **`false`** 否则返回。
 
 ### <a name="return-value"></a>返回值
 
 一种前向迭代器，用于寻址搜索范围内最小元素的第一个匹配项的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用范围必须是有效的；所有指针必须是可解除引用的，在每个序列中，最后一个位置可从第一个位置通过递增到达。
 
@@ -4800,7 +4800,7 @@ The smallest element in v1 under the mod_lesser
 binary predicate is: 0
 ```
 
-## <a name="minmax_element"></a><a name="minmax_element"></a> minmax_element
+## <a name="minmax_element"></a><a name="minmax_element"></a> `minmax_element`
 
 在一次调用中执行由 `min_element` 和 `max_element` 执行的操作。
 
@@ -4830,18 +4830,18 @@ pair<ForwardIterator, ForwardIterator> minmax_element(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种前向迭代器，指示范围的开始位置。
 
-*时间*\
+*`last`*\
 一种前向迭代器，指示范围的结束位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义一个元素小于另一个元素的含义。 比较谓词采用两个参数， **`true`** 如果第一个参数小于第二个参数，则应返回， **`false`** 否则返回。
 
 ### <a name="return-value"></a>返回值
@@ -4850,7 +4850,7 @@ pair<ForwardIterator, ForwardIterator> minmax_element(
 
 `pair<ForwardIterator, ForwardIterator>( min_element(first, last), max_element(first, last))`.
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 第一个模板函数返回
 
@@ -4860,7 +4860,7 @@ pair<ForwardIterator, ForwardIterator> minmax_element(
 
 如果序列为非空，此函数将最多执行 `3 * (last - first - 1) / 2` 次比较。
 
-## <a name="minmax"></a><a name="minmax"></a> minmax
+## <a name="minmax"></a><a name="minmax"></a> `minmax`
 
 比较两个输入参数，并按较小到较大的顺序将它们作为参数对返回。
 
@@ -4886,31 +4886,31 @@ constexpr pair<Type&, Type&> minmax(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*左中*\
+*`left`*\
 要比较的两个对象中的第一个对象。
 
-*然后*\
+*`right`*\
 要比较的两个对象中的第二个对象。
 
-*pred*\
+*`pred`*\
 用于比较两个对象的二元谓词。
 
-*inlist*\
+*`inlist`*\
 `initializer_list`包含要比较的成员的。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-`pair<const Type&, const Type&>( right, left )`如果 *right* 小于 *left*，则第一个模板函数返回。 否则，它将返回 `pair<const Type&, const Type&>( left, right )`。
+`pair<const Type&, const Type&>( right, left )`如果小于，则第一个模板函数返回 *`right`* *`left`* 。 否则，它将返回 `pair<const Type&, const Type&>( left, right )`。
 
-第二个成员函数返回一个对，其中第一个元素为较小的，第二个元素按谓词 *pred* 进行比较。
+第二个成员函数返回一个对，其中第一个元素为较小的，第二个元素与谓词进行比较时是较大的 *`pred`* 。
 
-其余模板函数的行为相同，不同之处在于它们将 *左* 参数和 *右* 参数替换为 *inlist*。
+剩余的模板函数的行为相同，只不过它们将 *`left`* 和参数替换 *`right`* 为 *`inlist`* 。
 
 此函数仅执行一次比较。
 
-## <a name="mismatch"></a><a name="mismatch"></a> 匹配
+## <a name="mismatch"></a><a name="mismatch"></a> `mismatch`
 
 逐个元素对比两个范围，并找到出现不同的第一个位置。
 
@@ -4986,31 +4986,31 @@ mismatch(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 用于确定要测试的第一个范围中第一个元素的位置的输入迭代器。
 
-*last1*\
+*`last1`*\
 用于确定要测试的第一个范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*first2*\
+*`first2`*\
 用于确定要测试的第二个范围中第一个元素的位置的输入迭代器。
 
-*last2*\
+*`last2`*\
 用于确定要测试的第二个范围中最后元素之后下一个元素的位置的输入迭代器。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，该对象将每个范围中的当前元素进行比较，并确定它们是否等效。 此方法 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 一对迭代器，用于确定两个范围中不匹配的位置，第一个组件迭代器指向第一个范围中的位置，第二个组件迭代器指向第二个范围中的位置。 如果比较的范围内的元素之间没有区别，或者两个范围内的所有元素对都满足第二个版本中的二进制谓词的两个范围，那么第一个组件迭代器会指向第一个范围中最后元素之后下一个元素的位置，第二个组件迭代器会指向第二个范围中测试的最后元素之后的下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 第一个模板函数假设从 first2 开始的范围中存在的元素数与 [first1, last1) 指定的范围中的元素数相同。 如果在第二个范围中存在更多值，则忽略它们;如果小于，则会导致未定义的行为。
 
@@ -5115,7 +5115,7 @@ C++14: vec_1 and list_1 are a mismatch: false
 Press a key
 ```
 
-## <a name="ltalggt-move"></a><a name="alg_move"></a> &lt;alg&gt; move
+## <a name="alg-move"></a><a name="alg_move"></a> `<alg> move`
 
 移动与指定范围关联的元素。
 
@@ -5134,25 +5134,25 @@ ForwardIterator2 move(
     ForwardIterator2 result);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个输入迭代器，指示在范围内移动元素的起始位置。
 
-*时间*\
+*`last`*\
 一个输入迭代器，指示在范围内移动元素的结束位置。
 
-*目的*\
+*`dest`*\
 将包含已移动元素的输出迭代器。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-该模板函数针对范围  中的每个  进行一次 `*(dest + N) = move(*(first + N))``N``[0, last - first)` 求值，从而从最低值开始严格递增 `N` 的值。 然后返回 `dest + N`。 如果 `dest` 和 *首次* 指定存储区域，则 *目标* 不能在范围内 `[first, last)` 。
+该模板函数针对范围  中的每个  进行一次 `*(dest + N) = move(*(first + N))``N``[0, last - first)` 求值，从而从最低值开始严格递增 `N` 的值。 然后返回 `dest + N`。 如果 `dest` 和 *`first`* 指定存储区域，则 *`dest`* 不能在范围内 `[first, last)` 。
 
-## <a name="move_backward"></a><a name="move_backward"></a> move_backward
+## <a name="move_backward"></a><a name="move_backward"></a> `move_backward`
 
 将一个迭代器的元素移动到另一迭代器。 移动从指定范围的最后一个元素开始，并在此范围的第一个元素结束。
 
@@ -5164,24 +5164,24 @@ BidirectionalIterator2 move_backward(
     BidirectionalIterator2 destEnd);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 指示范围内移动元素的开始位置的迭代器。
 
-*时间*\
+*`last`*\
 指示在范围内移动元素的结束位置的迭代器。 此元素未移动。
 
-*destEnd*\
+*`destEnd`*\
 一种双向迭代器，用于定址目标范围内最后元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-该模板函数针对范围  中的每个  进行一次 `*(destEnd - N - 1) = move(*(last - N - 1))``N``[0, last - first)` 求值，从而从最低值开始严格递增 `N` 的值。 然后返回 `destEnd - (last - first)`。 如果 *destEnd* 和 *第一次* 指定存储区域，则 *destEnd* 不能在范围内 `[first, last)` 。
+该模板函数针对范围  中的每个  进行一次 `*(destEnd - N - 1) = move(*(last - N - 1))``N``[0, last - first)` 求值，从而从最低值开始严格递增 `N` 的值。 然后返回 `destEnd - (last - first)`。 如果 *`destEnd`* 和 *`first`* 指定存储区域，则 *`destEnd`* 不能在范围内 `[first, last)` 。
 
 `move` 和 `move_backward` 在功能上等效于将 `copy` 和 `copy_backward` 与移动迭代器结合使用。
 
-## <a name="next_permutation"></a><a name="next_permutation"></a> next_permutation
+## <a name="next_permutation"></a><a name="next_permutation"></a> `next_permutation`
 
 重新排序范围中的元素，以便使用按字典顺序的下一个更大排列（如果有）替换原有排序，其中“下一个”的意义可通过二元谓词指定。
 
@@ -5198,22 +5198,22 @@ bool next_permutation(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种双向迭代器，指向要重新排序的范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，指向要重新排序的范围内最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果按字典顺序下一个排列存在并且已替换范围的原始顺序，则为; 否则为。否则 **`false`** ，会将排序转换为按字典顺序最小排列。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -5360,7 +5360,7 @@ After another next_permutation of vector v1,
 v1 =   ( -3 -2 -1 1 0 2 3 ).
 ```
 
-## <a name="nth_element"></a><a name="nth_element"></a> nth_element
+## <a name="nth_element"></a><a name="nth_element"></a> `nth_element`
 
 对一系列元素进行分区，正确找到范围中序列的第 *n* 个元素，以使其前面的所有元素都小于或等于该元素，并且序列后面的所有元素都大于或等于此元素。
 
@@ -5394,24 +5394,24 @@ void nth_element(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址要分区的范围中第一个元素的位置。
 
-*n*\
+*`nth`*\
 一种随机访问迭代器，用于寻址要在分区边界上进行正确排序的元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于寻址要分区的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 比较谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -5419,7 +5419,7 @@ void nth_element(
 
 元素是等效的，但是如果两者都不小于对方，则不一定要相等。
 
-排序复杂度的平均值是相对于 *最后一个* 的线性。
+排序复杂度的平均值是与相关的线性 *`last - first`* 。
 
 ### <a name="example"></a>示例
 
@@ -5487,7 +5487,7 @@ int main() {
 }
 ```
 
-## <a name="none_of"></a><a name="none_of"></a> none_of
+## <a name="none_of"></a><a name="none_of"></a> `none_of`
 
 **`true`** 当给定范围内的元素内从不出现条件时，返回。
 
@@ -5506,29 +5506,29 @@ bool none_of(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指示在元素范围内检查条件的起始位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指示元素范围的结束位置。
 
-*pred*\
+*`pred`*\
 要测试的条件。 由定义条件的用户定义的谓词函数对象提供。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果在指示范围内至少检测到一次条件，并且 **`false`** 检测到条件，则返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 **`true`** 仅当（对于 `N` 范围中的某些 `[0, last - first)` ）始终为谓词 `pred(*(first + N))` 时，模板函数才返回 **`false`** 。
 
-## <a name="partial_sort"></a><a name="partial_sort"></a> partial_sort
+## <a name="partial_sort"></a><a name="partial_sort"></a> `partial_sort`
 
 将范围中指定数量的较小元素按非降序顺序排列，或根据二元谓词指定的排序条件排列。
 
@@ -5562,30 +5562,30 @@ void partial_sort(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址要排序的范围中第一个元素的位置。
 
-*sortEnd*\
+*`sortEnd`*\
 一种随机访问迭代器，用于寻址要排序的子范围中最后元素之后下一个元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于寻址要部分排序的子范围中最后元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
 元素是等效的，但是如果两者都不小于对方，则不一定要相等。 该 `sort` 算法不稳定，并且不保证将保留等效元素的相对顺序。 算法 `stable_sort` 会保留此原始顺序。
 
-平均部分排序复杂度为 *O* ( # B1 `last` -  `first`) log (`sortEnd` -  `first`) # A5。
+平均部分排序复杂度是 *O* ( (`last` -  `first`) log (`sortEnd` -  `first`) ) 。
 
 ### <a name="example"></a>示例
 
@@ -5659,7 +5659,7 @@ Partially resorted (UDgreater) vector:
 v1 = ( 11 10 9 8 7 6 5 4 0 1 2 3 )
 ```
 
-## <a name="partial_sort_copy"></a><a name="partial_sort_copy"></a> partial_sort_copy
+## <a name="partial_sort_copy"></a><a name="partial_sort_copy"></a> `partial_sort_copy`
 
 将源范围中的元素复制到目标范围，其中源元素按降序或二元谓词指定的其他顺序排序。
 
@@ -5697,31 +5697,31 @@ RandomAccessIterator partial_sort_copy(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 发现源范围内的第一个元素的位置的输入迭代器。
 
-*last1*\
+*`last1`*\
 一个输入迭代器，用于寻址源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一种随机访问迭代器，用于寻址排序目标范围中第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一种随机访问迭代器，用于寻址排序目标范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 一种随机访问迭代器，用于将目标范围中的元素寻址到从源范围插入的最后一个元素之外的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 源范围和目标范围务必不能重叠，并且必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -5803,7 +5803,7 @@ int main() {
 }
 ```
 
-## <a name="partition"></a><a name="partition"></a> 依据
+## <a name="partition"></a><a name="partition"></a> `partition`
 
 将范围中的元素分为两个不相交的集，满足一元谓词的元素在不满足一元谓词的元素之前。
 
@@ -5822,31 +5822,31 @@ ForwardIterator partition(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种双向迭代器，用于寻址要分区的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，用于寻址要分区的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义如果元素要分类时应满足的条件。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一种双向迭代器，用于寻址范围中不满足谓词条件的第一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
-如果两者都为 false 且为 false，则元素 *a* 和 *b* 等效，但不一定相等， `pred( a, b )` `pred( b, a )` 其中 *pred* 是参数指定的谓词。 该 `partition` 算法不稳定，并且不保证将保留等效元素的相对顺序。 算法 `stable_partition` 会保留此原始顺序。
+元素 *`a`* 和 *`b`* 等效，但不一定等于，如果两者都 `pred( a, b )` 为 false 且 `pred( b, a )` 为 false，其中 *`pred`* 是参数指定的谓词。 该 `partition` 算法不稳定，并且不保证将保留等效元素的相对顺序。 算法 `stable_partition` 会保留此原始顺序。
 
-复杂性是线性的： `(last - first)` *pred* 的应用程序和最多 `(last - first)/2` 交换。
+复杂性是线性的：有 `(last - first)` 多个应用程序 *`pred`* 在进行 `(last - first)/2` 交换。
 
 ### <a name="example"></a>示例
 
@@ -5889,7 +5889,7 @@ int main()
 }
 ```
 
-## <a name="partition_copy"></a><a name="partition_copy"></a> partition_copy
+## <a name="partition_copy"></a><a name="partition_copy"></a> `partition_copy`
 
 将条件为的元素复制 **`true`** 到一个目标，将条件复制到另一个目标 **`false`** 。 元素必须来自于指定范围。
 
@@ -5912,31 +5912,31 @@ pair<ForwardIterator1, ForwardIterator2> partition_copy(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指示在一个范围中开始检查条件的位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指示范围的结束位置。
 
-*dest1*\
+*`dest1`*\
 一个输出迭代器，用于复制为使用 *pred* 测试的条件返回 true 的元素。
 
-*dest2*\
+*`dest2`*\
 一个输出迭代器，用于复制为使用 *pred* 测试的条件返回 false 的元素。
 
-*pred*\
+*`pred`*\
 要测试的条件。 由定义要测试条件的用户定义谓词函数对象提供。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `X` `[first,last)` `*dest1++` 如果 `pred(X)` 为 true， `*dest2++` 则模板函数将中的每个元素复制到; 否则为。 它将返回 `pair<OutputIterator1, OutputIterator2>(dest1, dest2)`。
 
-## <a name="partition_point"></a><a name="partition_point"></a> partition_point
+## <a name="partition_point"></a><a name="partition_point"></a> `partition_point`
 
 返回给定范围中不满足条件的第一个元素。 元素经过排序，满足条件的元素在不满足条件的元素之前。
 
@@ -5948,26 +5948,26 @@ ForwardIterator partition_point(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种 `ForwardIterator`，指示在一个范围内检查条件的开始位置。
 
-*时间*\
+*`last`*\
 一种 `ForwardIterator`，指示范围的结束位置。
 
-*pred*\
+*`pred`*\
 要测试的条件。 由用户定义的谓词函数对象提供，用于定义被搜索元素要满足的条件。 一元谓词采用单个参数并返回 **`true`** 或 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 返回一个 `ForwardIterator` ，它引用不满足 *pred* 测试的条件的第一个元素，如果未找到，则返回 *最后* 一个元素。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-模板函数查找中的第一个迭代器 `it` `[first, last)` `pred(*it)` **`false`** 。 序列必须按 *pred* 排序。
+模板函数查找中的第一个迭代器 `it` `[first, last)` `pred(*it)` **`false`** 。 序列必须按排序 *`pred`* 。
 
-## <a name="pop_heap"></a><a name="pop_heap"></a> pop_heap
+## <a name="pop_heap"></a><a name="pop_heap"></a> `pop_heap`
 
 移除从堆顶到范围中倒数第二个位置之间的最大元素，然后将剩余元素形成新堆。
 
@@ -5984,18 +5984,18 @@ void pop_heap(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址堆中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于寻址堆中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 如果添加到堆中的元素大于该堆中已有的任何元素，则 `pop_heap` 算法是由 push_heap 算法执行的操作的反向操作，其中范围的倒数第二个元素添加到由范围中前面的元素组成的堆中。
 
@@ -6076,7 +6076,7 @@ int main()
 }
 ```
 
-## <a name="prev_permutation"></a><a name="prev_permutation"></a> prev_permutation
+## <a name="prev_permutation"></a><a name="prev_permutation"></a> `prev_permutation`
 
 重新排序范围中的元素，以便按字典顺序的前一个更大排列（如果有）替换原有排序，其中“前一个”的意义可通过二元谓词指定。
 
@@ -6093,22 +6093,22 @@ bool prev_permutation(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种双向迭代器，指向要重新排序的范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，指向要重新排序的范围内最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 **`true`** 如果按字典顺序上一个排列存在并且已替换范围的原始顺序，则为; 否则为。否则 **`false`** ，在这种情况下，会将排序转换为按字典顺序最大排列。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -6251,7 +6251,7 @@ After another prev_permutation of vector v1,
 v1 =   ( -3 -2 0 2 -1 1 3 ).
 ```
 
-## <a name="push_heap"></a><a name="push_heap"></a> push_heap
+## <a name="push_heap"></a><a name="push_heap"></a> `push_heap`
 
 将范围末尾的元素添加到包括范围中前面元素的现有堆中。
 
@@ -6268,18 +6268,18 @@ void push_heap(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址堆中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于寻址要转换为堆的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 元素必须先推送回现有堆的末尾，然后使用该算法将此元素添加到现有堆。
 
@@ -6364,11 +6364,11 @@ int main() {
 }
 ```
 
-## <a name="random_shuffle"></a><a name="random_shuffle"></a> random_shuffle
+## <a name="random_shuffle"></a><a name="random_shuffle"></a> `random_shuffle`
 
-Std：： random_shuffle ( # A1 函数已弃用，由 [std：：无序播放](algorithm-functions.md#shuffle)。 有关代码示例和详细信息，请参阅 [\<random>](random.md) 和 Stack Overflow Post [为什么在 c + + 14 中弃用 std：： random_shuffle 方法？](https://go.microsoft.com/fwlink/p/?linkid=397954)。
+此 `std::random_shuffle()` 函数已弃用，替换为 [`std::shuffle`](algorithm-functions.md#shuffle) 。 有关代码示例和详细信息，请参阅 [`<random>`](random.md) 和 Stack Overflow 文章 [为什么 `std::random_shuffle` 在 c + + 14 中弃用方法呢？](https://go.microsoft.com/fwlink/p/?linkid=397954)。
 
-## <a name="remove"></a><a name="remove"></a> 取消
+## <a name="remove"></a><a name="remove"></a> `remove`
 
 从给定范围中消除指定值，而不影响剩余元素的顺序，并返回不包含指定值的新范围的末尾。
 
@@ -6387,25 +6387,25 @@ ForwardIterator remove(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 寻址要删除元素的范围中的第一个元素位置的转发迭代器。
 
-*时间*\
+*`last`*\
 寻址要删除元素的范围中的最后一个元素的下一个位置的转发迭代器。
 
-*负值*\
+*`value`*\
 要从该范围删除的值。
 
 ### <a name="return-value"></a>返回值
 
 寻址修改范围中的新的末尾位置的转发迭代器，此位置即超出不包含指定值的残留序列的最后一个元素的下一个位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -6415,7 +6415,7 @@ ForwardIterator remove(
 
 复杂性是线性的;`last`  -  `first` 相等性 () 比较。
 
-[List 类](list-class.md)具有更高效的成员函数版本 `remove` ，它也重新链接指针。
+[ `list` 类](list-class.md)具有更高效的成员函数版本 `remove` ，它也会重新链接指针。
 
 ### <a name="example"></a>示例
 
@@ -6464,7 +6464,7 @@ int main()
 }
 ```
 
-## <a name="remove_copy"></a><a name="remove_copy"></a> remove_copy
+## <a name="remove_copy"></a><a name="remove_copy"></a> `remove_copy`
 
 将源范围中的元素复制到目标范围（不复制具有指定值的元素），而不影响剩余元素的顺序，并返回新目标范围的末尾。
 
@@ -6485,28 +6485,28 @@ ForwardIterator2 remove_copy(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个输入迭代器，用于确定要删除元素的范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个输入迭代器，用于确定要删除元素的范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于确定要删除元素的目标范围内第一个元素的位置。
 
-*负值*\
+*`value`*\
 要从该范围删除的值。
 
 ### <a name="return-value"></a>返回值
 
 一个向前迭代器，用于确定目标范围中的新的末尾位置，此位置即不包含指定值的残留序列副本的最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的源范围和目标范围必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -6562,7 +6562,7 @@ int main()
 }
 ```
 
-## <a name="remove_copy_if"></a><a name="remove_copy_if"></a> remove_copy_if
+## <a name="remove_copy_if"></a><a name="remove_copy_if"></a> `remove_copy_if`
 
 将源范围中的元素复制到目标范围，但满足谓词的元素除外。 复制元素而不影响剩余元素的顺序。 返回新目标范围的末尾。
 
@@ -6583,28 +6583,28 @@ ForwardIterator2 remove_copy_if(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个输入迭代器，用于确定要删除元素的范围内第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个输入迭代器，用于确定要删除元素的范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于确定要删除元素的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 必须满足的一元谓词是要替换的元素值。
 
 ### <a name="return-value"></a>返回值
 
 一个向前迭代器，用于确定目标范围中的新的末尾位置，此位置即不包含满足谓词的元素的残留序列的最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的源范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -6669,7 +6669,7 @@ int main()
 }
 ```
 
-## <a name="remove_if"></a><a name="remove_if"></a> remove_if
+## <a name="remove_if"></a><a name="remove_if"></a> `remove_if`
 
 从给定范围中消除满足谓词的元素，而不影响剩余元素的顺序，并返回不包含指定值的新范围的末尾。
 
@@ -6688,25 +6688,25 @@ ForwardIterator remove_if(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指向从其中删除元素的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指向从其中删除元素的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 必须满足的一元谓词是要替换的元素值。
 
 ### <a name="return-value"></a>返回值
 
 寻址修改范围中的新的末尾位置的转发迭代器，此位置即超出不包含指定值的残留序列的最后一个元素的下一个位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -6770,7 +6770,7 @@ int main()
 }
 ```
 
-## <a name="replace"></a><a name="replace"></a> 全部
+## <a name="replace"></a><a name="replace"></a> `replace`
 
 检查范围中的每个元素，并替换与指定值匹配的元素。
 
@@ -6791,24 +6791,24 @@ void replace(
     const Type& newVal);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指向要从其中替换元素的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种输入迭代器，指向要从其中替换元素的范围中最后一个元素之后下一个元素的位置。
 
-*oldVal*\
+*`oldVal`*\
 要替换的元素的旧值。
 
-*newVal*\
+*`newVal`*\
 要赋给具有旧值的元素的新值。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -6857,7 +6857,7 @@ int main()
 }
 ```
 
-## <a name="replace_copy"></a><a name="replace_copy"></a> replace_copy
+## <a name="replace_copy"></a><a name="replace_copy"></a> `replace_copy`
 
 检查源范围中的每个元素，并替换与指定值匹配的元素，同时将结果复制到新的目标范围。
 
@@ -6880,31 +6880,31 @@ ForwardIterator2 replace_copy(
     const Type& newVal);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个输入迭代器，指向要替换元素的范围中的第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个输入迭代器，指向要替换元素的范围中最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，指向要将序列已更改的元素复制到的目标范围中的第一个元素。
 
-*oldVal*\
+*`oldVal`*\
 要替换的元素的旧值。
 
-*newVal*\
+*`newVal`*\
 要赋给具有旧值的元素的新值。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，指向目标范围中最后一个元素之后的位置，将更改的元素序列复制到该位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的源范围和目标范围不能重叠，并且必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -6972,7 +6972,7 @@ int main()
 }
 ```
 
-## <a name="replace_copy_if"></a><a name="replace_copy_if"></a> replace_copy_if
+## <a name="replace_copy_if"></a><a name="replace_copy_if"></a> `replace_copy_if`
 
 检查源范围中的每个元素，并替换满足指定谓词的元素，同时将结果复制到新的目标范围。
 
@@ -6995,31 +6995,31 @@ ForwardIterator2 replace_copy_if(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个输入迭代器，指向要替换元素的范围中的第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个输入迭代器，指向要替换元素的范围中最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，指向要将元素复制到的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 必须满足的一元谓词是要替换的元素值。
 
-*负值*\
+*`value`*\
 要赋给其旧值满足谓词的元素的新值。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，指向目标范围中最后一个元素之后的位置，将更改的元素序列复制到该位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的源范围和目标范围不能重叠，并且必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -7095,7 +7095,7 @@ int main()
 }
 ```
 
-## <a name="replace_if"></a><a name="replace_if"></a> replace_if
+## <a name="replace_if"></a><a name="replace_if"></a> `replace_if`
 
 检查范围中的每个元素，并替换满足指定谓词的元素。
 
@@ -7116,24 +7116,24 @@ void replace_if(
     const Type& value);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种输入迭代器，指向要从其中替换元素的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个迭代器，指向要替换元素的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 必须满足的一元谓词是要替换的元素值。
 
-*负值*\
+*`value`*\
 要赋给其旧值满足谓词的元素的新值。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -7191,7 +7191,7 @@ int main()
 }
 ```
 
-## <a name="reverse"></a><a name="reverse"></a> 反向
+## <a name="reverse"></a><a name="reverse"></a> `reverse`
 
 反转范围中元素的顺序。
 
@@ -7208,18 +7208,18 @@ void reverse(
     BidirectionalIterator last);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种双向迭代器，指向元素要进行重排的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个双向迭代器，指向元素要进行重排的范围中最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的源范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -7266,7 +7266,7 @@ The modified vector v1 with values reversed is:
 ( 9 8 7 6 5 4 3 2 1 0 ).
 ```
 
-## <a name="reverse_copy"></a><a name="reverse_copy"></a> reverse_copy
+## <a name="reverse_copy"></a><a name="reverse_copy"></a> `reverse_copy`
 
 反转源范围中元素的顺序，同时将这些元素复制到目标范围
 
@@ -7285,25 +7285,25 @@ ForwardIterator reverse_copy(
     ForwardIterator result);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个双向迭代器，指向元素进行置换的源范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个双向迭代器，指向元素进行置换的源范围中最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，指向要将元素复制到的目标范围内第一个元素的位置。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，指向目标范围中最后一个元素之后的位置，将更改的元素序列复制到该位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的源范围和目标范围必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -7348,7 +7348,7 @@ int main()
 }
 ```
 
-## <a name="rotate"></a><a name="rotate"></a> 90
+## <a name="rotate"></a><a name="rotate"></a> `rotate`
 
 交换两个相邻范围中的元素。
 
@@ -7367,21 +7367,21 @@ ForwardIterator rotate(
     ForwardIterator last);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个向前迭代器，用于确定要轮换的范围内第一个元素的位置。
 
-*过程*\
+*`middle`*\
 一个向前迭代器，用于在范围内定义边界，从而确定范围内其元素将与第一部分中的元素进行交换的第二部分中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个向前迭代器，用于确定要轮换的范围内最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -7462,7 +7462,7 @@ After the rotation of a single deque element to the back,
 d1 is   ( 0 1 2 3 4 5 ).
 ```
 
-## <a name="rotate_copy"></a><a name="rotate_copy"></a> rotate_copy
+## <a name="rotate_copy"></a><a name="rotate_copy"></a> `rotate_copy`
 
 交换源范围中两个相邻范围内的元素，并将结果复制到目标范围。
 
@@ -7483,28 +7483,28 @@ ForwardIterator2 rotate_copy(
     ForwardIterator2 result);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个向前迭代器，用于确定要轮换的范围内第一个元素的位置。
 
-*过程*\
+*`middle`*\
 一个向前迭代器，用于在范围内定义边界，从而确定范围内其元素将与第一部分中的元素进行交换的第二部分中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个向前迭代器，用于确定要轮换的范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一种输出迭代器，用于定址目标范围内第一个元素的位置。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于确定目标范围内最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针必须可取消引用，并且在序列内，最后一个位置可从第一个位置通过递增到达。
 
@@ -7570,7 +7570,7 @@ int main()
 }
 ```
 
-## <a name="sample"></a><a name="sample"></a> 范例
+## <a name="sample"></a><a name="sample"></a> `sample`
 
 ```cpp
 template<class PopulationIterator, class SampleIterator, class Distance, class UniformRandomBitGenerator>
@@ -7582,7 +7582,7 @@ SampleIterator sample(
     UniformRandomBitGenerator&& g);
 ```
 
-## <a name="search"></a><a name="search"></a> 寻找
+## <a name="search"></a><a name="search"></a> `search`
 
 在目标范围中搜索其元素与给定序列中的元素相等或在二元谓词指定的意义上等效于给定序列中的元素的序列的第一个匹配项。
 
@@ -7626,34 +7626,34 @@ ForwardIterator search(
     const Searcher& searcher);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*last1*\
+*`last1`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*first2*\
+*`first2`*\
 用于确定要匹配范围中的第一个元素的位置的前向迭代器。
 
-*last2*\
+*`last2`*\
 用于确定要匹配范围中的最后元素之后的位置的前向迭代器。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-*者*\
-封装要查找的模式以及要使用的搜索算法的搜索程序。 有关 searchers 的详细信息，请参阅 [default_searcher 类](default-searcher-class.md)、 [boyer_moore_horspool_searcher 类](boyer-moore-horspool-searcher-class.md)和 [boyer_moore_searcher 类](boyer-moore-searcher-class.md)。
+*`searcher`*\
+封装要查找的模式以及要使用的搜索算法的搜索程序。 有关 searchers 的详细信息，请参阅[ `default_searcher` 类](default-searcher-class.md)、 [ `boyer_moore_horspool_searcher` 类](boyer-moore-horspool-searcher-class.md)和[ `boyer_moore_searcher` 类](boyer-moore-searcher-class.md)。
 
 ### <a name="return-value"></a>返回值
 
 用于确定第一个子序列的第一个元素的位置的前向迭代器，这个子序列与指定序列匹配或在二元谓词所指定的某个条件下等效。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `operator==` 用于确定元素与指定值之间的匹配必须在其操作数之间施加等效关系。
 
@@ -7760,7 +7760,7 @@ to those in v2 under the binary predicate twice
 and the first one begins at position 2.
 ```
 
-## <a name="search_n"></a><a name="search_n"></a> search_n
+## <a name="search_n"></a><a name="search_n"></a> `search_n`
 
 在范围中搜索具有特定值或按二元谓词的指定与此值相关的指定数量的元素。
 
@@ -7798,31 +7798,31 @@ ForwardIterator search_n(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 用于确定要搜索范围中第一个元素的位置的前向迭代器。
 
-*last1*\
+*`last1`*\
 用于确定要搜索范围中最后元素之后下一个元素的位置的前向迭代器。
 
-*计*\
+*`count`*\
 要搜索的子序列的大小。
 
-*负值*\
+*`value`*\
 要搜索的序列中元素的值。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 用于确定第一个子序列的第一个元素的位置的前向迭代器，这个子序列与指定序列匹配或在二元谓词所指定的某个条件下等效。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 `operator==` 用于确定元素与指定值之间的匹配必须在其操作数之间施加等效关系。
 
@@ -7913,7 +7913,7 @@ There is a match of a sequence ( 5 5 5 ) under the equivalence
 predicate one_half in v1 and the first one begins at position 15.
 ```
 
-## <a name="set_difference"></a><a name="set_difference"></a> set_difference
+## <a name="set_difference"></a><a name="set_difference"></a> `set_difference`
 
 将属于一个排序的源范围、但不属于另一排序的源范围的所有元素相并到一个排序的目标范围，其中排序条件可通过二元谓词指定。
 
@@ -7955,34 +7955,34 @@ ForwardIterator set_difference(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一个输入迭代器，用于寻址要相并且排序为一个范围（表示两个源范围的差异）的两个已排序源范围中第一个源范围内第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一个输入迭代器，用于寻址要相并且排序为一个范围（表示两个源范围的差异）的两个已排序源范围中第一个源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一个输入迭代器，用于寻址要相并且排序为一个范围（表示两个源范围的差异）的两个连续已排序源范围中第二个源范围内第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一个输入迭代器，用于寻址要相并且排序为一个范围（表示两个源范围的差异）的两个连续已排序源范围中第二个源范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于寻址要将两个源范围相并为一个已排序范围（表示两个源范围的差异）的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回，否则应返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于寻址表示两个源范围的差异的已排序目标范围内最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -8115,7 +8115,7 @@ int main()
 }
 ```
 
-## <a name="set_intersection"></a><a name="set_intersection"></a> set_intersection
+## <a name="set_intersection"></a><a name="set_intersection"></a> `set_intersection`
 
 将属于两个排序的源范围的所有元素相并为一个排序的目标范围，其中排序条件可通过二元谓词指定。
 
@@ -8157,34 +8157,34 @@ ForwardIterator set_intersection(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的交集）的两个已排序源范围中第一个源范围内第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的交集）的两个已排序源范围中第一个源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的交集）的两个连续已排序源范围中第二个源范围内第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的交集）的两个连续已排序源范围中第二个源范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于确定要将两个源范围相并为一个已排序范围（表示两个源范围的交集）的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回，否则应返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于确定表示两个源范围的交集的已排序目标范围内最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -8313,7 +8313,7 @@ int main()
 }
 ```
 
-## <a name="set_symmetric_difference"></a><a name="set_symmetric_difference"></a> set_symmetric_difference
+## <a name="set_symmetric_difference"></a><a name="set_symmetric_difference"></a> `set_symmetric_difference`
 
 将属于一个而不是两个排序的源范围的所有元素相并为一个排序的目标范围，其中排序条件可通过二元谓词指定。
 
@@ -8355,34 +8355,34 @@ ForwardIterator set_symmetric_difference(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的对称差异）的两个已排序源范围中第一个源范围内第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的对称差异）的两个已排序源范围中第一个源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的对称差异）的两个连续已排序源范围中第二个源范围内第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的对称差异）的两个连续已排序源范围中第二个源范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于确定要将两个源范围相并为一个已排序范围（表示两个源范围的对称差异）的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回，否则应返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于确定表示两个源范围的对称差异的已排序目标范围内最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -8515,7 +8515,7 @@ int main()
 }
 ```
 
-## <a name="set_union"></a><a name="set_union"></a> set_union
+## <a name="set_union"></a><a name="set_union"></a> `set_union`
 
 将至少属于两个排序的源范围之一的所有元素相并为一个排序的目标范围，其中排序条件可通过二元谓词指定。
 
@@ -8557,34 +8557,34 @@ ForwardIterator set_union(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的并集）的两个已排序源范围中第一个源范围内第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的并集）的两个已排序源范围中第一个源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的并集）的两个连续已排序源范围中第二个源范围内第一个元素的位置。
 
-*last2*\
+*`last2`*\
 一个输入迭代器，用于确定要相并且排序为一个范围（表示两个源范围的并集）的两个连续已排序源范围中第二个源范围内最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于确定要将两个源范围相并为一个已排序范围（表示两个源范围的并集）的目标范围内第一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 二元谓词采用两个参数，并且应 **`true`** 在第一个元素小于第二个元素时返回，否则应返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于确定表示两个源范围的并集的已排序目标范围内最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有指针必须可取消引用，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。
 
@@ -8717,7 +8717,7 @@ int main()
 }
 ```
 
-## <a name="shuffle"></a><a name="shuffle"></a> 无
+## <a name="shuffle"></a><a name="shuffle"></a> `shuffle`
 
 通过使用随机数生成器重新排列给定范围中的元素。
 
@@ -8729,22 +8729,22 @@ void shuffle(
     UniformRandomNumberGenerator&& gen);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 指向范围中要重新排序的第一个元素的迭代器（包含第一个元素）。 必须满足 `RandomAccessIterator` 和 `ValueSwappable` 的要求。
 
-*时间*\
+*`last`*\
 指向范围中要重新排序的最后一个元素的迭代器（不包含最后一个元素）。 必须满足 `RandomAccessIterator` 和 `ValueSwappable` 的要求。
 
-*常规*\
+*`gen`*\
 `shuffle()` 函数将用于运算的随机数生成器。 必须满足 `UniformRandomNumberGenerator` 的要求。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-有关详细信息和使用的代码示例 `shuffle()` ，请参阅 [\<random>](random.md) 。
+有关详细信息和使用的代码示例 `shuffle()` ，请参阅 [`<random>`](random.md) 。
 
-## <a name="sort"></a><a name="sort"></a> 进行
+## <a name="sort"></a><a name="sort"></a> `sort`
 
 将指定范围中的元素按非降序顺序排列，或根据二元谓词指定的排序条件排列。
 
@@ -8774,21 +8774,21 @@ void sort(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址要排序的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于定址要排序的范围中最后元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 此二元谓词采用两个参数， **`true`** 如果两个参数按顺序排列，则返回 **`false`** ; 否则返回。 该比较器函数必须对序列中的元素对进行严格弱排序。 有关详细信息，请参阅[算法](algorithms.md)。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -8864,7 +8864,7 @@ Resorted (greater) vector v1 = ( 11 10 9 8 7 6 5 4 3 2 1 0 )
 Resorted (UDgreater) vector v1 = ( 11 10 9 8 7 6 5 4 3 2 1 0 )
 ```
 
-## <a name="sort_heap"></a><a name="sort_heap"></a> sort_heap
+## <a name="sort_heap"></a><a name="sort_heap"></a> `sort_heap`
 
 将堆转换为排序的范围。
 
@@ -8881,18 +8881,18 @@ void sort_heap(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 一种随机访问迭代器，用于寻址目标堆中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种随机访问迭代器，用于寻址目标堆中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义对一个元素小于另一个元素的理解。 比较谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 堆有两个属性：
 
@@ -8904,7 +8904,7 @@ void sort_heap(
 
 这种排序算法不稳定，因为不一定保留等效元素的相对顺序。
 
-堆是实施优先级队列的理想方式，用于实施 C++ 标准库容器适配器 [priority_queue 类](priority-queue-class.md)。
+堆是实现优先级队列的理想方法，并用于实现 c + + 标准库容器适配器[ `priority_queue` 类](priority-queue-class.md)。
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -8964,7 +8964,7 @@ int main()
 }
 ```
 
-## <a name="stable_partition"></a><a name="stable_partition"></a> stable_partition
+## <a name="stable_partition"></a><a name="stable_partition"></a> `stable_partition`
 
 将范围中的元素分为两个不相交的集，满足一元谓词的元素在不满足一元谓词的元素之前，并保留等效元素的相对顺序。
 
@@ -8983,29 +8983,29 @@ BidirectionalIterator stable_partition(
     UnaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种双向迭代器，用于寻址要分区的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，用于寻址要分区的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，用于定义如果元素要分类时应满足的条件。 一元谓词采用单个参数并在 **`true`** 满足时返回，如果不满足，则返回 **`false`** 。
 
 ### <a name="return-value"></a>返回值
 
 一种双向迭代器，用于寻址范围中不满足谓词条件的第一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
-如果两者都为 false 且为 false，则元素 *a* 和 *b* 等效，但不一定相等， `pred( a, b )` `pred( b, a )` 其中 *pred* 是参数指定的谓词。 `stable_partition`算法是稳定的，可保证保留等效元素的相对顺序。 此算法 `partition` 不一定要保留此原始顺序。
+元素 *a* 和 *b* 是等效的，但如果两者都 `pred( a, b )` 为 false 且为 false，则不一定相等， `pred( b, a )` 其中 *`pred`* 是参数指定的谓词。 `stable_partition`算法是稳定的，可保证保留等效元素的相对顺序。 此算法 `partition` 不一定要保留此原始顺序。
 
 ### <a name="example"></a>示例
 
@@ -9054,7 +9054,7 @@ int main()
 }
 ```
 
-## <a name="stable_sort"></a><a name="stable_sort"></a> stable_sort
+## <a name="stable_sort"></a><a name="stable_sort"></a> `stable_sort`
 
 将指定范围中的元素按非降序顺序排列，或根据二元谓词指定的排序条件排列，并保留等效元素的相对顺序。
 
@@ -9084,21 +9084,21 @@ void stable_sort(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种双向迭代器，用于寻址要排序的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种双向迭代器，用于寻址要排序的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用户定义的谓词函数对象，定义排序中连续元素要满足的比较条件。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须有效；所有指针都必须可以引用，并且在序列中，可通过递增从第一个位置到达最后一个位置。
 
@@ -9173,7 +9173,7 @@ Resorted (greater) vector v1 = ( 10 10 8 8 6 6 4 4 2 2 0 0 )
 Resorted (UDgreater) vector v1 = ( 10 10 8 8 6 6 4 4 2 2 0 0 )
 ```
 
-## <a name="swap"></a><a name="swap"></a> 购
+## <a name="swap"></a><a name="swap"></a> `swap`
 
 第一次重写交换两个对象的值。 第二次重写交换两个对象数组之间的值。
 
@@ -9188,15 +9188,15 @@ void swap(
     Type (& right)[N]);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*左中*\
+*`left`*\
 对于第一次重写，为交换其内容的第一个对象。 对于第二次重写，为交换其内容的第一个对象数组。
 
-*然后*\
+*`right`*\
 对于第一次重写，为交换其内容的第二个对象。 对于第二次重写，为交换其内容的第二个对象数组。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 第一次重载设计用于对各个对象进行操作。 第二次重载交换两个数组之间对象的内容。
 
@@ -9256,7 +9256,7 @@ Vector v1 is ( 5 5 5 5 5 ).
 Vector v2 is ( 0 1 2 3 4 5 6 7 8 9 10 ).
 ```
 
-## <a name="swap_ranges"></a><a name="swap_ranges"></a> swap_ranges
+## <a name="swap_ranges"></a><a name="swap_ranges"></a> `swap_ranges`
 
 将一个范围中的元素与另一大小相等的范围中的元素交换。
 
@@ -9275,25 +9275,25 @@ ForwardIterator2 swap_ranges(
     ForwardIterator2 first2);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一种前向迭代器，指向其元素将要进行交换的第一个范围的第一个位置。
 
-*last1*\
+*`last1`*\
 一种前向迭代器，指向其元素将要进行交换的第一个范围的最后一个位置之后的位置。
 
-*first2*\
+*`first2`*\
 一种前向迭代器，指向其元素将要进行交换的第二个范围的第一个位置。
 
 ### <a name="return-value"></a>返回值
 
 一种前向迭代器，指向其元素将要进行交换的第二个范围的最后一个位置之后的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须是有效的；所有指针必须是可解除引用的，并且在每个序列内，最后一个位置可从第一个位置通过递增到达。 第二个范围必须与第一个范围一样大。
 
@@ -9360,7 +9360,7 @@ After the swap_range, vector v1 is ( 6 6 6 6 6 6 ).
 After the swap_range deque d1 is   ( 0 1 2 3 4 5 ).
 ```
 
-## <a name="transform"></a><a name="transform"></a> 转换
+## <a name="transform"></a><a name="transform"></a> `transform`
 
 将指定的函数对象应用于源范围中的每个元素或两个源范围中的元素对，并将函数对象的返回值复制到目标范围。
 
@@ -9398,35 +9398,35 @@ ForwardIterator transform(
     BinaryOperation binary_op);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*first1*\
+*`first1`*\
 一种输入迭代器，用于寻址要操作的第一个源范围内第一个元素的位置。
 
-*last1*\
+*`last1`*\
 一种输入迭代器，用于寻址要操作的第一个源范围内最后一个元素之后下一个元素的位置。
 
-*first2*\
+*`first2`*\
 一种输入迭代器，用于定址所操作的第二个源范围内第一个元素的位置。
 
-*输出*\
+*`result`*\
 一种输出迭代器，用于定址目标范围内第一个元素的位置。
 
-*求*\
+*`func`*\
 在应用到第一个源范围中每个元素的第一版算法中使用的用户定义一元函数对象，或者在按前向顺序成对应用到两个源范围的第二版算法中使用的用户定义 (UD) 二元函数对象。
 
 ### <a name="return-value"></a>返回值
 
 一种输出迭代器，用于寻址接收通过函数对象转换的输出元素的目标范围内最后元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的范围必须是有效的；所有指针必须是可解除引用的，并且在每个序列内，最后一个位置必须可从第一个位置通过递增到达。 目标范围必须足够大，以包含已转换的源范围。
 
-如果在算法的第一个版本中， *结果* 设置等于 *first1* ，则源范围和目标范围将相同，并且将就地修改序列。 但 *结果* 可能不会寻址 [ `first1` + 1，) 范围内的位置 `last1` 。
+如果 *结果* 在 *`first1`* 算法的第一个版本中设置为等于，则源范围和目标范围均相同，并且将就地修改序列。 但 *`result`* 不能寻址 [ `first1` + 1，) 范围内的位置 `last1` 。
 
 复杂性是线性的，最多 (`last1`  -  `first1`) 比较。
 
@@ -9516,7 +9516,7 @@ Multiplying elements of the vectors v1mod and v2 pairwise gives:
 v3 = ( 320 180 80 20 0 20 80 ).
 ```
 
-## <a name="unique"></a><a name="unique"></a> 针对
+## <a name="unique"></a><a name="unique"></a> `unique`
 
 移除指定范围中彼此相邻的重复元素。
 
@@ -9546,25 +9546,25 @@ ForwardIterator unique(
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一种前向迭代器，用于寻址要进行重复删除扫描的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 一种前向迭代器，用于寻址要进行重复删除扫描的范围中最后一个元素之后下一个元素的位置。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 一种前向迭代器，指向不包含连续重复项的已修改序列新末尾位置，用于寻址未删除的最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 这两种形式的算法都可删除连续一对相等元素的第二个副本。
 
@@ -9665,7 +9665,7 @@ Removing adjacent elements satisfying the binary
   predicate mod_equal from vector v1 gives ( 5 7 ).
 ```
 
-## <a name="unique_copy"></a><a name="unique_copy"></a> unique_copy
+## <a name="unique_copy"></a><a name="unique_copy"></a> `unique_copy`
 
 将源范围中的元素复制到目标范围，彼此相邻的重复元素除外。
 
@@ -9699,28 +9699,28 @@ ForwardIterator2 unique_copy(ExecutionPolicy&& exec,
     BinaryPredicate pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*exec*\
+*`exec`*\
 要使用的执行策略。
 
-*1*\
+*`first`*\
 一个向前迭代器，用于寻址源范围中要复制的第一个元素的位置。
 
-*时间*\
+*`last`*\
 一个向前迭代器，用于寻址源范围中要复制的最后一个元素之后下一个元素的位置。
 
-*输出*\
+*`result`*\
 一个输出迭代器，用于寻址接收删除的连续副本的目标范围中第一个元素的位置。
 
-*pred*\
+*`pred`*\
 用于定义两个元素被视为等效时应满足的条件的用户定义谓词函数对象。 二元谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 一个输出迭代器，用于寻址接收删除的连续副本的目标范围中最后一个元素之后下一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 这两种形式的算法都可删除连续一对相等元素的第二个副本。
 
@@ -9802,7 +9802,7 @@ int main() {
 }
 ```
 
-## <a name="upper_bound"></a><a name="upper_bound"></a> upper_bound
+## <a name="upper_bound"></a><a name="upper_bound"></a> `upper_bound`
 
 在排序的范围中查找其值大于指定值的第一个元素的位置，其中排序条件可通过二元谓词指定。
 
@@ -9821,25 +9821,25 @@ ForwardIterator upper_bound(
     Compare pred);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*1*\
+*`first`*\
 要搜索的范围中第一个元素的位置。
 
-*时间*\
+*`last`*\
 要搜索的范围中最后一个元素之后下一个元素的位置。
 
-*负值*\
+*`value`*\
 返回排序范围中需要被迭代器寻址的元素值超越的值。
 
-*pred*\
+*`pred`*\
 用户定义的比较谓词函数对象，用于定义一个元素小于另一个元素的含义。 比较谓词采用两个参数，并且 **`true`** 在满足时返回， **`false`** 未满足时返回。
 
 ### <a name="return-value"></a>返回值
 
 一种前向迭代器，指向其值大于指定值的第一个元素的位置。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 引用的已排序源范围必须有效；所有迭代器必须可取消引用，并且在序列内，最后一个位置必须可从第一个位置通过递增到达。
 

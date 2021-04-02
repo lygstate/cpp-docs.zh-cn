@@ -1,6 +1,6 @@
 ---
 title: ceil、ceilf、ceill
-description: '适用于 calcuating 的 API ref 使用 ceil ( # A1 的值的上限。'
+description: 适用于 calcuating 的 API ref 使用 ceil () 的值的上限。
 ms.date: 9/1/2020
 api_name:
 - ceilf
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - ceil function
 - ceilf function
 ms.assetid: f4e5acab-5c8f-4b10-9ae2-9561e6453718
-ms.openlocfilehash: 3079f52c79d6d888923025357bb21adc782aa5cd
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: 67c3f930208a89697ef4efe72630c047cf3796c4
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89555238"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099607"
 ---
 # <a name="ceil-ceilf-ceill"></a>ceil、ceilf、ceill
 
@@ -75,7 +75,7 @@ long double ceill(
 
 ## <a name="return-value"></a>返回值
 
-**Ceil**函数返回一个浮点值，该值表示大于或等于*x*的最小整数。 无错误返回。
+**Ceil** 函数返回一个浮点值，该值表示大于或等于 *x* 的最小整数。 无错误返回。
 
 |输入|SEH 异常|Matherr 异常|
 |-----------|-------------------|-----------------------|
@@ -83,7 +83,7 @@ long double ceill(
 
 **ceil** 具有使用流式处理 simd 扩展 2 (SSE2) 的实现。 有关使用 SSE2 实现的信息和限制，请参阅 [_set_SSE2_enable](set-sse2-enable.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 由于 c + + 允许重载，因此你可以调用采用或类型的 **ceil** 的重载 **`float`** **`long double`** 。 在 C 程序中，除非使用 \<tgmath.h> 宏调用此函数，否则， **ceil** 始终采用并返回 **`double`** 。
 
@@ -95,8 +95,8 @@ long double ceill(
 
 |例程所返回的值|必需的标头|
 |-------------|---------------------|
-|**ceil**、 **ceilf**、 **ceill**|\<math.h>|
-|**ceil** 宏 | \<tgmath.h> ||
+| **ceil**、 **ceilf**、 **ceill**| \<math.h> |
+| **ceil** 宏 | \<tgmath.h> |
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 

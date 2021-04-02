@@ -47,12 +47,12 @@ helpviewer_keywords:
 - llroundf function
 - lroundl function
 ms.assetid: cfb88a35-54c6-469f-85af-f7d695dcfdd8
-ms.openlocfilehash: c5db62da7cdba58fdc58e8acbfe3aff0e2c386d6
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: ab0663acc0d1fd5bf2110993114ce9bd8f67f55e
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89555314"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099554"
 ---
 # <a name="lround-lroundf-lroundl-llround-llroundf-llroundl"></a>lround、lroundf、lroundl、llround、llroundf、llroundl
 
@@ -101,13 +101,13 @@ long long llroundl(
 
 ## <a name="return-value"></a>返回值
 
-**Lround**和**llround**函数将最接近的 **`long`** 或 **`long long`** 整数返回到*x*。 中间值从零舍入，这与浮点舍入模式的设置无关。 无错误返回。
+**Lround** 和 **llround** 函数将最接近的 **`long`** 或 **`long long`** 整数返回到 *x*。 中间值从零舍入，这与浮点舍入模式的设置无关。 无错误返回。
 
 |输入|SEH 异常|Matherr 异常|
 |-----------|-------------------|-----------------------|
 |± **QNAN**， **IND**|无|**_DOMAIN**|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 由于 c + + 允许重载，因此你可以调用采用并返回和值的 **lround** 或 **llround** 的重载 **`float`** **`long double`** 。 在 C 程序中，除非使用 \<tgmath.h> 宏调用此函数，否则， **lround** 和 **llround** 始终采用并返回 **`double`** 。
 
@@ -120,7 +120,7 @@ long long llroundl(
 |例程所返回的值|必需的标头|
 |-------------|---------------------|
 |**lround**、 **lroundf**、 **lroundl**、 **llround**、 **llroundf**、 **llroundl**|\<math.h>|
-|**lround** 宏 | \<tgmath.h> ||
+|**lround** 宏 | \<tgmath.h> |
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 

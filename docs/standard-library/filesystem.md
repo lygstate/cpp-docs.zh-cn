@@ -14,12 +14,12 @@ no-loc:
 - wchar_t
 - char16_t
 - char32_t
-ms.openlocfilehash: 8dc81692c7c7dc467f3ab8e2ceb8cac19e004ab8
-ms.sourcegitcommit: 3d9cfde85df33002e3b3d7f3509ff6a8dc4c0a21
+ms.openlocfilehash: 4af9e0a5d5f2839de564f25c976e018e8f1565e7
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98667479"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099347"
 ---
 # `filesystem`
 
@@ -34,8 +34,8 @@ using namespace std::experimental::filesystem::v1;
 ```
 
 > [!IMPORTANT]
-> 在 Visual Studio 2017 版本中， \<filesystem> 标头尚不是 c + + 标准。 Visual Studio 2017 RTW 中的 c + + 实现了最终草案标准，可在 [ISO/IEC JTC 1/SC 22/WG 21 N4100](https://wg21.link/n4100)中找到。 Visual Studio 2017 版本15.7 及更高版本支持新的 c + + 17 \<filesystem> 标准版。
-> 这是一个全新的实现，与以前的版本不兼容 `std::experimental` 。 这是必要的，如符号支持、bug 修复和标准要求的行为更改。 目前，包括 \<filesystem> 提供新的 `std::filesystem` 和上一个 `std::experimental::filesystem` 。 包括 \<experimental/filesystem> 仅提供旧 experimental 实现。 experimental将在下一次 ABI 中断版本的库中删除该实现。
+> 在 Visual Studio 2017 版本中， `<filesystem>` 标头尚不是 c + + 标准。 Visual Studio 2017 RTW 中的 c + + 实现了最终草案标准，可在 [ISO/IEC JTC 1/SC 22/WG 21 N4100](https://wg21.link/n4100)中找到。 Visual Studio 2017 版本15.7 及更高版本支持新的 c + + 17 `<filesystem>` 标准版。
+> 这是一个全新的实现，与以前的版本不兼容 `std::experimental` 。 这是必要的，如符号支持、bug 修复和标准要求的行为更改。 目前，包括 `<filesystem>` 提供新的 `std::filesystem` 和上一个 `std::experimental::filesystem` 。 包括 `<experimental/filesystem>` 仅提供旧 experimental 实现。 experimental将在下一次 ABI 中断版本的库中删除该实现。
 
 此标头支持两大类主机操作系统（Microsoft Windows 和 POSIX）之一的文件系统。
 
@@ -91,7 +91,7 @@ using namespace std::experimental::filesystem::v1;
 
 一个次要差别是路径名中目录序列之间的首选分隔符。 这两个操作系统都允许写入正斜杠 `/` ，但在某些上下文中，Windows 更倾向于使用反斜杠 `\` 。 实现将其首选分隔符存储在的数据成员 `preferred_separator` 中 `path` 。
 
-最后， `path` 对象具有一项重要功能：在标头中定义的类中需要 filename 参数时，可以使用它们 [\<fstream>](fstream.md) 。
+最后， `path` 对象具有一项重要功能：在标头中定义的类中需要 filename 参数时，可以使用它们 [`<fstream>`](fstream.md) 。
 
 有关详细信息和代码示例，请参阅 [文件系统导航 (c + +) ](../standard-library/file-system-navigation.md)。
 
@@ -101,12 +101,12 @@ using namespace std::experimental::filesystem::v1;
 
 |“属性”|说明|
 |-|-|
-|[`directory_entry` 班级](../standard-library/directory-entry-class.md)|描述由 `directory_iterator` 或返回 `recursive_directory_iterator` 并包含的对象 `path` 。|
-|[`directory_iterator` 班级](../standard-library/directory-iterator-class.md)|描述通过文件系统目录中的文件名排序的输入迭代器。|
-|[`filesystem_error` 班级](../standard-library/filesystem-error-class.md)|所引发以报告低级系统溢出的异常的基类。|
-|[`path` 班级](../standard-library/path-class.md)|定义一个类，该类存储适合用作文件名的模板类型 `String` 的对象。|
-|[`recursive_directory_iterator` 班级](../standard-library/recursive-directory-iterator-class.md)|描述通过文件系统目录中的文件名排序的输入迭代器。 迭代器还可以降到子目录中。|
-|[`file_status` 班级](../standard-library/file-status-class.md)|包装 `file_type`。|
+|[`directory_entry` 类](../standard-library/directory-entry-class.md)|描述由 `directory_iterator` 或返回 `recursive_directory_iterator` 并包含的对象 `path` 。|
+|[`directory_iterator` 类](../standard-library/directory-iterator-class.md)|描述通过文件系统目录中的文件名排序的输入迭代器。|
+|[`filesystem_error` 类](../standard-library/filesystem-error-class.md)|所引发以报告低级系统溢出的异常的基类。|
+|[`path` 类](../standard-library/path-class.md)|定义一个类，该类存储适合用作文件名的模板类型 `String` 的对象。|
+|[`recursive_directory_iterator` 类](../standard-library/recursive-directory-iterator-class.md)|描述通过文件系统目录中的文件名排序的输入迭代器。 迭代器还可以降到子目录中。|
+|[`file_status` 类](../standard-library/file-status-class.md)|包装 `file_type`。|
 
 ### <a name="structs"></a>结构
 
@@ -116,11 +116,11 @@ using namespace std::experimental::filesystem::v1;
 
 ## <a name="functions"></a>函数
 
-[\<filesystem> 函数](../standard-library/filesystem-functions.md)
+[`<filesystem>` 函数](../standard-library/filesystem-functions.md)
 
 ## <a name="operators"></a>运算符
 
-[\<filesystem> 运算符](../standard-library/filesystem-operators.md)
+[`<filesystem>` 运算符](../standard-library/filesystem-operators.md)
 
 ## <a name="enumerations"></a>枚举
 

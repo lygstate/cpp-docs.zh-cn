@@ -34,12 +34,12 @@ helpviewer_keywords:
 - fminf function
 - fminl function
 ms.assetid: 1916dfb5-99c1-4b0d-aefb-513525c3f2ac
-ms.openlocfilehash: 6a070835d809c6adcb5b7bfd57b5373886b348ca
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: 007eae82ca60796d7a81b34e6419d21585c708d0
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89556705"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099711"
 ---
 # <a name="fmin-fminf-fminl"></a>fmin、fminf、fminl
 
@@ -86,7 +86,7 @@ long double fminl(
 
 ## <a name="return-value"></a>返回值
 
-如果成功，则返回 *x* 或 *y*中的较小者。
+如果成功，则返回 *x* 或 *y* 中的较小者。
 
 |输入|结果|
 |-----------|------------|
@@ -94,9 +94,9 @@ long double fminl(
 |*y* 为 NaN|*x*|
 |*x* 和 *y* 为 NaN|NaN|
 
-函数不会导致调用 [_matherr](matherr.md) ，导致任何浮点异常或更改 **errno**的值。
+函数不会导致调用 [_matherr](matherr.md) ，导致任何浮点异常或更改 **errno** 的值。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 由于 c + + 允许重载，因此你可以调用采用并返回和类型的 **fmin** 的重载 **`float`** **`long double`** 。 在 C 程序中，除非使用 \<tgmath.h> 宏调用此函数，否则， **fmin** 始终采用并返回 **`double`** 。
 
@@ -107,7 +107,7 @@ long double fminl(
 |例程所返回的值|必需的标头|
 |-------------|---------------------|
 |**fmin**、 **fminf**、 **fminl**|Ansi-c \<math.h><br />C + +： \<math.h> 或 \<cmath>|
-|**fmin** 宏 | \<tgmath.h> ||
+|**fmin** 宏 | \<tgmath.h> |
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 

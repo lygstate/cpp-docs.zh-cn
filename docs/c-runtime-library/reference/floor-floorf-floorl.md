@@ -36,12 +36,12 @@ helpviewer_keywords:
 - calculating floors of values
 - floorl function
 ms.assetid: e9955f70-d659-414f-8050-132e13c8ff36
-ms.openlocfilehash: 6af047d3da891270ab6a596dfc3ebef0941a91cf
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: f2fa789d780b624ab0e680afa0631793d7eed162
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89556731"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099544"
 ---
 # <a name="floor-floorf-floorl"></a>floor、floorf、floorl
 
@@ -75,7 +75,7 @@ long double floorl(
 
 ## <a name="return-value"></a>返回值
 
-**楼层**函数返回一个浮点值，该值表示小于或等于*x*的最大整数。 无错误返回。
+**楼层** 函数返回一个浮点值，该值表示小于或等于 *x* 的最大整数。 无错误返回。
 
 |输入|SEH 异常|Matherr 异常|
 |-----------|-------------------|-----------------------|
@@ -83,7 +83,7 @@ long double floorl(
 
 **楼层** 具有使用流式处理 simd 扩展 2 (SSE2) 的实现。 有关使用 SSE2 实现的信息和限制，请参阅 [_set_SSE2_enable](set-sse2-enable.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 C + + 允许重载，因此你可以调用采用并返回和值的 **楼层** 的重载 **`float`** **`long double`** 。 在 C 程序中，除非使用 \<tgmath.h> 宏来调用此函数，否则 **楼层** 始终采用并返回 **`double`** 。
 
@@ -96,7 +96,7 @@ C + + 允许重载，因此你可以调用采用并返回和值的 **楼层** �
 |函数|必需的标头|
 |--------------|---------------------|
 |**floor**、 **floorf**、 **floorl**|\<math.h>|
-|**楼层** 宏 | \<tgmath.h> ||
+|**楼层** 宏 | \<tgmath.h> |
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 

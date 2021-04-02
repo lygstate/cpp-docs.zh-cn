@@ -168,12 +168,12 @@ helpviewer_keywords:
 author: sigatrev
 ms.author: magardn
 ms.date: 11/14/2019
-ms.openlocfilehash: 13358458bf9abcf0bc6e38ca115b537abc99300a
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 604658dbf4e6ac96b5c2344be5851f3baab3f641
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90039750"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099490"
 ---
 # <a name="arm64-intrinsics"></a>ARM64 内部函数
 
@@ -183,7 +183,7 @@ Microsoft c + + 编译器 (MSVC) 使以下内部函数可用于 ARM64 体系结�
 
 适用于 ARM64 的霓虹灯矢量指令集扩展提供了 Single Instruction Multiple Data (SIMD) 功能。 它们类似于在 x86 和 x64 体系结构处理器中通用的 MMX 和 SSE 矢量指令集中的内容。
 
-支持霓虹灯内部函数，如标头文件 *arm64_neon*中所述。 MSVC 对霓虹灯内部函数的支持与 ARM64 编译器的支持相似，后者在 ARM 信息中心网站上的 [ARM 霓虹灯型内部引用](https://static.docs.arm.com/ihi0073/c/IHI0073C_arm_neon_intrinsics_ref.pdf) 中进行了介绍。
+支持霓虹灯内部函数，如标头文件 *arm64_neon* 中所述。 MSVC 对霓虹灯内部函数的支持与 ARM64 编译器的支持相似，后者在 ARM 信息中心网站上的 [ARM 霓虹灯型内部引用](https://developer.arm.com/architectures/instruction-sets/simd-isas/neon/intrinsics) 中进行了介绍。
 
 ## <a name="arm64-specific-intrinsics-listing"></a><a name="A"></a> ARM64 特定的内部函数列表
 
@@ -351,11 +351,11 @@ void __iso_volatile_store8(volatile __int8 * Location, __int8 Value);
 
 #### <a name="return-value-load-intrinsics-only"></a>仅 (加载内部函数的返回值) 
 
-由 *location*指定的内存位置的值。
+由 *location* 指定的内存位置的值。
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-您可以使用 `__iso_volatile_load8/16/32/64` 和 `__iso_volatile_store8/16/32/64` 内部函数显式执行不受编译器优化限制的内存访问。 编译器无法删除、同步或更改这些操作的相对顺序。 但是，它不会产生隐式硬件内存障碍。 因此，硬件仍可能对跨多个线程的可观察内存访问进行重新排序。 更准确地说，这些内部函数等效于在 **/volatile： iso**下编译的以下表达式。
+您可以使用 `__iso_volatile_load8/16/32/64` 和 `__iso_volatile_store8/16/32/64` 内部函数显式执行不受编译器优化限制的内存访问。 编译器无法删除、同步或更改这些操作的相对顺序。 但是，它不会产生隐式硬件内存障碍。 因此，硬件仍可能对跨多个线程的可观察内存访问进行重新排序。 更准确地说，这些内部函数等效于在 **/volatile： iso** 下编译的以下表达式。
 
 ```cpp
 int a = __iso_volatile_load32(p);    // equivalent to: int a = *(const volatile __int32*)p;
@@ -364,7 +364,7 @@ __iso_volatile_store32(p, a);        // equivalent to: *(volatile __int32*)p = a
 
 请注意内部函数采用易失性指针来适应易失性变量。 但是，不要求或建议使用可变指针作为参数。 如果使用常规、非易失性类型，则这些操作的语义完全相同。
 
-有关 **/volatile： iso** 命令行参数的详细信息，请参阅 [/volatile (volatile 关键字解读) ](../build/reference/volatile-volatile-keyword-interpretation.md)。
+有关 **/volatile： iso** 命令行参数的详细信息，请参阅 [/volatile (volatile 关键字解读)](../build/reference/volatile-volatile-keyword-interpretation.md)。
 
 ## <a name="arm64-support-for-intrinsics-from-other-architectures"></a><a name="I"></a> ARM64 对来自其他体系结构的内部函数的支持
 
@@ -422,15 +422,15 @@ __iso_volatile_store32(p, a);        // equivalent to: *(volatile __int32*)p = a
 
 |操作|8|16|32|64|128|P|
 |-|-------|--------|--------|--------|-------|-------|
-|添加|无|无|完全|完全|无|无|
-|And|完全|完全|完全|完全|无|无|
+|添加|None|None|完全|完全|None|None|
+|且|完全|完全|完全|完全|None|None|
 |CompareExchange|完全|完全|完全|完全|完全|完全|
-|递减|无|完全|完全|完全|无|无|
-|Exchange|完全|完全|完全|完全|无|完全|
-|ExchangeAdd|完全|完全|完全|完全|无|无|
-|增量|无|完全|完全|完全|无|无|
-|Or|完全|完全|完全|完全|无|无|
-|Xor|完全|完全|完全|完全|无|无|
+|递减|None|完全|完全|完全|None|None|
+|Exchange|完全|完全|完全|完全|None|完全|
+|ExchangeAdd|完全|完全|完全|完全|None|None|
+|增量|None|完全|完全|完全|None|None|
+|或|完全|完全|完全|完全|None|None|
+|Xor|完全|完全|完全|完全|None|None|
 
 密钥:
 

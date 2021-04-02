@@ -125,12 +125,12 @@ helpviewer_keywords:
 - std::basic_string [C++], ends_with
 - std::basic_string [C++], substr
 - std::basic_string [C++], swap
-ms.openlocfilehash: ebd8f4c35a1e51a96f09069ed78c67345d71ab32
-ms.sourcegitcommit: 3d9cfde85df33002e3b3d7f3509ff6a8dc4c0a21
+ms.openlocfilehash: d4990b58e0f71d095f97435ad8449ade3fa240d7
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98667582"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099545"
 ---
 # <a name="basic_string-class"></a>`basic_string` 类
 
@@ -194,7 +194,7 @@ class basic_string;
 |[`cend`](#cend)|返回发现字符串中最后一个元素之后的位置的常量迭代器。|
 |[`clear`](#clear)|清除字符串中的全部元素。|
 |[`compare`](#compare)|将字符串与指定字符串比较，确定两个字符串是否相等或按字典顺序一个字符串是否小于另一个。|
-|[`copy`](#copy)|将指定数目的字符从源字符串中的索引位置复制到目标字符组。 已否决。 改为使用 [`basic_string::_Copy_s`](#copy_s) 。|
+|[`copy`](#copy)|将指定数目的字符从源字符串中的索引位置复制到目标字符组。 已弃用。 改为使用 [`basic_string::_Copy_s`](#copy_s) 。|
 |[`crbegin`](#crbegin)|返回发现反向字符串中第一个元素的位置的常量迭代器。|
 |[`crend`](#crend)|返回发现反向字符串中最后一个元素之后的位置的常量迭代器。|
 |[`_Copy_s`](#copy_s)|将指定数目的字符从源字符串中的索引位置复制到目标字符组。|
@@ -4041,7 +4041,7 @@ basic_string<CharType, Traits, Allocator>& replace(
 一种迭代器（const_pointer 或 const_iterator），用于寻址参数字符串中进行复制的最后一个字符。
 
 *`count`*\
-将 *char_value* 复制到操作数字符串的次数。
+*`char_value`* 复制到操作数字符串的次数。
 
 ### <a name="return-value"></a>返回值
 
