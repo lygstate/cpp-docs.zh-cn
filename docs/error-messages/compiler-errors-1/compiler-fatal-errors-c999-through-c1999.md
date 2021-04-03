@@ -51,12 +51,12 @@ helpviewer_keywords:
 - C1505
 - C1901
 ms.assetid: 6c8df109-7594-48ed-987a-97d9fe2b04af
-ms.openlocfilehash: 93b1e9d3998a3ad29d45e2b1c197807bf61e4176
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 45a1e5f1a0ab57048d2a40da0f976b5ff7c8d653
+ms.sourcegitcommit: be9a1af0b9d3f1d6c2987d8744392170b8dccab0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97262836"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232330"
 ---
 # <a name="compiler-fatal-errors-c999-through-c1999"></a>编译器致命错误 C999 - C1999
 
@@ -64,7 +64,7 @@ ms.locfileid: "97262836"
 
 [!INCLUDE[error-boilerplate](../../error-messages/includes/error-boilerplate.md)]
 
-## <a name="error-messages"></a>错误消息
+## <a name="error-messages"></a>Error messages
 
 |错误|消息|
 |-----------|-------------|
@@ -134,7 +134,7 @@ ms.locfileid: "97262836"
 |[错误 C1087](fatal-error-c1087.md)|无法告知 *type* 文件：“*file*”： *message*|
 |[错误 C1088](fatal-error-c1088.md)|无法刷新 *type* 文件：“*file*”： *message*|
 |[错误 C1089](fatal-error-c1089.md)|无法截断 *type* 文件：“*file*”： *message*|
-|错误 C1090|PDB API 调用失败，错误代码“*code*”：“*message*”|
+|[错误 C1090](fatal-error-c1090.md)|PDB API 调用失败，错误代码“*code*”：“*message*”|
 |[错误 C1091](fatal-error-c1091.md)|编译器限制：字符串长度超过 *number* 个字节|
 |[错误 C1092](../../error-messages/compiler-errors-1/fatal-error-c1092.md)|“编辑并继续”不支持对数据类型的更改；需要生成|
 |[错误 C1093](../../error-messages/compiler-errors-1/fatal-error-c1093.md)|API 调用“*function*”对“*HRESULT*”失败：“*description*”|
@@ -152,7 +152,7 @@ ms.locfileid: "97262836"
 |[错误 C1109](fatal-error-c1109.md)|无法在 DLL“*file*”中找到“*symbol*”|
 |错误 C1110|嵌套的模板/泛型定义太多|
 |错误 C1111|模板/泛型参数太多|
-|错误 C1112|编译器限制： `'number`”个宏参数（过多），只允许 *number* 个|
+|错误 C1112|编译器限制： "*number*" 个宏参数太多，只允许使用 *数量*|
 |[错误 C1113](../../error-messages/compiler-errors-1/fatal-error-c1113.md)|在“*file*”上 #using 失败|
 |错误 C1114|“*file*”：WinRT 不支持托管程序集的 #using|
 |[错误 C1120](../../error-messages/compiler-errors-1/fatal-error-c1120.md)|对于“*function*”，调用 GetProcAddress 失败|
@@ -214,6 +214,6 @@ ms.locfileid: "97262836"
 |[错误 C1904](fatal-error-c1904.md)|错误的提供程序交互：“*file*”|
 |[错误 C1905](../../error-messages/compiler-errors-1/fatal-error-c1905.md)|前端和后端不兼容(必须以同一处理器为目标)。|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [C/C++ 编译器和生成工具错误与警告](../compiler-errors-1/c-cpp-build-errors.md)
