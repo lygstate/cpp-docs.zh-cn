@@ -1,17 +1,17 @@
 ---
-title: AddressSanitizer 的已知问题
+title: AddressSanitizer 已知问题
 description: 适用于 Microsoft C/c + + 已知问题的 AddressSanitizer 的技术说明。
 ms.date: 03/02/2021
 helpviewer_keywords:
 - AddressSanitizer known issues
-ms.openlocfilehash: 7db8b06a96eababbd6a48e337cff7155f248fb34
-ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
+ms.openlocfilehash: 0bd8b8cc05265930b8ade514c4d1f8ea162bb304
+ms.sourcegitcommit: dc77cf3b5b644d8e2adf595540b98194ab95c6e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102470889"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106377224"
 ---
-# <a name="addresssanitizer-known-issues"></a>AddressSanitizer 的已知问题
+# <a name="addresssanitizer-known-issues"></a>AddressSanitizer 已知问题
 
 > [!NOTE]
 > 向我们发送有关你希望在未来版本中看到的内容的 [反馈](https://aka.ms/vsfeedback/browsecpp) ，并在遇到问题时 [报告 bug](https://aka.ms/feedback/report?space=62) 。
@@ -66,6 +66,12 @@ int main() {
 ## <a name="addresssanitizer-runtime-dll-locations"></a>AddressSanitizer 运行时 DLL 位置
 
 *`clang_rt.asan*.dll`* 运行时文件安装在中的编译器旁边 *`%VSINSTALLDIR%\VC\Tools\MSVC\<version>\bin\<host-arch>\<target-arch>\`* 。 这些位置位于调试会话和 Visual Studio 开发人员命令提示中的路径上。 永远不会将这些文件放入 *`C:\Windows\System32`* 或 *`C:\Windows\SysWOW64`* 。
+
+## <a name="custom-property-sheet-support"></a>自定义属性表支持
+
+在 Visual Studio IDE 中的 "属性管理器" 窗口中，可以向项目添加自定义 *`.props`* 文件。 即使显示了 **Enable Address Sanitizer** 属性 (`<EnableASAN>`) ，它也不会被生成所遵守。 这是因为自定义 *`.props`* 文件将包含在之后 *`Microsoft.cpp.props`* ，后者使用 `<EnableASAN>` 该值来设置其他属性。
+
+作为一种解决方法，可以 *`Directory.Build.props`* 在项目的根目录中创建一个文件来定义 `<EnableASAN>` 属性。 有关详细信息，请参阅 [自定义 c + + 生成](/visualstudio/msbuild/customize-your-build#customize-c-builds)。
 
 ## <a name="see-also"></a>另请参阅
 
