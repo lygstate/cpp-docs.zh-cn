@@ -3,12 +3,12 @@ title: 将 vcpkg 与 Visual Studio 或 Visual Studio Code 集成
 description: 了解如何将 vcpkg 与 Windows 上的 Visual Studio 或者与 macOS 和 Linux 上的 Visual Studio Code 集成。
 ms.date: 12/11/2020
 ms.technology: cpp-ide
-ms.openlocfilehash: b6f092313dde14b10a05d4cff0904adf5174b264
-ms.sourcegitcommit: 2b2c3fa9244e31db35ea33554dea0efcab490f3c
+ms.openlocfilehash: a08820ad65781a89ec6bc59a62d615cae2798b4b
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97684103"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099373"
 ---
 # <a name="integrate-vcpkg-with-visual-studio-or-visual-studio-code"></a>将 vcpkg 与 Visual Studio 或 Visual Studio Code 集成
 
@@ -53,5 +53,5 @@ Vcpkg 是适用于 C 和 C++ 库的跨平台命令行包管理器。 可以将�
 [安装 vcpkg](install-vcpkg.md)\
 [使用 vcpkg 管理库](manage-libraries-with-vcpkg.md)\
 [vcpkg 命令行参考](vcpkg-command-line-reference.md)\
-[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/index.md)\
+[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/README.md)\
 [常见问题解答](https://github.com/microsoft/vcpkg/blob/master/docs/about/faq.md)

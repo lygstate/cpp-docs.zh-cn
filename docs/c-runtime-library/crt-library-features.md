@@ -1,8 +1,9 @@
 ---
-title: C 运行时 (CRT) 和 c + + 标准库 .lib 文件
+title: C 运行时 (CRT) 和 C++ 标准库 .lib 文件
 description: 可以链接的 Microsoft C 运行时和 c + + 标准库 .lib 文件的列表及其关联的编译器选项和预处理器指令。
 ms.date: 3/5/2021
 ms.topic: reference
+ms.custom: contperf-fy21q3
 helpviewer_keywords:
 - MSVCR71.dll
 - libraries [C++], multithreaded
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - libraries [C++]
 - libraries [C++], run-time
 - linking [C++], libraries
-ms.openlocfilehash: dab3d767865b91f8a8e567488698a197c35c9b74
-ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
+ms.openlocfilehash: e1af94143ecf8aa2705c79f9f5c0c6a6890007f4
+ms.sourcegitcommit: a89eac9acdbd54a181e3bd5d5bc71a3ef3c1abca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102514689"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106506099"
 ---
 # <a name="c-runtime-crt-and-c-standard-library-stl-lib-files"></a>C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件
 

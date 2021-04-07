@@ -5,12 +5,12 @@ ms.custom: contperf-fy21q2
 ms.date: 12/11/2020
 ms.topic: overview
 ms.technology: cpp-ide
-ms.openlocfilehash: f937f1df718bf8dfcc0ae5166d8b9eb671d2d8ab
-ms.sourcegitcommit: 2b2c3fa9244e31db35ea33554dea0efcab490f3c
+ms.openlocfilehash: 23ad9b34a04791181b83bcae3d413d6dfe0eed00
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97682461"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099594"
 ---
 # <a name="vcpkg-a-c-package-manager-for-windows-linux-and-macos"></a>vcpkg：用于 Windows、Linux 和 macOS 的 C++ 包管理器
 
@@ -63,5 +63,5 @@ Vcpkg 收集使用数据，以帮助我们改进你的体验。 Microsoft 收集
 [集成 vcpkg](integrate-vcpkg.md)\
 [使用 vcpkg 管理库](manage-libraries-with-vcpkg.md)\
 [vcpkg 命令行参考](vcpkg-command-line-reference.md)\
-[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/index.md)\
+[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/README.md)\
 [常见问题解答](https://github.com/microsoft/vcpkg/blob/master/docs/about/faq.md)

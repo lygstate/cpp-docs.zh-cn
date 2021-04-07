@@ -203,6 +203,8 @@
       href: compiler-errors-1/fatal-error-c1088.md
     - name: 致命错误 C1089
       href: compiler-errors-1/fatal-error-c1089.md
+    - name: 严重错误 C1090
+      href: compiler-errors-1/fatal-error-c1090.md
     - name: 致命错误 C1091
       href: compiler-errors-1/fatal-error-c1091.md
     - name: 致命错误 C1092

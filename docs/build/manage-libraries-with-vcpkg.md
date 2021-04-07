@@ -3,12 +3,12 @@ title: 使用 vcpkg 管理库
 description: 了解如何在 Windows、macOS 和 Linux 上使用 vcpkg 管理库。
 ms.date: 12/11/2020
 ms.technology: cpp-ide
-ms.openlocfilehash: 88f8bc1cff7b4b04f5e38b5018676e313383733f
-ms.sourcegitcommit: 2b2c3fa9244e31db35ea33554dea0efcab490f3c
+ms.openlocfilehash: 5e5fc0e9cb1616155bfe8268f2c55afcee4c4a94
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97684104"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099243"
 ---
 # <a name="manage-libraries-with-vcpkg"></a>使用 vcpkg 管理库
 
@@ -325,6 +325,6 @@ If you are sure you want to rebuild the above packages, run this command with th
 [安装 vcpkg](install-vcpkg.md)\
 [集成 vcpkg](integrate-vcpkg.md)\
 [vcpkg 命令行参考](vcpkg-command-line-reference.md)\
-[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/index.md)\
+[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/README.md)\
 [常见问题解答](https://github.com/microsoft/vcpkg/blob/master/docs/about/faq.md)\
 [安装和使用包示例：SQLite](https://github.com/microsoft/vcpkg/blob/master/docs/examples/installing-and-using-packages.md)

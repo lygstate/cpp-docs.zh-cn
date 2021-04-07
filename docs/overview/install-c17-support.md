@@ -5,12 +5,12 @@ ms.date: 09/11/2020
 helpviewer_keywords:
 - Install preview Windows SDK
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: 9310b0dbb4e436245de820622ec9dd0f52292871
-ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.openlocfilehash: 84e3e17c7d65fc129e789634e6cf0b442565e26b
+ms.sourcegitcommit: bf6d8a220f6392f1f19c0c0605d1467d0221ef6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92924415"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551743"
 ---
 # <a name="install-c11-and-c17-support-in-visual-studio"></a>在 Visual Studio 中安装 C11 和 C17 支持
 
@@ -24,11 +24,11 @@ ms.locfileid: "92924415"
 
 从 Visual Studio 2019 版本 16.8 开始，提供对 C11 和 C17 的支持。 支持需要更新的通用 C 运行时 (UCRT) 和最新的 Windows SDK 更新，才能正确地使用一致的预处理器 ([`/Zc:preprocessor`](../build/reference/zc-preprocessor.md))。
 
-Windows SDK 版本与 Windows OS 版本相对应。 由于 Windows 版本未进行这些更改，因此需要 *Insider Preview Windows SDK* 。 这是 Windows SDK 的预览版本，它与当前由 Windows Insider 外部测试的 Windows 版本相对应。 安装 Insider Preview Windows 10 SDK 后，配置为使用最新的 Windows SDK 的 Visual Studio 项目将使用 Insider Preview。
+Windows SDK 版本与 Windows OS 版本相对应。 由于 Windows 版本未进行这些更改，因此需要 *Insider Preview Windows SDK*。 这是 Windows SDK 的预览版本，它与当前由 Windows Insider 外部测试的 Windows 版本相对应。 安装 Insider Preview Windows 10 SDK 后，配置为使用最新的 Windows SDK 的 Visual Studio 项目将使用 Insider Preview。
 
 ## <a name="prerequisites"></a>先决条件
 
-- Visual Studio 2019 版本 16.8 预览版 3 或更高版本已安装并正在你的计算机上运行。 在安装中，包括“使用 C++ 的桌面开发”工作负载。 可以从 [Visual Studio 预览版](https://visualstudio.microsoft.com/vs/preview/)页中下载最新预览版。 如果尚未安装 Visual Studio，请参阅[在 Visual Studio 中安装 C++ 支持](../build/vscpp-step-0-installation.md)以获取安装说明。
+- Visual Studio 2019 版本 16.8 或更高版本已安装并正在你的计算机上运行。 在安装中，包括“使用 C++ 的桌面开发”工作负载。 可以从 [Visual Studio 预览版](https://visualstudio.microsoft.com/vs/preview/)页中下载最新预览版。 如果尚未安装 Visual Studio，请参阅[在 Visual Studio 中安装 C++ 支持](../build/vscpp-step-0-installation.md)以获取安装说明。
 
 ## <a name="step-1-sign-in-by-using-an-insider-microsoft-account"></a>步骤 1：使用 Insider Microsoft 帐户登录
 
@@ -82,7 +82,7 @@ Insider Preview Windows SDK 下载为 `.iso` 文件。 在文件资源管理器�
 
 语言为 C++ 时使用 C++ 语言标准。 当文件扩展名为 *`.cpp`* 时，这是默认设置。 语言为 C 时使用 C 语言标准版本。当文件扩展名为 *`.c`* 时，这是默认设置。 若要使用 C11 或 C17 生成，请将源代码放在 `.c` 文件中，或将代码设置为“编译为 C”。可以在“配置属性” > “C/C++” > “高级”页上设置项目的此属性。 将“编译为”属性设置为“编译为 C 代码(/TC)”。
 
-恭喜，你已完成在 Visual Studio 2019 版本 16.8 预览版 3 中生成 C11 和 C17 代码所需的所有设置！
+恭喜，你已完成在 Visual Studio 中生成 C11 和 C17 代码所需的所有设置！
 
 ## <a name="see-also"></a>请参阅
 

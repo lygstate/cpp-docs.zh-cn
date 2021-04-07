@@ -4,12 +4,12 @@ description: 了解如何在 Windows、macOS 和 Linux 上使用 vcpkg 的命令
 ms.date: 12/17/2020
 ms.topic: reference
 ms.technology: cpp-ide
-ms.openlocfilehash: d60ebf983fea2eb41430f05b8c12e4a4a6fe370b
-ms.sourcegitcommit: 2b2c3fa9244e31db35ea33554dea0efcab490f3c
+ms.openlocfilehash: 22210f3ee80050890d0b71fcc26461372e77e11e
+ms.sourcegitcommit: 82a0d23b04d0776c00209d885689cbc5be36d3b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97684101"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099620"
 ---
 # <a name="vcpkg-command-line-reference"></a>Vcpkg 命令行参考
 
@@ -17,7 +17,7 @@ Vcpkg 中提供的命令的快速参考。
 
 ## <a name="commands"></a>命令
 
-| Command | 描述 |
+| 命令 | 描述 |
 |--|--|
 | **`vcpkg search [pat]`** | 搜索可安装的包 |
 | **`vcpkg install <pkg>...`** | 安装包 |
@@ -51,5 +51,5 @@ Vcpkg 中提供的命令的快速参考。
 [安装 vcpkg](install-vcpkg.md)\
 [集成 vcpkg](integrate-vcpkg.md)\
 [使用 vcpkg 管理库](manage-libraries-with-vcpkg.md)\
-[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/index.md)\
+[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/README.md)\
 [常见问题解答](https://github.com/microsoft/vcpkg/blob/master/docs/about/faq.md)
