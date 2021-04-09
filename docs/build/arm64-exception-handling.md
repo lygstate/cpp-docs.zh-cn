@@ -2,12 +2,12 @@
 title: ARM64 异常处理
 description: 描述 ARM64 上的 Windows 使用的异常处理约定和数据。
 ms.date: 11/19/2018
-ms.openlocfilehash: abc77aa683e73a2740c71ffbd7ddead07f91ff7d
-ms.sourcegitcommit: 5bb421fdf61d290cac93a03e16a6a80959accf6d
+ms.openlocfilehash: b1137e4e46e1127ea5452e93e1d8d9452ba0ea4d
+ms.sourcegitcommit: dc77cf3b5b644d8e2adf595540b98194ab95c6e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854822"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106377263"
 ---
 # <a name="arm64-exception-handling"></a>ARM64 异常处理
 
@@ -96,7 +96,7 @@ ms.locfileid: "83854822"
         sub    sp,sp,#(framesz-80)      // allocate the remaining local area
     ```
 
-   所有局部变量都基于 SP 进行访问。 \<x29,lr> 指向前一个帧。 对于帧大小 \<= 512，如果寄存器保存的区域移动到堆栈底部，则可以优化掉“sub sp, ...”。 缺点是它与上面的其他布局不一致，并且保存的寄存器会占用对寄存器以及索引前和索引后偏移寻址模式的范围。
+   所有局部变量都基于 SP 进行访问。 \<x29,lr> 指向前一帧。 对于帧大小 \<= 512，如果寄存器保存的区域移动到堆栈底部，则可以优化掉“sub sp, ...”。 缺点是它与上面的其他布局不一致，并且保存的寄存器会占用对寄存器以及索引前和索引后偏移寻址模式的范围。
 
 1. 非链式，非叶函数（lr 保存在 Int 保存区域中）
 
@@ -130,7 +130,7 @@ ms.locfileid: "83854822"
 
    \* 寄存器保存区域分配不会折叠到 stp 中，因为索引前寄存器 lr stp 无法使用展开代码进行表示。
 
-   所有局部变量都基于 SP 进行访问。 \<x29> 指向前一个帧。
+   所有局部变量都基于 SP 进行访问。 \<x29> 指向前一帧。
 
 1. 链式，#framesz \<= 512，#outsz = 0
 
@@ -192,11 +192,11 @@ ARM64 的每个 .pdata 记录的长度是 8 字节。 每个记录的一般格�
 
 字段如下所示：
 
-- 函数起始 RVA 为函数起始位置的 32 位 RVA。
+- 函数起始 RVA  为函数起始位置的 32 位 RVA。
 
-- 标志是指示如何解释第二个 .pdata 字的剩余 30 位的一个 2 位字段。 如果标志为 0，则剩余的位将形成异常信息 RVA（最低两位隐式为 0）。 如果标志非零，则剩余的位将形成已打包的展开数据结构。
+- 标志  是指示如何解释第二个 .pdata 字的剩余 30 位的一个 2 位字段。 如果标志为 0，则剩余的位将形成异常信息 RVA（最低两位隐式为 0）。 如果标志  非零，则剩余的位将形成已打包的展开数据  结构。
 
-- 异常信息 RVA 是 .xdata 部分中存储的长度可变的异常信息结构的地址。 此数据必须是对齐的 4 字节。
+- 异常信息 RVA  是 .xdata 部分中存储的长度可变的异常信息结构的地址。 此数据必须是对齐的 4 字节。
 
 - 已打包的展开数据是对从函数展开时所需操作的概括说明，采用规范格式。 在这种情况下，不需要任何 .xdata 记录。
 
@@ -243,27 +243,32 @@ ARM64 的每个 .pdata 记录的长度是 8 字节。 每个记录的一般格�
 .xdata 记录的设计目的是为了能够提取前 8 个字节并使用它们计算该记录的完整大小，减去它后面的大小可变的异常数据的长度。 以下代码段将计算记录大小：
 
 ```cpp
-ULONG ComputeXdataSize(PULONG *Xdata)
+ULONG ComputeXdataSize(PULONG Xdata)
 {
-    ULONG EpilogScopes;
     ULONG Size;
+    ULONG EpilogScopes;
     ULONG UnwindWords;
 
-    if ((Xdata[0] >> 27) != 0) {
+    if ((Xdata[0] >> 22) != 0) {
         Size = 4;
         EpilogScopes = (Xdata[0] >> 22) & 0x1f;
-        UnwindWords = (Xdata[0] >> 27) & 0x0f;
+        UnwindWords = (Xdata[0] >> 27) & 0x1f;
     } else {
         Size = 8;
         EpilogScopes = Xdata[1] & 0xffff;
         UnwindWords = (Xdata[1] >> 16) & 0xff;
     }
 
-    Size += 4 * EpilogScopes;
-    Size += 4 * UnwindWords;
-    if (Xdata[0] & (1 << 20)) {
-        Size += 4;        // exception handler RVA
+    if (!(Xdata[0] & (1 << 21))) {
+        Size += 4 * EpilogScopes;
     }
+
+    Size += 4 * UnwindWords;
+
+    if (Xdata[0] & (1 << 20)) {
+        Size += 4;  // Exception handler RVA
+    }
+
     return Size;
 }
 ```
@@ -288,7 +293,7 @@ ULONG ComputeXdataSize(PULONG *Xdata)
 |-|-|
 |`alloc_s`|000xxxxx：分配小型堆栈，大小为 \< 512 (2^5 * 16)。|
 |`save_r19r20_x`|    001zzzzz：将 \<x19,x20> 对保存在 `[sp-#Z*8]!`，索引前偏移 >= -248 |
-|`save_fplr`|        01zzzzzz：将 \<x29,lr> 对保存在 `[sp+#Z*8]`，偏移 \<= 504. |
+|`save_fplr`|        01zzzzzz：将 \<x29,lr> 对保存在 `[sp+#Z*8]`，偏移 \<= 504。 |
 |`save_fplr_x`|        10zzzzzz：将 \<x29,lr> 对保存在 `[sp-(#Z+1)*8]!`，索引前偏移 >= -512 |
 |`alloc_m`|        11000xxx'xxxxxxxx：分配大型堆栈，大小为 \< 16k (2^11 * 16)。 |
 |`save_regp`|        110010xx'xxzzzzzz：将 x(19+#X) 对保存在 `[sp+#Z*8]`，偏移 \<= 504 |
@@ -335,7 +340,7 @@ prolog 中不允许使用索引后偏移寻址。 所有偏移范围 (#Z) 都匹
 
 字段如下所示：
 
-- 函数起始 RVA 为函数起始位置的 32 位 RVA。
+- 函数起始 RVA  为函数起始位置的 32 位 RVA。
 - 标志是如上所述的一个 2 位字段，具有以下含义：
   - 00 = 未使用的已打包展开数据；剩余的位指向 .xdata 记录
   - 01 = 已打包展开数据在范围开头和结尾与单个 prolog 和 epilog 一起使用
@@ -345,7 +350,7 @@ prolog 中不允许使用索引后偏移寻址。 所有偏移范围 (#Z) 都匹
 - 帧大小是一个 9 位字段，指示为此函数分配的堆栈的字节数除以 16 的值。 分配大于 (8k-16) 字节的堆栈的函数必须使用完整的 .xdata 记录。 它包括局部变量区域、传出参数区域、被调用方保存的 Int 和 FP 区域以及寻址参数区域，但不包括动态分配区域。
 - CR 是 2 位标志，它指示函数是否包含用于设置帧链和返回链接的额外指令：
   - 00 = 非链式函数，\<x29,lr> 对不保存在堆栈中。
-  - 01 = 非链式函数，\<lr> 不保存在堆栈中
+  - 01 = 非链式函数，\<lr> 保存在堆栈中
   - 10 = 保留；
   - 11 = 链式函数，在 prolog/epilog \<x29,lr> 中使用存储/加载对指令
 - H 是 1 位标志，它指示函数是否通过在其开始位置存储整数参数寄存器 (x0-x7) 来对它们进行寻址。 （0=不会对寄存器进行寻址，1=对寄存器进行寻址）。
