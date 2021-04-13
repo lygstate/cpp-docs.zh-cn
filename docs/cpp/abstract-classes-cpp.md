@@ -7,18 +7,18 @@ helpviewer_keywords:
 - base classes [C++], abstract classes [C++]
 - abstract classes [C++]
 - derived classes [C++], abstract classes [C++]
-ms.openlocfilehash: 8a20e988cb0c0a134fd2ebb83382d81c838bcf23
-ms.sourcegitcommit: 5efc34c2b98d4d0d3e41aec38b213f062c19d078
+ms.openlocfilehash: 375dd40c41a9de2b5b66a295cfccaae04d4ccbb8
+ms.sourcegitcommit: 10baf2761694a7d9f478e5609f24158ed8258a44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101844489"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107282617"
 ---
 # <a name="abstract-classes-c"></a>C + +)  (抽象类
 
 抽象类作为可从中派生更具体的类的一般概念的表达。 不能创建抽象类类型的对象。 但是，可以使用指向抽象类类型的指针和引用。
 
-通过声明至少一个纯虚拟成员函数来创建一个抽象类。 这是使用纯说明符声明 () 语法的虚拟函数 `= 0` 。 派生自抽象类的类必须实现纯虚函数或者它们必须也是抽象类。
+通过声明至少一个纯虚拟成员函数来创建一个抽象类。 这是使用 *纯* 说明符声明 () 语法的虚拟函数 `= 0` 。 派生自抽象类的类必须实现纯虚函数或者它们必须也是抽象类。
 
 请考虑 [虚拟函数](../cpp/virtual-functions.md)中显示的示例。 类 `Account` 的用途是提供通用功能，但 `Account` 类型的对象太通用，因此没什么用。 这意味着 `Account` 非常适合抽象类：
 
@@ -57,7 +57,7 @@ private:
 
 *抽象类名称*：：*函数名* () 
 
-在设计其基类包含纯虚析构函数的类层次结构时，定义的纯虚函数很有用。 这是因为，在对象销毁期间始终调用基类析构函数。 请考虑以下示例：
+在设计其基类包含纯虚析构函数的类层次结构时，定义的纯虚函数很有用。 这是因为，在对象销毁期间始终调用基类析构函数。 请看下面的示例：
 
 ```cpp
 // deriv_RestrictionsOnUsingAbstractClasses.cpp
@@ -67,8 +67,13 @@ class base
 {
 public:
     base() {}
-    virtual ~base() = 0 {}; // pure virtual, and defined!
+    // To define the virtual destructor outside the class:
+    virtual ~base() = 0;
+    // Microsoft-specific extension to define it inline:
+//  virtual ~base() = 0 {};
 };
+
+base::~base() {} // required if not using Microsoft extension
 
 class derived : public base
 {
@@ -83,7 +88,7 @@ int main()
 }
 ```
 
-该示例演示内联的定义 `~base()` ，但你也可以通过使用在类的外部定义它 `base::~base() {}` 。
+该示例演示如何通过 Microsoft 编译器扩展将内联定义添加到纯虚拟 `~base()` 。 你还可以通过使用在类的外部定义它 `base::~base() {}` 。
 
 当对象 `aDerived` 超出范围时，将调用类的析构函数 `derived` 。 编译器生成代码以在 `base` 析构函数后隐式调用类的析构函数 `derived` 。 纯虚函数的空实现 `~base` 确保至少存在一个函数的实现。 如果没有此方法，链接器将为隐式调用生成一个无法解析的外部符号错误。
 
