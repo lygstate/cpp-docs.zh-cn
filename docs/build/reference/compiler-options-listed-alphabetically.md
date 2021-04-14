@@ -1,15 +1,15 @@
 ---
 title: 按字母顺序列出的编译器选项
 description: Microsoft C/c + + 编译器命令行选项的按字母顺序排列的引用列表。
-ms.date: 07/29/2020
+ms.date: 04/13/2021
 helpviewer_keywords:
 - compiler options, C++
-ms.openlocfilehash: de83cd5e2d649b88de4e21f3d828f68504705dc2
-ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
+ms.openlocfilehash: 78366537d0ff0599951d4ba528cfae2bdcc2c3e0
+ms.sourcegitcommit: bac5dde649d5b0447de1d26a73365e36d74595f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465361"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107381215"
 ---
 # <a name="compiler-options-listed-alphabetically"></a>按字母顺序列出的编译器选项
 
@@ -41,6 +41,7 @@ ms.locfileid: "102465361"
 | [`/execution-charset`](execution-charset-set-execution-character-set.md) | 设置执行字符集。 |
 | [`/experimental:module`](experimental-module.md) | 启用实验性模块支持。 |
 | [`/experimental:preprocessor`](experimental-preprocessor.md) | 已弃用。 启用实验相容预处理器支持。 使用 [`/Zc:preprocessor`](zc-preprocessor.md) |
+| [`/exportHeader`](module-exportheader.md) | 创建标头单元 (*`.ifc`* 由输入参数指定的) 文件。 |
 | [`/F`](f-set-stack-size.md) | 设置堆栈大小。 |
 | [`/favor`](favor-optimize-for-architecture-specifics.md) | 生成针对特定 x64 体系结构进行了优化的代码。 或者，适用于 AMD64 和 EM64T 体系结构中的特定微体系结构。 |
 | [`/FA`](fa-fa-listing-file.md) | 创建列表文件。 |
@@ -81,6 +82,8 @@ ms.locfileid: "102465361"
 | [`/GZ`](gz-enable-stack-frame-run-time-error-checking.md) | 已弃用。 与 `/RTC1` 相同。 |
 | [`/Gz`](gd-gr-gv-gz-calling-convention.md) | **`__stdcall`** 仅 (x86) 使用调用约定。 |
 | [`/H`](h-restrict-length-of-external-names.md) | 已弃用。 限制外部（公共）名称的长度。 |
+| [`/headerName`](headername.md) | 从指定的标头生成标题单元。 |
+| [`/headerUnit`](headerunit.md) | 指定在何处查找指定标头 () 的标头单元文件 `.ifc` 。 |
 | [`/HELP`](help-compiler-command-line-help.md) | 列出编译器选项。 |
 | [`/homeparams`](homeparams-copy-register-parameters-to-stack.md) | 强制将传入寄存器的参数写入其在函数入口的堆栈上的位置。 此编译器选项仅适用于 x64 编译器 (本机编译和跨平台编译) 。 |
 | [`/hotpatch`](hotpatch-create-hotpatchable-image.md) | 创建热可修补映像。 |
@@ -121,16 +124,19 @@ ms.locfileid: "102465361"
 | [`/Qspectre-load`](qspectre-load.md) | 指定编译器生成序列化说明，以根据负载说明减少 Spectre 的安全漏洞。 |
 | [`/Qspectre-load-cf`](qspectre-load-cf.md) | 指定编译器的序列化说明的生成，以根据加载内存的控制流指令来减少 Spectre 的安全漏洞。 |
 | [`/Qvec-report` (自动向量化报表级别) ](qvec-report-auto-vectorizer-reporting-level.md) | 启用自动矢量化的报告级别。 |
+| [`/reference`](module-reference.md) | 使用命名模块 IFC。 |
 | [`/RTC`](rtc-run-time-error-checks.md) | 启用运行时错误检查。 |
 | [`/sdl`](sdl-enable-additional-security-checks.md) | 启用更多安全功能和警告。 |
 | [`/showIncludes`](showincludes-list-include-files.md) | 在编译期间显示包含文件的列表。 |
 | [`/source-charset`](source-charset-set-source-character-set.md) | 设置源字符集。 |
-| [`/sourceDependencies`](sourcedependencies.md) | 列出标头、模块和其他源依赖项。 |
+| [`/sourceDependencies`](sourcedependencies.md) | 列出所有源级别的依赖关系。 |
+| [`/sourceDependencies:directives`](sourcedependencies-directives.md) |列出模块和标头单元依赖关系。 |
 | [`/std`](std-specify-language-standard-version.md) | C + + 标准版本兼容性选择器。 |
 | [`/Tc`](tc-tp-tc-tp-specify-source-file-type.md) | 指定 C 源文件。 |
 | [`/TC`](tc-tp-tc-tp-specify-source-file-type.md) | 指定所有源文件均为 C。 |
 | [`/Tp`](tc-tp-tc-tp-specify-source-file-type.md) | 指定 C++ 源文件。 |
 | [`/TP`](tc-tp-tc-tp-specify-source-file-type.md) | 指定所有源文件均为 c + +。 |
+| [`/translateInclude`](translateinclude.md) | 视为 `#include` `import` 。 |
 | [`/U`](u-u-undefine-symbols.md) | 移除预定义宏。 |
 | [`/u`](u-u-undefine-symbols.md) | 移除所有的预定义宏。 |
 | [`/utf-8`](utf-8-set-source-and-executable-character-sets-to-utf-8.md) | 将源和执行字符集设置为 UTF-8。 |
@@ -176,7 +182,7 @@ ms.locfileid: "102465361"
 | [`/Zs`](zs-syntax-check-only.md) | 只检查语法。 |
 | [`/ZW`](zw-windows-runtime-compilation.md) | 生成要在 Windows 运行时上运行的输出文件。 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MSVC 编译器选项](compiler-options.md)\
 [MSVC 编译器命令行语法](compiler-command-line-syntax.md)

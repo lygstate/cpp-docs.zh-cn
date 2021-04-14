@@ -1,22 +1,24 @@
 ---
-title: '/translateInclude (将 include 指令转换为导入指令) '
-description: '使用/translateInclude 编译器选项将可导入标头名称 #include 指令转换为导入标头名称指令。'
-ms.date: 09/13/2020
+title: /translateInclude（将 include 指令转换为 import 指令）
+description: '使用/translateInclude 编译器选项可在可导入标头单位可用时将 #include 指令视为导入语句。'
+ms.date: 4/13/2021
+author: tylermsft
+ms.author: twhitney
 f1_keywords:
 - /translateInclude
 helpviewer_keywords:
 - /translateInclude
 - Translate include directives into import directives
-ms.openlocfilehash: 0050f2cb117e48d69cf97a587ef128b9b45790af
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: e700e79c64be466e33e0ee698114c85eba1f7e18
+ms.sourcegitcommit: bac5dde649d5b0447de1d26a73365e36d74595f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90079133"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107381294"
 ---
-# <a name="translateinclude-translate-include-directives-into-import-directives"></a>`/translateInclude` (将 include 指令转换为导入指令) 
+# <a name="translateinclude-translate-include-directives-into-import-directives"></a>`/translateInclude`（将 include 指令转换为 import 指令）
 
-通知编译器将 `#include` 可导入标头名称的指令转换为 `import header-name;` 指令，而不是使用文本包含。
+指示编译器将 `#include` `import` () 文件中预构建为标头单元的标头视为 `.ifc` 。
 
 ## <a name="syntax"></a>语法
 
@@ -24,9 +26,9 @@ ms.locfileid: "90079133"
 
 ## <a name="remarks"></a>备注
 
-**`/translateInclude`** 编译器选项要求使用编译器选项启用实验性模块支持，并 [`/experimental:module`](experimental-module.md) 与[/std： c + + 最新](std-specify-language-standard-version.md)选项一起启用。 从 Visual Studio 2019 版本16.8 开始，此选项可用。
+**`/translateInclude`** 编译器选项要求启用 [/std： c + + 最新](std-specify-language-standard-version.md)选项。 `/translateInclude` 从 Visual Studio 2019 版本 16.10 Preview 2 开始提供。
 
-**`/translateInclude`** 选项会有效地进行以下转换，其中，示例 `<vector>` 是可导入的标头单元：
+此 **`/translateInclude`** 选项将有效地进行以下转换，其中示例 `<vector>` 已预建为可导入标头单元：
 
 ```cpp
 #include <vector>
@@ -35,10 +37,10 @@ ms.locfileid: "90079133"
 编译器将此指令替换为：
 
 ```cpp
-import <vector> ;
+import <vector>;
 ```
 
-在 MSVC 中，可导入的标头单位由 **`/headerUnit`** 引用命名。 有关详细信息，请参阅[ `/headerUnit` (Use HEADER unit IFC) ](headerunit.md)。
+在 MSVC 中，可通过选项使用可用的标头单位 **`/headerUnit`** ，这会将标头文件映射到相应的预生成的可导入标头单元。 有关详细信息，请参阅[ `/headerUnit` (指定在何处查找页眉单元文件 (`.ifc` 指定标头的) ) ](headerunit.md)。
 
 ### <a name="examples"></a>示例
 
@@ -58,25 +60,27 @@ import <vector> ;
 int main() { }
 ```
 
-**`/translateInclude`** 选项允许编译器导入标题单元，而不是再次编译标头。 下面是一个示例命令行，用于转换和的 include 指令以 *`util.h`* *`app.h`* 导入标题单元的导入：
+**`/translateInclude`** 选项允许编译器将 `#include` 作为 `import` 具有对应的已编译标头单元文件 (*`.ifc`*) 并通过开关在命令行上指定的的标头文件 `/headerUnit` 。
+
+如果 `#include` 遇到没有通过开关指定的相应标头单元的情况 `/headerUnit` ，则预处理器会将其作为常规指令进行处理 `#include` 。
+
+ 下面是一个示例命令行，用于转换和的 include 指令以 *`util.h`* *`app.h`* 导入标题单元的导入：
 
 ```CMD
-cl /IC:\ /experimental:module /translateInclude /headerUnit C:\utils\util.h=C:\util.h.ifc /headerUnit C:\app\app.h=C:\app.h.ifc
+cl /IC:\ /translateInclude /headerUnit C:\utils\util.h=C:\util.h.ifc /headerUnit C:\app\app.h=C:\app.h.ifc
 ```
 
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项
+## <a name="to-set-this-compiler-option-in-visual-studio"></a>在 Visual Studio 中设置此编译器选项
 
-1. 打开项目的“属性页”  对话框。 有关详细信息，请参阅[在 Visual Studio 中设置 C++ 编译器和生成属性](../working-with-project-properties.md)。
+若要启用 `/translateInclude` ，请在项目属性中设置 " **翻译包含到导入** " 选项：
 
-1. 将 **配置** 下拉箭头设置为 " **所有配置**"。
+1. 在项目属性页的左窗格中，选择 "**配置属性**" "  >  **c/c + +**  >  **常规**"
+1. 更改 **转换包含以** 将下拉列表导入到 **"是** 
+ ![ 项目属性" 对话框集转换包含到导入](../media/vs2019-translate-includes-option.png)
 
-1. 选择 "**配置属性**" "  >  **c/c + +**  >  **命令行**" 属性页。
 
-1. 修改 " **附加选项** " 属性以添加 *`/translateInclude`* 选项。 然后，选择 **"确定" 或 "** **应用** " 保存所做的更改。
+## <a name="see-also"></a>请参阅
 
-## <a name="see-also"></a>另请参阅
-
-[`/experimental:module` (启用模块支持) ](experimental-module.md)\
 [ `/headerUnit` (使用标题单元 IFC) ](headerunit.md)。
-[`/module:exportHeader` (创建标题单元) ](module-exportheader.md)\
-[`/module:reference` (使用命名模块 IFC) ](module-reference.md)
+[`/exportHeader` (创建标题单元) ](module-exportheader.md)\
+[`/reference`（使用命名模块 IFC）](module-reference.md)

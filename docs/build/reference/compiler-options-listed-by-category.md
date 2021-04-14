@@ -5,12 +5,12 @@ ms.date: 07/29/2020
 helpviewer_keywords:
 - compiler options, C++
 ms.assetid: c4750dcf-dba0-4229-99b6-45cdecc11729
-ms.openlocfilehash: b892575719d97ed4a0acb061aae0182ff2d576eb
-ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
+ms.openlocfilehash: e527e5ef309b4ea4e0a38189d7855475b99762f2
+ms.sourcegitcommit: bac5dde649d5b0447de1d26a73365e36d74595f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465374"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107381202"
 ---
 # <a name="compiler-options-listed-by-category"></a>按类别列出的编译器选项
 
@@ -110,6 +110,18 @@ ms.locfileid: "102465374"
 | [`/u`](u-u-undefine-symbols.md) | 移除所有的预定义宏。 |
 | [`/X`](x-ignore-standard-include-paths.md) | 忽略标准包含目录。 |
 
+## <a name="header-units"></a>标题单元
+
+| 选项 | 目标 |
+|--|--|
+| [`/exportHeader`](module-exportheader.md) | 创建标头单元文件 (*`.ifc`* 由输入参数指定的) 。 |
+| [`/headerUnit`](headerunit.md) | 指定在何处查找指定标头 () 的标头单元文件 `.ifc` 。 |
+| [`/headerName`](headername.md) | 从指定的标头生成标题单元。 |
+| [`/reference`](module-reference.md) | 使用命名模块 IFC。 |
+| [`/sourceDependencies`](sourcedependencies.md) | 列出所有源级别的依赖关系。 |
+| [`/sourceDependencies:directives`](sourcedependencies-directives.md) | 列出模块和标头单元依赖关系。 |
+| [`/translateInclude`](translateinclude.md) | 视为 `#include` `import` 。 |
+
 ## <a name="language"></a>语言
 
 | 选项 | 目标 |
@@ -172,7 +184,6 @@ ms.locfileid: "102465374"
 | [`/nologo`](nologo-suppress-startup-banner-c-cpp.md) | 取消显示登录版权标志。 |
 | [`/sdl`](sdl-enable-additional-security-checks.md) | 启用更多安全功能和警告。 |
 | [`/showIncludes`](showincludes-list-include-files.md) | 在编译期间显示所有包含文件的列表。 |
-| [`/sourceDependencies`](sourcedependencies.md) | 列出标头、模块和其他源依赖项。 |
 | [`/Tc`](tc-tp-tc-tp-specify-source-file-type.md) | 指定 C 源文件。 |
 | [`/TC`](tc-tp-tc-tp-specify-source-file-type.md) | 指定所有源文件均为 C。 |
 | [`/Tp`](tc-tp-tc-tp-specify-source-file-type.md) | 指定 C++ 源文件。 |
@@ -233,7 +244,7 @@ ms.locfileid: "102465374"
 | [`/Ze`](za-ze-disable-language-extensions.md) | 已弃用。 启用语言扩展。 |
 | [`/Zg`](zg-generate-function-prototypes.md) | 在 Visual Studio 2015 中移除。 生成函数原型。 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [C/c + + 生成参考](c-cpp-building-reference.md)\
 [MSVC 编译器选项](compiler-options.md)\

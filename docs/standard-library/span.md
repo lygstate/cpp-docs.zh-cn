@@ -1,19 +1,19 @@
 ---
-title: '&lt;格&gt;'
+title: <span>
 description: 标准模板库的 API 参考 (STL) span 命名空间，该命名空间提供了一系列连续的对象。
 ms.date: 05/28/2020
 f1_keywords:
 - <span>
 helpviewer_keywords:
 - span header
-ms.openlocfilehash: f4c6b141dfea6464e58d06e221a39a693469d31c
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 6f8a7e6ecbc02adeae7301dfc7eead2812c3c1f5
+ms.sourcegitcommit: bac5dde649d5b0447de1d26a73365e36d74595f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90039867"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107381150"
 ---
-# <a name="ltspangt"></a>&lt;格&gt;
+# `<span>`
 
 `span`是一个视图，它是一系列连续的对象。 它提供快速且不安全的访问。 与 `vector` 或不同 `array` ，它不会 "拥有" 它提供访问权限的元素。
 
@@ -66,7 +66,7 @@ int main()
 |名称|说明|
 |-|:-|
 |[operator =](span-class.md#op_eq)| 跨度赋值 |
-|[操作员\[\]](span-class.md#op_at)| 元素访问 |
+|[运算符后的表达式\[\]](span-class.md#op_at)| 元素访问 |
 
 ### <a name="functions"></a>函数
 
@@ -81,6 +81,6 @@ int main()
 |-|:-|
 | **dynamic_extent** | 指示范围大小在运行时确定，而不是在编译时确定。 如果范围中的元素数量在编译时是已知的，则会将其指定为 `Extent` 模板参数。 如果在运行时之前不知道该数字，请改为指定 `dynamic_extent` 。 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [头文件引用](../standard-library/cpp-standard-library-header-files.md)
