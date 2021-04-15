@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Standards conformance compiler options
 - permissive compiler options [C++]
 ms.assetid: db1cc175-6e93-4a2e-9396-c3725d2d8f71
-ms.openlocfilehash: c8d654540deb492a5bebff304ef01ca4c71f044a
-ms.sourcegitcommit: 74e58bee5cffb30b66e17be6dbfde2544369638e
+ms.openlocfilehash: ab6f1a088ae45e1098a02d2ab0bdf18d6bc8047c
+ms.sourcegitcommit: aaab04df80e2d00389c13b075cfac59afc7f4681
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763818"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107467625"
 ---
 # <a name="permissive--standards-conformance"></a>/permissive-（标准符合性）
 
@@ -471,4 +471,4 @@ Windows 2018 年4月更新 SDK (10.0.17134.0) 、Windows 秋季创意者更新 S
 ## <a name="see-also"></a>另请参阅
 
 [MSVC 编译器选项](compiler-options.md)\
-[MSVC 编译器 Command-Line 语法](compiler-command-line-syntax.md)
+[MSVC 编译器命令行语法](compiler-command-line-syntax.md)
