@@ -10,14 +10,14 @@ helpviewer_keywords:
 - width fields, printf function
 - precision fields, printf function
 ms.assetid: 664b1717-2760-4c61-bd9c-22eee618d825
-ms.openlocfilehash: 18642f650949e346fd3421b4a123acb4e84ed659
-ms.sourcegitcommit: 9c801a43ee0d4d84956b03fd387716c818705e0d
+ms.openlocfilehash: 6bc45f806870fce3f20fdf00d3fe7b9afd99696f
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92907527"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539554"
 ---
-# <a name="format-specification-syntax-printf-and-wprintf-functions"></a>格式规范语法：printf 和 wprintf 函数
+# <a name="format-specification-syntax-printf-and-wprintf-functions"></a>格式规范语法： `printf` 和 `wprintf` 函数
 
 各种 `printf` 和 `wprintf` 函数采用格式字符串和可选参数，并生成用于输出的格式化字符序列。 格式字符串包含零个或多个指令，这些指令是用于输出的文本字符或描述如何在输出中设置参数格式的已编码的转换规范。 本文介绍用于对格式字符串中的转换规范进行编码的语法。 有关这些函数的列表，请参阅[流 I/O](../c-runtime-library/stream-i-o.md)。
 
@@ -77,8 +77,8 @@ ms.locfileid: "92907527"
 |**`A`**|浮点|带符号的十六进制双精度浮点值，其形式为 *[-] 0Xh hhhh*__P ±__ *`dd`* ，其中 *hhhh* 是十六进制数字， (使用尾数的大写字母) ， *dd* 是指数的一个或多个数字。 精度指定此点后的数字位数。|
 |**`n`**|指向整数的指针|目前成功写入流或缓冲区的字符数。 此值存储在地址作为自变量的整数中。 可通过参数大小规范前缀控制指向的整数的大小。 **`n`** 默认情况下，说明符处于禁用状态; 有关信息，请参阅重要的安全说明。|
 |**`p`**|指针类型|将自变量显示为十六进制数字形式的地址。|
-|**`s`**|String|与 `printf` 函数一起使用时，指定单字节或多字节字符串；与 `wprintf` 函数一起使用时，指定宽字符字符串。 将于第一个空字符之前或达到精度值时显示字符。|
-|**`S`**|String|与 `printf` 函数一起使用时，指定宽字符字符串；与 `wprintf` 函数一起使用时，指定单字节或多字节字符串。 将于第一个空字符之前或达到精度值时显示字符。|
+|**`s`**|字符串|与 `printf` 函数一起使用时，指定单字节或多字节字符串；与 `wprintf` 函数一起使用时，指定宽字符字符串。 将于第一个空字符之前或达到精度值时显示字符。|
+|**`S`**|字符串|与 `printf` 函数一起使用时，指定宽字符字符串；与 `wprintf` 函数一起使用时，指定单字节或多字节字符串。 将于第一个空字符之前或达到精度值时显示字符。|
 |**`Z`**|`ANSI_STRING` 或 `UNICODE_STRING` 结构|当或结构的地址 [`ANSI_STRING`](/windows/win32/api/ntdef/ns-ntdef-string) [`UNICODE_STRING`](/windows/win32/api/ntdef/ns-ntdef-_unicode_string) 作为参数传递时，将显示由结构的字段指向的缓冲区中包含的字符串 `Buffer` 。 使用 *大小* 修饰符前缀 **`w`** 指定 `UNICODE_STRING` 参数，例如 `%wZ` 。 结构的 `Length` 字段必须设置为字符串的长度（以字节为单位）。 结构的 `MaximumLength` 字段必须设置为缓冲区的长度（以字节为单位）。<br /><br />通常， **`Z`** 只能在使用转换规范的驱动程序调试函数（如和）中使用类型字符 `dbgPrint` `kdPrint` 。|
 
 从 Visual Studio 2015 开始，如果与浮点转换说明符相对应的参数 (、、、、、、、 **`a`** **`A`** **`e`** **`E`** **`f`** **`F`** **`g`** **`G`**) 是无限、不定或 NaN，则格式化的输出应符合 C99 标准。 下表列出了格式化的输出：
@@ -134,15 +134,15 @@ ms.locfileid: "92907527"
 
 ## <a name="width-specification"></a>宽度规范
 
-在转换规范中，可选宽度规范字段出现在任何标志字符之后。 宽度参数是控制输出的最小字符数量的非负十进制整数。 如果输出值中的字符数小于指定宽度，则将在值的左侧或右侧添加空格，具体取决于是否指定左对齐标志 (**`-`**) ，直到达到最小宽度。 如果 0 作为宽度的前缀，则将向整数或浮点转换添加前导零，直到达到最小宽度为止，但转换到 infinity 或 NaN 时除外。
+在转换规范中，可选宽度规范字段出现在任何标志字符之后。 *`width`* 参数是一个非负的十进制整数，该整数控制要输出的最小字符数。 如果输出值中的字符数小于指定宽度，则将在值的左侧或右侧添加空格，具体取决于是否指定左对齐标志 (**`-`**) ，直到达到最小宽度。 如果 *`width`* 以0作为前缀，则将前导零添加到整数或浮点转换直到达到最小宽度，只不过转换为无穷或 `NaN` 。
 
-宽度规范永远不会导致值被截断。 如果输出值中的字符数大于指定宽度，或如果未提供 *width* ，则值的所有字符都将输出，根据 *精度* 规范进行。
+宽度规范永远不会导致值被截断。 如果输出值中的字符数大于指定宽度，或如果 *`width`* 未提供，则值的所有字符都将输出，根据精度规范。
 
-如果宽度规范是一个星号 (`*`)，则参数列表中的 `int` 参数将提供此值。 宽度参数必须先于在参数列表中要设置其格式的值，如以下示例中所示：
+如果宽度规范是一个星号 (`*`)，则参数列表中的 `int` 参数将提供此值。 *`width`* 参数必须在参数列表中要设置格式的值之前，如以下示例中所示：
 
 `printf("%0*d", 5, 3);  /* 00003 is output */`
 
-转换规范中缺少宽度值或此值较小将不会导致截断输出值。 如果转换结果的宽度大于宽度值，则字段将扩展以包含转换结果。
+转换规范中缺少或较小的 *`width`* 值不会导致输出值的截断。 如果转换的结果大于 *`width`* 值，则字段将扩展以包含转换结果。
 
 <a name="precision"></a>
 
@@ -150,15 +150,15 @@ ms.locfileid: "92907527"
 
 在转换规范中，第三个可选字段是精度规范。 它包含一个句点 (`.`) 后跟一个非负十进制整数，具体取决于转换类型、指定字符串字符的数量、小数位数或要输出的有效位数。
 
-与宽度规范不同的是，精度规范可能导致输出值截断或浮点值舍入。 如果将精度指定为 0 并且要转换的值为 0，则结果为无字符输出，如以下示例中所示：
+与宽度规范不同的是，精度规范可能导致输出值截断或浮点值舍入。 如果 *`precision`* 将指定为0，并且要转换的值为0，则结果将不会输出任何字符，如以下示例中所示：
 
 `printf( "%.0d", 0 );      /* No characters output */`
 
-如果精度规范是一个星号 (`*`)，则参数列表中的某个 `int` 参数将提供此值。 在参数列表中，精度参数前必须先于要设置其格式的值，如以下示例中所示：
+如果精度规范是一个星号 (`*`)，则参数列表中的某个 `int` 参数将提供此值。 在参数列表中， *`precision`* 参数必须位于要设置格式的值之前，如以下示例中所示：
 
 `printf( "%.*f", 3, 3.14159265 );  /* 3.142 output */`
 
-如果省略精度，则类型字符将决定精度的解释或默认精度，如下表中所示。
+*`type`* *`precision`* 如果省略，字符将确定或默认精度 *`precision`* ，如下表所示。
 
 ### <a name="how-precision-values-affect-type"></a>精度值如何影响类型
 
@@ -211,6 +211,6 @@ ms.locfileid: "92907527"
 
 ## <a name="see-also"></a>另请参阅
 
-[`printf, _printf_l, wprintf, _wprintf_l`](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)\
-[`printf_s, _printf_s_l, wprintf_s, _wprintf_s_l`](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)\
+[`printf`, `_printf_l`, `wprintf`, `_wprintf_l`](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)\
+[`printf_s`, `_printf_s_l`, `wprintf_s`, `_wprintf_s_l`](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)\
 [`printf_p` 位置参数](../c-runtime-library/printf-p-positional-parameters.md)

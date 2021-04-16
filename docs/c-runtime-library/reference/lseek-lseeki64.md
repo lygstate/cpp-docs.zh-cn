@@ -36,12 +36,12 @@ helpviewer_keywords:
 - file pointers [C++], moving
 - seek file pointers
 ms.assetid: aba8a768-d40e-48c3-b38e-473dbd782f93
-ms.openlocfilehash: 5ac536a0f1388f8d664aa6721900256da368d652
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 69a495eda02faa06bd173483d0b292dea11abc13
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97299964"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539719"
 ---
 # <a name="_lseek-_lseeki64"></a>_lseek、_lseeki64
 
@@ -62,7 +62,7 @@ __int64 _lseeki64(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *fd*<br/>
 引用打开的文件的文件描述符。
@@ -70,7 +70,7 @@ __int64 _lseeki64(
 *offset*<br/>
 *origin* 中的字节数。
 
-*格式*<br/>
+*origin*<br/>
 初始位置。
 
 ## <a name="return-value"></a>返回值
@@ -79,11 +79,11 @@ __int64 _lseeki64(
 
 有关这些及其他错误代码的详细信息，请参阅 [_doserrno、errno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Lseek** 函数将与 *fd* 关联的文件指针移动到从源 *偏移* 字节的新 *位置。* 对文件的下一步操作发生在新位置。 *origin* 参数必须是 Stdio.h 中定义的以下常量之一。
 
-|*原始* 值||
+|*原始* 值| 说明 |
 |-|-|
 | **SEEK_SET** | 文件开头。 |
 | **SEEK_CUR** | 文件指针的当前位置。 |

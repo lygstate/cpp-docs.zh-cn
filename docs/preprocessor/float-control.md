@@ -1,7 +1,7 @@
 ---
 title: float_control pragma
 description: 描述 float_control 指令的用法和效果 pragma 。 Float_control 指令在运行时控制浮点精确语义和异常语义的状态。
-ms.date: 01/22/2021
+ms.date: 04/15/2021
 f1_keywords:
 - vc-pragma.float_control
 - float_control_CPP
@@ -10,23 +10,23 @@ helpviewer_keywords:
 - pragma, float_control
 no-loc:
 - pragma
-ms.openlocfilehash: 98695c15424395a9b4e008a5cb1133824e1e7054
-ms.sourcegitcommit: a26a66a3cf479e0e827d549a9b850fad99b108d1
+ms.openlocfilehash: b7a02acf729d04527300454fed6e74e7d06bbfe9
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98712760"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539769"
 ---
-# <a name="float_control-no-locpragma"></a>`float_control` pragma
+# <a name="float_control-pragma"></a>`float_control` pragma
 
 指定函数的浮点行为。
 
 ## <a name="syntax"></a>语法
 
 > **`#pragma float_control`**\
-> **`#pragma float_control( precise,`** { **`on`** | **`off`** } [ **`, push`** ] **`)`**\
-> **`#pragma float_control( except,`** { **`on`** | **`off`** } [ **`, push`** ] **`)`**\
-> **`#pragma float_control(`** { **`push`** | **`pop`** } **`)`**
+> **`#pragma float_control( precise,`** { **`on`** &vert; **`off`** } [ **`, push`** ] **`)`**\
+> **`#pragma float_control( except,`** { **`on`** &vert; **`off`** } [ **`, push`** ] **`)`**\
+> **`#pragma float_control(`** { **`push`** &vert; **`pop`** } **`)`**
 
 ## <a name="options"></a>选项
 
@@ -64,7 +64,7 @@ ms.locfileid: "98712760"
 
 - **`fenv_access`** 除非启用了精确语义，否则不能启用，无论是通过 **`float_control`** pragma 还是编译器选项启用。
 
-- 启用后，不能使用 **`float_control`** 来 **`precise`** 关闭 **`fenv_access`** 。
+- 启用后，不能使用 **`float_control`** 来关闭 **`precise`** **`fenv_access`** 。
 
 这些限制意味着某些浮点指令的顺序 pragma 非常重要。 若要使用指令从快速模型转为严格模型 pragma ，请使用以下代码：
 

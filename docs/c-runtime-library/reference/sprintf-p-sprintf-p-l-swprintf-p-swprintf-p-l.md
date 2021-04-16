@@ -45,14 +45,14 @@ helpviewer_keywords:
 - stprintf_p_l function
 - formatted text [C++]
 - _stprintf_p_l function
-ms.openlocfilehash: 356aa4c5266323e989ffbc5b651af4c77431eecd
-ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
+ms.openlocfilehash: 2f0b6dad129a8f3f2f91bf1244c77ae5691a679e
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102621641"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539273"
 ---
-# <a name="_sprintf_p-_sprintf_p_l-_swprintf_p-_swprintf_p_l"></a>_sprintf_p, _sprintf_p_l, _swprintf_p, _swprintf_p_l
+# <a name="_sprintf_p-_sprintf_p_l-_swprintf_p-_swprintf_p_l"></a>`_sprintf_p`, `_sprintf_p_l`, `_swprintf_p`, `_swprintf_p_l`
 
 利用指定参数在格式字符串中使用的顺序的能力将带格式的数据写入字符串。
 
@@ -89,19 +89,19 @@ int _swprintf_p_l(
 
 ### <a name="parameters"></a>参数
 
-*宽限*<br/>
+*`buffer`*<br/>
 输出的存储位置
 
-*sizeOfBuffer*<br/>
+*`sizeOfBuffer`*<br/>
 可存储的最多字符数。
 
-*format*<br/>
+*`format`*<br/>
 窗体控件字符串。
 
-*argument_list*<br/>
+*`argument_list`*<br/>
 格式字符串的可选参数。
 
-*locale*<br/>
+*`locale`*<br/>
 要使用的区域设置。
 
 有关更多信息，请参见 [格式规范](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)。
@@ -112,32 +112,32 @@ int _swprintf_p_l(
 
 ## <a name="remarks"></a>注解
 
-**_Sprintf_p** 函数将一系列字符和值存储到 *缓冲区* 中。 *Argument_list* 中的每个自变量都 () 如果根据 *格式* 规范中的相应格式规范进行转换和输出。 *Format* 参数将 [格式规范语法用于 printf 和 wprintf 函数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)。 null 字符追加在写入的最后一个字符后。 如果在重叠的字符串之间发生复制，则此行为不确定。 **_Sprintf_p** 和 **sprintf_s** 之间的区别在于 **_sprintf_p** 支持位置参数，这允许指定在格式字符串中使用参数的顺序。 有关详细信息，请参阅 [printf_p 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)。
+**`_sprintf_p`** 函数在中设置和存储一系列字符和值 *`buffer`* 。 *`argument_list`* 如果根据中的相应格式规范转换和输出任何) ，则 (中的每个参数 *`format`* 。 *Format* 参数使用 [ `printf` 和 `wprintf` 函数的格式规范语法](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)。 null 字符追加在写入的最后一个字符后。 如果在重叠的字符串之间发生复制，则此行为不确定。 和之间的差异在于 **`_sprintf_p`** **`sprintf_s`** **`_sprintf_p`** 支持位置参数，这允许指定格式字符串中使用参数的顺序。 有关详细信息，请参阅[ `printf_p` 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)。
 
-**_swprintf_p** 是 **_sprintf_p** 的宽字符版本; **_swprintf_p** 的指针参数是宽字符字符串。 **_Swprintf_p** 中的编码错误检测可能与 **_sprintf_p** 中的不同。 **_swprintf_p** 和 **fwprintf_p** 的行为完全相同，只是 **_swprintf_p** 将输出写入字符串，而不是将输出写入字符串，而不是将输出写入到类型 **文件** 的目标，而 **_swprintf_p** 要求 *count* 参数指定要写入的最大字符数。 这些具有 **_l** 后缀的函数的版本相同，只不过它们使用传入的区域设置参数而不是当前线程区域设置。
+**`_swprintf_p`** 是的宽字符版本 **`_sprintf_p`** ; 的指针参数 **`_swprintf_p`** 是宽字符字符串。 中对编码错误的检测 **`_swprintf_p`** 可能与中的不同 **`_sprintf_p`** 。 **`_swprintf_p`** 和 **`fwprintf_p`** 的行为方式相同，只不过将 **`_swprintf_p`** 输出写入字符串而不是类型的目标 **`FILE`** ，并且 **`_swprintf_p`** 需要 *`count`* 参数来指定要写入的最大字符数。 这些带有后缀的函数的版本 **`_l`** 相同，只不过它们使用传入的区域设置参数而不是当前线程区域设置。
 
-**_sprintf_p** 返回 *缓冲区* 中存储的字节数，不包括终止 null 字符。 **_swprintf_p** 返回 *缓冲区* 中存储的宽字符数，不包括终止 null 宽字符。 如果 *缓冲区* 或 *格式* 为 null 指针，或者格式字符串包含无效的格式字符，则将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则这些函数将返回-1，并将 **errno** 设置为 **EINVAL**。
+**`_sprintf_p`** 返回存储在中的字节数 *`buffer`* ，不包括终止 null 字符。 **`_swprintf_p`** 返回存储在中的宽字符数 *`buffer`* ，不包括终止 null 宽字符。 如果 *`buffer`* 或 *`format`* 为 null 指针，或如果格式字符串包含无效的格式字符，则将调用无效的参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则这些函数将返回-1 并将设置 **`errno`** 为 **`EINVAL`** 。
 
 > [!IMPORTANT]
 > 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
-|TCHAR.H 例程|未定义 _UNICODE 和 _MBCS|已定义 _MBCS|已定义 _UNICODE|
+|`TCHAR.H` 例程|`_UNICODE` & `_MBCS` 未定义|`_MBCS` 明确|`_UNICODE` 明确|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|**_stprintf_p**|**_sprintf_p**|**_sprintf_p**|**_swprintf_p**|
-|**_stprintf_p_l**|**_sprintf_p_l**|**_sprintf_p_l**|**_swprintf_p_l**|
+|**`_stprintf_p`**|**`_sprintf_p`**|**`_sprintf_p`**|**`_swprintf_p`**|
+|**`_stprintf_p_l`**|**`_sprintf_p_l`**|**`_sprintf_p_l`**|**`_swprintf_p_l`**|
 
 ## <a name="requirements"></a>要求
 
 |例程所返回的值|必需的标头|
 |-------------|---------------------|
-|**_sprintf_p**， **_sprintf_p_l**|\<stdio.h>|
-|**_swprintf_p**， **_swprintf_p_l**|\<stdio.h> 或 \<wchar.h>|
+|**`_sprintf_p`**, **`_sprintf_p_l`**|`<stdio.h>`|
+|**`_swprintf_p`**, **`_swprintf_p_l`**|`<stdio.h>` 或 `<wchar.h>`|
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-## <a name="example-use-_sprintf_p-to-format-data"></a>示例：使用 _sprintf_p 设置数据格式
+## <a name="example-use-_sprintf_p-to-format-data"></a>示例：用于 `_sprintf_p` 设置数据的格式
 
 ```C
 // crt_sprintf_p.c
@@ -215,13 +215,13 @@ Wrote -1 characters
 ## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
-[_fprintf_p、_fprintf_p_l、_fwprintf_p、_fwprintf_p_l](fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)<br/>
-[fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
-[_printf_p、_printf_p_l、_wprintf_p、_wprintf_p_l](printf-p-printf-p-l-wprintf-p-wprintf-p-l.md)<br/>
-[printf、_printf_l、wprintf、_wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
-[sprintf、_sprintf_l、swprintf、_swprintf_l、__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
-[scanf、_scanf_l、wscanf、_wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
-[sscanf、_sscanf_l、swscanf、_swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
-[sscanf_s、_sscanf_s_l、swscanf_s、_swscanf_s_l](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md)<br/>
-[vprintf 函数](../../c-runtime-library/vprintf-functions.md)<br/>
-[printf_p 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)<br/>
+[`_fprintf_p`, `_fprintf_p_l`, `_fwprintf_p`, `_fwprintf_p_l`](fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)<br/>
+[`fprintf`, `_fprintf_l`, `fwprintf`, `_fwprintf_l`](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
+[`_printf_p`, `_printf_p_l`, `_wprintf_p`, `_wprintf_p_l`](printf-p-printf-p-l-wprintf-p-wprintf-p-l.md)<br/>
+[`printf`, `_printf_l`, `wprintf`, `_wprintf_l`](printf-printf-l-wprintf-wprintf-l.md)<br/>
+[`sprintf`, `_sprintf_l`, `swprintf`, `_swprintf_l`, `__swprintf_l`](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[`scanf`, `_scanf_l`, `wscanf`, `_wscanf_l`](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
+[`sscanf`, `_sscanf_l`, `swscanf`, `_swscanf_l`](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
+[`sscanf_s`, `_sscanf_s_l`, `swscanf_s`, `_swscanf_s_l`](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md)<br/>
+[`vprintf` 函数](../../c-runtime-library/vprintf-functions.md)<br/>
+[`printf_p` 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)<br/>

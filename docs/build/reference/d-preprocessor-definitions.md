@@ -14,12 +14,12 @@ helpviewer_keywords:
 - -D compiler option [C++]
 - D compiler option [C++]
 ms.assetid: b53fdda7-8da1-474f-8811-ba7cdcc66dba
-ms.openlocfilehash: 6ae7dcd81e1821d4c3a8a2f6d5c1b711c0faa9f2
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 2e94c28c094f6ea03eacdb04c452785511fb3a3f
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97196823"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539656"
 ---
 # <a name="d-preprocessor-definitions"></a>/D（预处理器定义）
 
@@ -27,22 +27,22 @@ ms.locfileid: "97196823"
 
 ## <a name="syntax"></a>语法
 
-> **/D** \[]_name_ \[ `=` \| `#` \[ { *string* \| *number* }]] \
-> **/D** \[] `"` _name_ \[ `=` \| `#` \[ { *string* \| *number* }]]`"`
+> **`/D`**\[]_name_ \[ `=` &vert; `#` \[ { *string* &vert; *number* }]] \
+> **`/D`**\[] `"` _name_ \[ `=` &vert; `#` \[ { *string* &vert; *number* }]]`"`
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 可以将此符号与 `#if` 或 `#ifdef` 一起使用，以便有条件地编译源代码。 符号定义在代码中重新定义之前有效，或在代码中由 `#undef` 指令定义。
 
-**/D** 与源代码文件开头的指令具有相同的效果 `#define` 。 不同之处在于， **/d** 在命令行上抽出引号，而 `#define` 指令保留它们。 **/D** 和符号之间可以有空格。 符号和等号之间不能存在空格，或者在等号和分配的任何值之间不能存在空格。
+**`/D`** 与源代码文件开头的指令具有相同的效果 `#define` 。 不同之处在于 **`/D`** ，命令行上有带引号的引号， `#define` 指令会将其保留。 和符号之间可以有空格 **`/D`** 。 符号和等号之间不能存在空格，或者在等号和分配的任何值之间不能存在空格。
 
 默认情况下，与符号关联的值为 1。 例如，`/D name` 等效于 `/D name=1`。 在本文末尾的示例中，显示的定义 `TEST` 是 "打印" `1` 。
 
 使用进行编译将 `/D name=` 导致符号 *名称* 没有关联值。 尽管该符号仍可用于有条件地编译代码，但它不会计算出任何结果。 在此示例中，如果使用进行编译 `/DTEST=` ，则会发生错误。 此行为类似于带或不带值使用 `#define`。
 
-**/D** 选项不支持类似于函数的宏定义。 若要插入不能在命令行上定义的定义，请考虑 [/fi (名称强制包含文件) ](fi-name-forced-include-file.md) 编译器选项。
+**`/D`** 选项不支持类似于函数的宏定义。 若要插入不能在命令行上定义的定义，请考虑[ `/FI` (名称强制包含文件) ](fi-name-forced-include-file.md)编译器选项。
 
-您可以在命令行上多次使用 **/d** 来定义其他符号。 如果多次定义同一符号，则使用最后一个定义。
+您可以 **`/D`** 在命令行上多次使用来定义更多符号。 如果多次定义同一符号，则使用最后一个定义。
 
 此命令在 TEST.c 中定义符号 DEBUG：
 
@@ -50,13 +50,13 @@ ms.locfileid: "97196823"
 CL /DDEBUG TEST.C
 ```
 
-此命令移除 TEST.c 中关键字 `__far` 的所有匹配项：
+此命令删除在 test.txt 中出现的所有关键字 **`__far`** ：
 
 ```cmd
 CL /D __far= TEST.C
 ```
 
-**CL** 环境变量不能设置为包含等号的字符串。 若要将 **/d** 与 **CL** 环境变量一起使用，必须指定数字符号 (`#`) 而不是等号：
+**CL** 环境变量不能设置为包含等号的字符串。 若要 **`/D`** 与 **`CL`** 环境变量一起使用，必须指定数字符号 (`#`) 而不是等号：
 
 ```cmd
 SET CL=/DTEST#0
@@ -72,11 +72,11 @@ CL /DTEST=%% TEST.C
 
 1. 打开项目“属性页”  对话框。 有关详细信息，请参阅[在 Visual Studio 中设置 C++ 编译器和生成属性](../working-with-project-properties.md)。
 
-1. 在左窗格中，选择 " **配置属性**"、" **c/c + +**、 **预处理器**"。
+1. 选择 "**配置属性**" "  >  **c/c + +**  >  **预处理器**" 属性页。
 
-1. 在右侧窗格中，在 " **预处理器定义** " 属性的右侧列中，打开下拉菜单，然后选择 " **编辑**"。
+1. 打开 " **预处理器定义** " 属性的下拉菜单，然后选择 " **编辑**"。
 
-1. 在 " **预处理器定义** " 对话框中，每行添加 (一个) 、修改或删除一个或多个定义。 选择“确定”以保存更改  。
+1. 在 " **预处理器定义** " 对话框中，添加、修改或删除一个或多个定义，每行一个或多个定义。 选择“确定”以保存更改  。
 
    不需要在此处指定的定义上包含 "/D" 选项前缀。 在属性页中，定义由分号分隔 (`;`) 。
 
@@ -105,11 +105,11 @@ int main( )
 TEST defined 1
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [MSVC 编译器选项](compiler-options.md)\
-[MSVC 编译器 Command-Line 语法](compiler-command-line-syntax.md)\
-[/FI (名称强制包含文件) ](fi-name-forced-include-file.md)\
-[/U，/u (取消定义符号) ](u-u-undefine-symbols.md)\
-[ (C/c + + 的 #undef 指令) ](../../preprocessor/hash-undef-directive-c-cpp.md)\
-[ (C/c + + 的 #define 指令) ](../../preprocessor/hash-define-directive-c-cpp.md)
+[MSVC 编译器命令行语法](compiler-command-line-syntax.md)\
+[`/FI` (名称强制包含文件) ](fi-name-forced-include-file.md)\
+[`/U`， `/u` (取消定义符号) ](u-u-undefine-symbols.md)\
+[`#undef` 指令 (C/c + +) ](../../preprocessor/hash-undef-directive-c-cpp.md)\
+[`#define` 指令 (C/c + +) ](../../preprocessor/hash-define-directive-c-cpp.md)

@@ -85,12 +85,12 @@ helpviewer_keywords:
 - CPaneDivider [MFC], m_nDefaultWidth
 - CPaneDivider [MFC], m_pSliderRTC
 ms.assetid: 8e828a5d-232f-4127-b8e3-7fa45a7a476e
-ms.openlocfilehash: f2541483f7881ab0b303750e69af776c2c3bc7a7
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 9f05b419a2eb420794fcd416f603592e4ce8bb07
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97301511"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539603"
 ---
 # <a name="cpanedivider-class"></a>CPaneDivider 类
 
@@ -108,13 +108,13 @@ class CPaneDivider : public CBasePane
 
 ### <a name="public-constructors"></a>公共构造函数
 
-|“属性”|描述|
+|“属性”|说明|
 |----------|-----------------|
 |[CPaneDivider::CPaneDivider](#cpanedivider)||
 
 ### <a name="public-methods"></a>公共方法
 
-|“属性”|描述|
+|“属性”|说明|
 |----------|-----------------|
 |[CPaneDivider::AddPaneContainer](#addpanecontainer)||
 |[CPaneDivider::AddPane](#addpane)||
@@ -129,7 +129,9 @@ class CPaneDivider : public CBasePane
 |[CPaneDivider::FindTabbedPane](#findtabbedpane)||
 |[CPaneDivider::GetDefaultWidth](#getdefaultwidth)||
 |[CPaneDivider::GetFirstPane](#getfirstpane)||
+|[CPaneDivider::GetPaneDividers](#getpanedividers)|返回驻留在 [CPaneContainer 类](../../mfc/reference/cpanecontainer-class.md)中的窗格分隔线的列表。 只应为默认的窗格分隔符调用此方法。|
 |[CPaneDivider::GetPaneDividerStyle](#getpanedividerstyle)||
+|[CPaneDivider::GetPanes](#getpanes)|返回驻留在 [CPaneContainer 类](../../mfc/reference/cpanecontainer-class.md)中的窗格的列表。 只应为默认的窗格分隔符调用此方法。|
 |[CPaneDivider::GetRootContainerRect](#getrootcontainerrect)||
 |[CPaneDivider::GetWidth](#getwidth)||
 |[CPaneDivider：： Init](#init)||
@@ -151,21 +153,12 @@ class CPaneDivider : public CBasePane
 |[CPaneDivider::StoreRecentDockSiteInfo](#storerecentdocksiteinfo)||
 |[CPaneDivider::StoreRecentTabRelatedInfo](#storerecenttabrelatedinfo)||
 
-### <a name="public-methods"></a>公共方法
-
-|“属性”|描述|
-|----------|-----------------|
-|[CPaneDivider::GetPanes](#getpanes)|返回驻留在 [CPaneContainer 类](../../mfc/reference/cpanecontainer-class.md)中的窗格的列表。 只应为默认的窗格分隔符调用此方法。|
-|[CPaneDivider::GetPaneDividers](#getpanedividers)|返回驻留在 [CPaneContainer 类](../../mfc/reference/cpanecontainer-class.md)中的窗格分隔线的列表。 只应为默认的窗格分隔符调用此方法。|
-
-### <a name="data-members"></a>数据成员
-
-|名称|描述|
+|名称|说明|
 |----------|-----------------|
 |[CPaneDivider：： m_nDefaultWidth](#m_ndefaultwidth)|指定应用程序中所有窗格分隔线的默认宽度（以像素为单位）。|
 |[CPaneDivider：： m_pSliderRTC](#m_psliderrtc)|保存指向有关派生对象的运行时类信息的指针 `CPaneDivider` 。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 `CPaneDivider`停靠窗格时，框架会自动创建对象。
 
@@ -199,11 +192,11 @@ class CPaneDivider : public CBasePane
 void SetAutoHideMode(BOOL bMode);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *bMode*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividersetpanecontainermanager"></a><a name="setpanecontainermanager"></a> CPaneDivider::SetPaneContainerManager
 
@@ -211,11 +204,11 @@ void SetAutoHideMode(BOOL bMode);
 void SetPaneContainerManager(CPaneContainerManager* p);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *p*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedivideraddpane"></a><a name="addpane"></a> CPaneDivider::AddPane
 
@@ -223,11 +216,11 @@ void SetPaneContainerManager(CPaneContainerManager* p);
 virtual void AddPane(CDockablePane* pBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBar*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedivideraddpanecontainer"></a><a name="addpanecontainer"></a> CPaneDivider::AddPaneContainer
 
@@ -242,7 +235,7 @@ virtual BOOL AddPaneContainer(
     DWORD dwAlignment);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *barContainerManager*<br/>
 中 *bOuterEdge*<br/>
@@ -251,7 +244,7 @@ virtual BOOL AddPaneContainer(
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedivideraddrecentpane"></a><a name="addrecentpane"></a> CPaneDivider::AddRecentPane
 
@@ -259,13 +252,13 @@ virtual BOOL AddPaneContainer(
 virtual CDockablePane* AddRecentPane(CDockablePane* pBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBar*<br/>
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividercalcexpecteddockedrect"></a><a name="calcexpecteddockedrect"></a> CPaneDivider::CalcExpectedDockedRect
 
@@ -278,7 +271,7 @@ virtual void CalcExpectedDockedRect(
     CDockablePane** ppTargetBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pWndToDock*<br/>
 中 *ptMouse*<br/>
@@ -286,7 +279,7 @@ virtual void CalcExpectedDockedRect(
 中 *bDrawTab*<br/>
 中 *ppTargetBar*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividercalcfixedlayout"></a><a name="calcfixedlayout"></a> CPaneDivider：： CalcFixedLayout
 
@@ -296,14 +289,14 @@ virtual CSize CalcFixedLayout(
     BOOL bHorz);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *bStretch*<br/>
 中 *bHorz*<br/>
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividercheckvisibility"></a><a name="checkvisibility"></a> CPaneDivider::CheckVisibility
 
@@ -313,7 +306,7 @@ virtual BOOL CheckVisibility();
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividercpanedivider"></a><a name="cpanedivider"></a> CPaneDivider::CPaneDivider
 
@@ -325,14 +318,14 @@ CPaneDivider(
     CWnd* pParent = NULL);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *bDefaultSlider*<br/>
 中 *pParent*<br/>
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividercreateex"></a><a name="createex"></a> CPaneDivider：： CreateEx
 
@@ -346,7 +339,7 @@ virtual BOOL CreateEx(
     CCreateContext* pContext);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *dwStyleEx*<br/>
 中 *dwStyle*<br/>
@@ -357,7 +350,7 @@ virtual BOOL CreateEx(
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerdoesallowdyninsertbefore"></a><a name="doesallowdyninsertbefore"></a> CPaneDivider：:D oesAllowDynInsertBefore
 
@@ -367,7 +360,7 @@ virtual BOOL DoesAllowDynInsertBefore() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerdoescontainfloatingpane"></a><a name="doescontainfloatingpane"></a> CPaneDivider：:D oesContainFloatingPane
 
@@ -377,7 +370,7 @@ virtual BOOL DoesContainFloatingPane();
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerfindpanecontainer"></a><a name="findpanecontainer"></a> CPaneDivider::FindPaneContainer
 
@@ -387,14 +380,14 @@ CPaneContainer* FindPaneContainer(
     BOOL& bLeftBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBar*<br/>
 中 *bLeftBar*<br/>
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerfindtabbedpane"></a><a name="findtabbedpane"></a> CPaneDivider::FindTabbedPane
 
@@ -402,13 +395,13 @@ CPaneContainer* FindPaneContainer(
 CDockablePane* FindTabbedPane(UINT nID);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *nID*<br/>
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividergetdefaultwidth"></a><a name="getdefaultwidth"></a> CPaneDivider::GetDefaultWidth
 
@@ -418,7 +411,7 @@ static int __stdcall GetDefaultWidth();
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividergetfirstpane"></a><a name="getfirstpane"></a> CPaneDivider::GetFirstPane
 
@@ -428,7 +421,7 @@ const CBasePane* GetFirstPane() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividergetpanedividers"></a><a name="getpanedividers"></a> CPaneDivider::GetPaneDividers
 
@@ -438,12 +431,12 @@ const CBasePane* GetFirstPane() const;
 void GetPaneDividers(CObList& lstSliders);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *lstSliders*<br/>
 弄包含位于窗格容器中的窗格分隔线的列表。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 只应为默认的窗格分隔条调用此方法。 默认窗格分隔符是调整整个窗格容器大小的分隔线。
 
@@ -455,7 +448,7 @@ DWORD GetPaneDividerStyle() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividergetpanes"></a><a name="getpanes"></a> CPaneDivider::GetPanes
 
@@ -465,12 +458,12 @@ DWORD GetPaneDividerStyle() const;
 void GetPanes(CObList& lstBars);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *lstBars*<br/>
 弄包含位于窗格容器中的窗格的列表。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 只应为默认的窗格分隔条调用此方法。 默认窗格分隔符是调整整个窗格容器大小的分隔线。
 
@@ -482,7 +475,7 @@ CRect GetRootContainerRect();
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividergetwidth"></a><a name="getwidth"></a> CPaneDivider::GetWidth
 
@@ -492,7 +485,7 @@ int GetWidth() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerinit"></a><a name="init"></a> CPaneDivider：： Init
 
@@ -502,12 +495,12 @@ void Init(
     CWnd* pParent = NULL);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *bDefaultSlider*<br/>
 中 *pParent*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerinsertpane"></a><a name="insertpane"></a> CPaneDivider::InsertPane
 
@@ -519,7 +512,7 @@ virtual BOOL InsertPane(
     LPCRECT lpRect = NULL);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBarToInsert*<br/>
 中 *pTargetBar*<br/>
@@ -528,7 +521,7 @@ virtual BOOL InsertPane(
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerisautohidemode"></a><a name="isautohidemode"></a> CPaneDivider::IsAutoHideMode
 
@@ -538,7 +531,7 @@ BOOL IsAutoHideMode() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerisdefault"></a><a name="isdefault"></a> CPaneDivider：： IsDefault
 
@@ -548,7 +541,7 @@ BOOL IsDefault() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerishorizontal"></a><a name="ishorizontal"></a> CPaneDivider::IsHorizontal
 
@@ -558,7 +551,7 @@ BOOL IsHorizontal() const;
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerm_ndefaultwidth"></a><a name="m_ndefaultwidth"></a> CPaneDivider：： m_nDefaultWidth
 
@@ -576,12 +569,12 @@ virtual void Move(
     BOOL bAdjustLayout = TRUE);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *ptOffset*<br/>
 中 *bAdjustLayout*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerm_psliderrtc"></a><a name="m_psliderrtc"></a> CPaneDivider：： m_pSliderRTC
 
@@ -591,7 +584,7 @@ virtual void Move(
 AFX_IMPORT_DATA static CRuntimeClass* m_pSliderRTC;
 ```
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 如果创建自定义窗格分隔符，请设置此成员变量。 这使框架能够在绘制窗格时创建窗格分隔符。
 
@@ -614,7 +607,7 @@ CPaneDivider::m_pSliderRTC = RUNTIME_CLASS(CMySpliter);
 virtual void NotifyAboutRelease();
 ```
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedivideronshowpane"></a><a name="onshowpane"></a> CPaneDivider::OnShowPane
 
@@ -624,12 +617,12 @@ virtual void OnShowPane(
     BOOL bShow);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBar*<br/>
 中 *bShow*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerreleaseemptypanecontainers"></a><a name="releaseemptypanecontainers"></a> CPaneDivider::ReleaseEmptyPaneContainers
 
@@ -637,7 +630,7 @@ virtual void OnShowPane(
 void ReleaseEmptyPaneContainers();
 ```
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerremovepane"></a><a name="removepane"></a> CPaneDivider::RemovePane
 
@@ -645,11 +638,11 @@ void ReleaseEmptyPaneContainers();
 virtual void RemovePane(CDockablePane* pBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBar*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerreplacepane"></a><a name="replacepane"></a> CPaneDivider::ReplacePane
 
@@ -659,14 +652,14 @@ virtual BOOL ReplacePane(
     CDockablePane* pBarToReplaceWith);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBarToReplace*<br/>
 中 *pBarToReplaceWith*<br/>
 
 ### <a name="return-value"></a>返回值
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerrepositionpanes"></a><a name="repositionpanes"></a> CPaneDivider::RepositionPanes
 
@@ -676,12 +669,12 @@ virtual void RepositionPanes(
     HDWP& hdwp);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *rectNew*<br/>
 中 *hdwp*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerserialize"></a><a name="serialize"></a> CPaneDivider：：串行化
 
@@ -689,11 +682,11 @@ virtual void RepositionPanes(
 void Serialize(CArchive& ar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *ar*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividershowwindow"></a><a name="showwindow"></a> CPaneDivider：： ShowWindow
 
@@ -701,11 +694,11 @@ void Serialize(CArchive& ar);
 void ShowWindow(int nCmdShow);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *nCmdShow*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerstorerecentdocksiteinfo"></a><a name="storerecentdocksiteinfo"></a> CPaneDivider::StoreRecentDockSiteInfo
 
@@ -713,11 +706,11 @@ void ShowWindow(int nCmdShow);
 void StoreRecentDockSiteInfo(CDockablePane* pBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pBar*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 ## <a name="cpanedividerstorerecenttabrelatedinfo"></a><a name="storerecenttabrelatedinfo"></a> CPaneDivider::StoreRecentTabRelatedInfo
 
@@ -727,17 +720,17 @@ void StoreRecentTabRelatedInfo(
     CDockablePane* pTabbedBar);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 中 *pDockingBar*<br/>
 中 *pTabbedBar*<br/>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [层次结构图](../../mfc/hierarchy-chart.md)<br/>
-[Classes](../../mfc/reference/mfc-classes.md)<br/>
+[类](../../mfc/reference/mfc-classes.md)<br/>
 [CPaneContainerManager 类](../../mfc/reference/cpanecontainermanager-class.md)<br/>
 [CPaneContainer 类](../../mfc/reference/cpanecontainer-class.md)<br/>
 [CDockingManager 类](../../mfc/reference/cdockingmanager-class.md)<br/>

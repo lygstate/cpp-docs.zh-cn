@@ -39,16 +39,16 @@ helpviewer_keywords:
 - files [C++], opening
 - fopen function
 ms.assetid: e868993f-738c-4920-b5e4-d8f2f41f933d
-ms.openlocfilehash: a11bf5ab387ac3436a488f77bea4c5c130836790
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: d6735d85fbbf3afa72aeb7a21ea1acdd7a5d254b
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97164921"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539516"
 ---
-# <a name="fopen-_wfopen"></a>fopen、_wfopen
+# <a name="fopen-_wfopen"></a>`fopen`, `_wfopen`
 
-打开文件。 这些执行附加参数验证并返回错误代码的函数有更安全的版本可用；请参阅 [fopen_s, _wfopen_s](fopen-s-wfopen-s.md)。
+打开文件。 这些函数的更安全版本可执行其他参数验证并返回错误代码;请参阅[ `fopen_s` 、 `_wfopen_s` ](fopen-s-wfopen-s.md)。
 
 ## <a name="syntax"></a>语法
 
@@ -63,33 +63,33 @@ FILE *_wfopen(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*filename*<br/>
+*`filename`*<br/>
 文件名。
 
-*mode*<br/>
+*`mode`*<br/>
 启用的访问类型。
 
 ## <a name="return-value"></a>返回值
 
 这些函数均返回指向打开文件的指针。 一个 null 指针值指示错误。 如果 *filename* 或 *mode* 为 **NULL** 或空字符串，这些函数将触发无效的参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则这些函数将返回 **NULL** ，并将 **Errno** 设置为 **EINVAL**。
 
-有关详细信息，请参阅 [errno、_doserrno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
+有关详细信息，请参阅[ `errno` 、、 `_doserrno` `_sys_errlist` 和 `_sys_nerr` ](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-**Fopen** 函数打开 *文件名* 指定的文件。 默认情况下，使用 ANSI 代码页 (CP_ACP) 解释窄 *文件名* 字符串。 在 Windows 桌面应用程序中，可以通过使用 [SetFileApisToOEM](/windows/win32/api/fileapi/nf-fileapi-setfileapistooem) 函数将此更改为 OEM 代码页 (CP_OEMCP)。 您可以使用 [AreFileApisANSI](/windows/win32/api/fileapi/nf-fileapi-arefileapisansi) 函数来确定是使用 ANSI 还是系统默认的 OEM 代码页来解释 *文件名* 。 **_wfopen** 是 **fopen** 的宽字符版本; **_wfopen** 的参数是宽字符字符串。 否则， **_wfopen** 和 **fopen** 的行为相同。 只使用 **_wfopen** 不会影响在文件流中使用的编码字符集。
+**`fopen`** 函数打开 *文件名* 指定的文件。 默认情况下，使用 ANSI 代码页 () 来解释窄 *文件名* 字符串 `CP_ACP` 。 在 Windows 桌面应用程序中，可以使用函数将此更改为 OEM 代码页 (`CP_OEMCP`) [`SetFileApisToOEM`](/windows/win32/api/fileapi/nf-fileapi-setfileapistooem) 。 您可以使用 [`AreFileApisANSI`](/windows/win32/api/fileapi/nf-fileapi-arefileapisansi) 函数来确定是使用 ANSI 还是系统默认的 OEM 代码页来解释 *文件名* 。 **`_wfopen`** 是的宽字符版本 **`fopen`** ; 的参数 **`_wfopen`** 是宽字符字符串。 否则， **`_wfopen`** 和的 **`fopen`** 行为相同。 仅使用不 **`_wfopen`** 会影响在文件流中使用的编码字符集。
 
-**fopen** 接受在执行时文件系统上有效的路径; **fopen** 接受 UNC 路径和包含映射的网络驱动器的路径，前提是执行代码的系统在执行时能够访问共享或映射的驱动器。 构造 **fopen** 的路径时，请确保驱动器、路径或网络共享在执行环境中可用。 可使用斜杠 (/) 或反斜杠 (\\) 作为路径中的目录分隔符。
+**`fopen`** 接受执行时在文件系统上有效的路径; **`fopen`** 接受 UNC 路径和包含映射的网络驱动器的路径，前提是执行代码的系统在执行时能够访问共享或映射的驱动器。 为构造路径时 **`fopen`** ，请确保驱动器、路径或网络共享在执行环境中可用。 可使用斜杠 (/) 或反斜杠 (\\) 作为路径中的目录分隔符。
 
-对文件执行任何其他操作前，请始终检查返回值以确定指针是否为 NULL。 如果发生错误，则会设置全局变量 **errno** ，并可将其用于获取特定错误信息。 有关详细信息，请参阅 [errno、_doserrno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
+对文件执行任何其他操作前，请始终检查返回值以确定指针是否为 NULL。 如果发生错误，则会设置全局变量，并可将其 **`errno`** 用于获取特定错误信息。 有关详细信息，请参阅[ `errno` 、、 `_doserrno` `_sys_errlist` 和 `_sys_nerr` ](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
 默认情况下，此函数的全局状态的作用域限定为应用程序。 若要更改此项，请参阅 [CRT 中的全局状态](../global-state.md)。
 
 ## <a name="unicode-support"></a>Unicode 支持
 
-**fopen** 支持 Unicode 文件流。 若要打开 Unicode 文件，请将指定所需编码的 **ccs** 标志传递给 **fopen**，如下所示。
+**`fopen`** 支持 Unicode 文件流。 若要打开 Unicode 文件，请将指定所需编码的 **ccs** 标志传递给 **`fopen`** ，如下所示。
 
 > **文件 \* fp = fopen ( "newfile.txt"、"rt +，ccs =**_encoding_**" ) ;**
 
@@ -114,30 +114,30 @@ FILE *_wfopen(
 
 在 Unicode 模式下打开以进行写入的文件将自动写入 BOM。
 
-如果 *mode* 为 **"a，ccs =**_encoding_**"**，则 **fopen** 将首先尝试使用读取和写入访问权限打开文件。 如果成功，此函数将读取 BOM 以确定文件的编码；如果失败，此函数将使用文件的默认编码。 在这两种情况下， **fopen** 将使用只写访问权限重新打开文件。  (仅适用于 **"a"** 模式，不适用于 **"a** " 模式。 ) 
+如果 *mode* 为 **a，ccs =*_encoding_* * *，则 **`fopen`** 首先尝试使用读取和写入访问权限打开文件。 如果成功，此函数将读取 BOM 以确定文件的编码；如果失败，此函数将使用文件的默认编码。 在任一情况下， **`fopen`** 都将使用只写访问权限重新打开文件。  (仅适用于 **"a"** 模式，不适用于 **"a** " 模式。 ) 
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
 |TCHAR.H 例程|未定义 _UNICODE 和 _MBCS|已定义 _MBCS|已定义 _UNICODE|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|**_tfopen**|**fopen**|**fopen**|**_wfopen**|
+|**`_tfopen`**|**`fopen`**|**`fopen`**|**`_wfopen`**|
 
 字符字符串 *模式* 指定为文件请求的访问类型，如下所示。
 
 |*mode*|Access|
 |-|-|
-| **迅驰** | 打开以便读取。 如果文件不存在或找不到，则 **fopen** 调用失败。 |
+| **迅驰** | 打开以便读取。 如果文件不存在或找不到， **`fopen`** 调用将失败。 |
 | **水平** | 打开用于写入的空文件。 如果给定文件存在，则其内容会被销毁。 |
 | **的** | 在文件末尾打开以进行写入（追加），在新数据写入到文件之前不移除文件末尾 (EOF) 标记。 创建文件（如果文件不存在）。 |
 | **"r +"** | 打开以便读取和写入。 文件必须存在。 |
 | **"w +"** | 打开用于读取和写入的空文件。 如果文件存在，则其内容会被销毁。 |
 | **"a +"** | 打开以进行读取和追加。 追加操作包括在新数据写入文件之前移除 EOF 标记。 写入完成后，EOF 标记不会还原。 创建文件（如果文件不存在）。 |
 
-使用 **"a"** 访问类型或 **"a +"** 访问类型打开文件时，所有写入操作都将在文件末尾进行。 可以通过使用 [fseek](fseek-fseeki64.md) 或 [倒带](rewind.md)重定位文件指针，但在执行任何写入操作之前，始终会将其移回文件末尾。 因此，无法覆盖现有数据。
+使用 **"a"** 访问类型或 **"a +"** 访问类型打开文件时，所有写入操作都将在文件末尾进行。 可以使用或重定位文件指针 [`fseek`](fseek-fseeki64.md) [`rewind`](rewind.md) ，但在执行任何写入操作前，会始终将其移回文件末尾。 因此，无法覆盖现有数据。
 
 **"A"** 模式不会在将 EOF 标记追加到文件之前将其删除。 在追加后，MS-DOS TYPE 命令只显示原始 EOF 标记之前的数据，不显示追加到文件的任何数据。 在将其追加到文件之前， **"a +"** 模式将删除 EOF 标记。 在追加后，MS-DOS TYPE 命令显示文件中的所有数据。 附加到使用 CTRL + Z EOF 标记终止的流文件需要 **"a +"** 模式。
 
-当指定 **"r +"**、 **"w +"** 或 **"a +"** 访问类型时，将同时启用读取和写入 (该文件被称为 "更新" ) 。 但是，当你从读取切换到写入时，输入操作必须遇到 EOF 标记。 如果没有 EOF，必须使用对文件定位函数的干预调用。 文件定位函数包括 **fsetpos**、 [fseek](fseek-fseeki64.md)和 [倒带](rewind.md)。 当从写入切换到读取时，必须使用对 **fflush** 或文件定位函数的干预调用。
+当指定 **"r +"**、 **"w +"** 或 **"a +"** 访问类型时，将同时启用读取和写入 (该文件被称为 "更新" ) 。 但是，当你从读取切换到写入时，输入操作必须遇到 EOF 标记。 如果没有 EOF，必须使用对文件定位函数的干预调用。 文件定位函数是 **`fsetpos`** 、 [`fseek`](fseek-fseeki64.md) 和 [`rewind`](rewind.md) 。 当从写入切换到读取时，必须使用对 **`fflush`** 或文件定位函数的干预调用。
 
 除了前面的值以外，还可以将以下字符追加到 *mode* 以指定换行符的转换模式。
 
@@ -146,11 +146,11 @@ FILE *_wfopen(
 | **t** | 在文本（转换）模式下打开。 |
 | **b** | 在二进制 (未翻译的) 模式下打开;将禁止涉及回车符和换行符的翻译。 |
 
-在文本模式下，CTRL + Z 将在输入时解释为 EOF 字符。 在使用 **"a +"** 打开以进行读取/写入的文件中， **fopen** 将检查文件末尾的 CTRL + Z 并将其删除（如果可能）。 这样做的原因是，使用 [fseek](fseek-fseeki64.md) 和 **FTELL** 在以 CTRL + Z 结尾的文件中移动时，可能会导致 [fseek](fseek-fseeki64.md) 在文件结尾附近出现错误的行为。
+在文本模式下，CTRL + Z 将在输入时解释为 EOF 字符。 在使用 **"a +"** 打开以进行读取/写入的文件中， **fopen** 将检查文件末尾的 CTRL + Z 并将其删除（如果可能）。 这是因为使用 [`fseek`](fseek-fseeki64.md) 和 **ftell** 在以 CTRL + Z 结尾的文件中移动可能导致在 [`fseek`](fseek-fseeki64.md) 文件末尾附近错误运行。
 
-在文本模式下，回车换行符组合在输入时转换为单行馈送，换行字符将转换为输出上的回车换行符组合。 当 Unicode 流 I/O 函数在文本模式（默认设置）下运行时，源或目标流将假定为一系列多字节字符。 因此，Unicode 流输入函数将多字节字符转换为宽字符（就像调用 mbtowc 函数一样）。 出于同一原因，Unicode 流输出函数将宽字符转换为多字节字符（就像调用 wctomb 函数一样）。
+在文本模式下，回车换行符组合在输入时转换为单行馈送，换行字符将转换为输出上的回车换行符组合。 当 Unicode 流 I/O 函数在文本模式（默认设置）下运行时，源或目标流将假定为一系列多字节字符。 因此，Unicode 流输入函数将多字节字符转换为宽字符 (就像通过调用 **`mbtowc`** 函数) 。 出于同一原因，Unicode 流输出函数将宽字符转换为多字节字符， (就像通过调用 **`wctomb`** 函数) 。
 
-如果在 *mode* 中未给出 **t** 或 **b** ，则默认转换模式由全局变量 [_fmode](../../c-runtime-library/fmode.md)定义。 如果 **t** 或 **b** 作为参数的前缀，则函数将失败并返回 **NULL**。
+如果在 *mode* 中未给出 **t** 或 **b** ，则默认转换模式由全局变量定义 [`_fmode`](../../c-runtime-library/fmode.md) 。 如果 **t** 或 **b** 作为参数的前缀，则函数将失败并返回 **NULL**。
 
 有关如何在 Unicode 和多字节流 I/O 中使用文本和二进制模式的详细信息，请参阅 [Text and Binary Mode File I/O](../../c-runtime-library/text-and-binary-mode-file-i-o.md) 和 [Unicode Stream I/O in Text and Binary Modes](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md)。
 
@@ -159,7 +159,7 @@ FILE *_wfopen(
 |*模式* 修饰符|行为|
 |-|-|
 | **x** | 如果 *文件名* 已存在，则强制该函数失败。 只能与 "w" 或 "w +" 说明符一起使用。 |
-| **c** | 启用关联 *文件名* 的提交标志，以便在调用 **fflush** 或 **_flushall** 时，将文件缓冲区的内容直接写入磁盘。 |
+| **c** | 启用关联 *文件名* 的提交标志，以便在 **`fflush`** 调用或时将文件缓冲区的内容直接写入磁盘 **`_flushall`** 。 |
 | **n** | 将关联的 *文件名* 的提交标志重置为 "无提交"。 这是默认值。 如果将程序显式链接到 COMMODE.OBJ，它还将重写全局提交标志。 除非将程序显式链接到 COMMODE.OBJ，否则全局提交标志默认为“no-commit”（请参阅 [Link Options](../../c-runtime-library/link-options.md)）。 |
 | N | 指定文件不由子进程继承。 |
 | **S** | 指定缓存针对（但不限于）从磁盘的顺序访问进行优化。 |
@@ -168,11 +168,11 @@ FILE *_wfopen(
 | **D** | 将文件指定为临时。 最后一个文件指针关闭时，它将被删除。 |
 | **ccs =**_编码_ | 指定要使用的编码字符集，此文件 (**utf-8**、 **utf-16le** 或 **UNICODE**) 之一。 如果需要 ANSI 编码，请不要指定此字符集。 |
 
-**Fopen** 和 **_fdopen** 中使用的 *模式* 字符串的有效字符对应于 [_open](open-wopen.md)和 [_sopen](sopen-wsopen.md)中使用的 *oflag* 参数，如下所示。
+和中使用的 *模式* 字符串的有效字符 **`fopen`** **`_fdopen`** 与和中使用的 *oflag* 参数对应 [`_open`](open-wopen.md) [`_sopen`](sopen-wsopen.md) ，如下所示。
 
 |*模式* 字符串中的字符| \_ Open/sopen 的等效 oflag \_ 值|
 |-------------------------------|----------------------------------------------------|
-|**的**|**\_ O \_ WRONLY** &#124; **\_ o \_ 追加** (通常是 **\_ o \_ WRONLY** &#124; **\_ o \_** 将 &#124; **\_ o \_ 追加**) |
+|**a**|**\_ O \_ WRONLY** &#124; **\_ o \_ 追加** (通常是 **\_ o \_ WRONLY** &#124; **\_ o \_** 将 &#124; **\_ o \_ 追加**) |
 |**a +**|**\_ O \_ RDWR** &#124; **\_ o \_ 追加** (&#124; **\_ \_** **\_ o \_ 追加**&#124; **\_ o \_** ) |
 |**r**|**\_O \_ RDONLY**|
 |**r +**|**\_O \_ RDWR**|
@@ -197,16 +197,16 @@ FILE *_wfopen(
 
 |函数|必需的标头|
 |--------------|---------------------|
-|**fopen**|\<stdio.h>|
-|**_wfopen**|\<stdio.h> 或 \<wchar.h>|
+|**`fopen`**|`<stdio.h>`|
+|**`_wfopen`**|`<stdio.h>` 或 `<wchar.h>`|
 
-**_wfopen** 是 Microsoft 扩展。 有关兼容性的详细信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
+**`_wfopen`** 是 Microsoft 扩展。 有关兼容性的详细信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-" **C**"、" **n**"、" **t**"、" **S**"、" **R**"、" **t**" 和 " **D** " *模式* 选项是 Microsoft **fopen** 和 **_fdopen** 扩展，不应在需要 ANSI 可移植性时使用。
+" **C**"、" **n**"、" **t**"、" **S**"、" **R**"、" **t**" 和 " **D** " *模式* 选项是和的 Microsoft 扩展， **`fopen`** **`_fdopen`** 不应在需要 ANSI 可移植性时使用。
 
 ## <a name="example-1"></a>示例 1
 
-以下程序打开两个文件。  它使用 **fclose** 关闭第一个文件，并 **_fcloseall** 关闭所有剩余文件。
+以下程序打开两个文件。  它使用 **`fclose`** 关闭第一个文件并 **`_fcloseall`** 关闭所有剩余文件。
 
 ```C
 // crt_fopen.c
@@ -259,7 +259,7 @@ Number of files closed by _fcloseall: 1
 
 ## <a name="example-2"></a>示例 2
 
-以下程序在具有 Unicode 编码的文本模式下创建文件（或在文件存在时覆盖文件）。  然后，它将两个字符串写入文件并关闭文件。 输出是名为 _wfopen_test.xml 的文件，其中包含输出部分中的数据。
+以下程序在具有 Unicode 编码的文本模式下创建文件（或在文件存在时覆盖文件）。  然后，它将两个字符串写入文件并关闭文件。 输出是一个名为 *_wfopen_test.xml* 的文件，其中包含输出部分中的数据。
 
 ```C
 // crt__wfopen.c
@@ -315,15 +315,15 @@ int main(int argc, char** argv)
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [Multibyte-Character 序列的解释](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
-[fclose、_fcloseall](fclose-fcloseall.md)<br/>
-[_fdopen、_wfdopen](fdopen-wfdopen.md)<br/>
-[ferror](ferror.md)<br/>
-[_fileno](fileno.md)<br/>
-[freopen、_wfreopen](freopen-wfreopen.md)<br/>
-[_open、_wopen](open-wopen.md)<br/>
-[_setmode](setmode.md)<br/>
-[_sopen、_wsopen](sopen-wsopen.md)<br/>
+[`fclose`, `_fcloseall`](fclose-fcloseall.md)<br/>
+[`_fdopen`, `_wfdopen`](fdopen-wfdopen.md)<br/>
+[`ferror`](ferror.md)<br/>
+[`_fileno`](fileno.md)<br/>
+[`freopen`, `_wfreopen`](freopen-wfreopen.md)<br/>
+[`_open`, `_wopen`](open-wopen.md)<br/>
+[`_setmode`](setmode.md)<br/>
+[`_sopen`, `_wsopen`](sopen-wsopen.md)<br/>

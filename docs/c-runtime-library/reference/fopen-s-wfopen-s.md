@@ -39,16 +39,16 @@ helpviewer_keywords:
 - Unicode [C++], writing files
 - files [C++], opening
 - Unicode [C++], files
-ms.openlocfilehash: a034eda7ad45be30decccee50a104c0565907c41
-ms.sourcegitcommit: c0c9cdae79f19655e809a4979227c51bb19cff63
+ms.openlocfilehash: e3526df036711d7c6319dfa582dcefcf7b7d0818
+ms.sourcegitcommit: d531c567c268b676b44abbc8416ba7e20d22044b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102236532"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107539794"
 ---
 # <a name="fopen_s-_wfopen_s"></a>`fopen_s`, `_wfopen_s`
 
-打开文件。 这些版本的 [`fopen, _wfopen`](fopen-wfopen.md) 具有安全增强功能，如 [CRT 中的安全功能](../../c-runtime-library/security-features-in-the-crt.md)中所述。
+打开文件。 [ `fopen` 的 `_wfopen` 这些版本具有安全性增强功能，如](fopen-wfopen.md) [CRT 中的安全功能](../../c-runtime-library/security-features-in-the-crt.md)中所述。
 
 ## <a name="syntax"></a>语法
 
@@ -78,7 +78,7 @@ errno_t _wfopen_s(
 
 ## <a name="return-value"></a>返回值
 
-如果成功，则为零；如果失败，则为错误代码。 有关这些错误代码的详细信息，请参阅 [`errno, _doserrno, _sys_errlist, and _sys_nerr`](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) 。
+如果成功，则为零；如果失败，则为错误代码。 有关这些错误代码的详细信息，请参阅[ `errno` 、、 `_doserrno` `_sys_errlist` 和 `_sys_nerr` ](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
 ### <a name="error-conditions"></a>错误条件
 
@@ -88,9 +88,9 @@ errno_t _wfopen_s(
 |any|**`NULL`**|any|**`EINVAL`**|未更改|
 |any|any|**`NULL`**|**`EINVAL`**|未更改|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-由打开 **`fopen_s`** 且 **`_wfopen_s`** 不能共享的文件。 如果您要求文件可共享，请使用 [`_fsopen, _wfsopen`](fsopen-wfsopen.md) 与相应的共享模式常量（例如） **`_SH_DENYNO`** 进行读/写共享。
+由打开 **`fopen_s`** 且 **`_wfopen_s`** 不能共享的文件。 如果要求文件可共享，请使用 [ `_fsopen` ， `_wfsopen`](fsopen-wfsopen.md)并使用适当的共享模式常量（例如 **`_SH_DENYNO`** 用于读/写共享）。
 
 **`fopen_s`** 函数打开 *文件名* 指定的文件。 **`_wfopen_s`** 是的宽字符版本 **`fopen_s`** ; 的参数 **`_wfopen_s`** 是宽字符字符串。 **`_wfopen_s`** 和的 **`fopen_s`** 行为方式相同。
 
@@ -98,7 +98,7 @@ errno_t _wfopen_s(
 
 这些函数验证其参数。 如果 *`pFile`* 、 *`filename`* 或 *`mode`* 为 null 指针，则这些函数将生成无效的参数异常，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。
 
-在对文件执行任何进一步操作之前，请始终检查返回值以查看函数是否成功。 如果发生错误，将返回错误代码并设置全局变量 **`errno`** 。 有关详细信息，请参阅 [`errno, _doserrno, _sys_errlist, and _sys_nerr`](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
+在对文件执行任何进一步操作之前，请始终检查返回值以查看函数是否成功。 如果发生错误，将返回错误代码并设置全局变量 **`errno`** 。 有关详细信息，请参阅[ `errno` 、、 `_doserrno` `_sys_errlist` 和 `_sys_nerr` ](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
 默认情况下，此函数的全局状态的作用域限定为应用程序。 若要更改此项，请参阅 [CRT 中的全局状态](../global-state.md)。
 
@@ -137,7 +137,7 @@ errno_t _wfopen_s(
 
 字符串指定为 *`mode`* 文件请求的访问类型，如下所示。
 
-|*`mode`*|访问|
+|*`mode`*|Access|
 |-|-|
 | **`"r"`** | 打开以便读取。 如果文件不存在或找不到，调用将 **`fopen_s`** 失败。 |
 | **`"w"`** | 打开用于写入的空文件。 如果给定文件存在，则其内容会被销毁。 |
@@ -148,7 +148,7 @@ errno_t _wfopen_s(
 
 使用 **`"a"`** 或访问类型打开文件时 **`"a+"`** ，所有写入操作都将在文件末尾进行。 可以使用或重定位文件指针 [`fseek`](fseek-fseeki64.md) [`rewind`](rewind.md) ，但在执行任何写入操作之前，将始终将其移回文件末尾，以便不会覆盖现有数据。
 
-在 **`"a"`** 追加到文件之前，模式不会删除 EOF 标记。 在追加后，MS-DOS `TYPE` 命令只显示原始 EOF 标记中的数据，而不显示追加到文件的任何数据。 **`"a+"`** 模式会在将 EOF 标记追加到文件之前将其删除。 追加后，MS-DOS `TYPE` 命令显示文件中的所有数据。 此 **`"a+"`** 模式是附加到以 EOF 标记终止的流文件所必需的 `CTRL+Z` 。
+在 **`"a"`** 追加到文件之前，模式不会删除 EOF 标记。 在追加后，MS-DOS `TYPE` 命令只显示原始 EOF 标记中的数据，而不显示追加到文件的任何数据。 **`"a+"`** 模式会在将 EOF 标记追加到文件之前将其删除。 追加后，MS-DOS `TYPE` 命令显示文件中的所有数据。 **`"a+"`** 若要追加到以 **CTRL** + **Z** EOF 标记终止的流文件，则需要模式。
 
 **`"r+"`** **`"w+"`** 指定、或 **`"a+"`** 访问类型时，允许读取和写入。  (该文件被称为 "更新"。 ) 不过，当你从读取切换到写入时，输入操作必须跨越 EOF 标记。 如果没有 EOF 标记，则必须使用对文件定位函数的干预调用。 文件定位函数是 **`fsetpos`** 、 [`fseek`](fseek-fseeki64.md) 和 [`rewind`](rewind.md) 。 当从写入切换到读取时，必须使用对 **`fflush`** 或文件定位函数的干预调用。
 
@@ -161,7 +161,7 @@ errno_t _wfopen_s(
 | **`t`** | 在文本（转换）模式下打开。 |
 | **`b`** | 在二进制 (未翻译的) 模式下打开;将禁止涉及回车符和换行符的翻译。 |
 
-在文本 (翻译) 模式下，在 `CTRL+Z` 输入时解释为文件尾字符。 在使用打开以进行读取/写入的文件中 **`"a+"`** ， **`fopen_s`** 将检查 `CTRL+Z` 文件末尾的，如果可能，将会删除该文件。 这是因为使用 [`fseek`](fseek-fseeki64.md) 和 **`ftell`** 在以结尾的文件中移动时 `CTRL+Z` ，可能会导致 [`fseek`](fseek-fseeki64.md) 在文件末尾附近运行不当。
+在文本 (平移) 模式下，在输入时将 **CTRL** + **Z** 解释为文件尾字符。 在使用打开以进行读取/写入的文件中 **`"a+"`** ， **`fopen_s`** 将检查文件末尾的 **CTRL +** + **Z** 并将其删除（如果可能）。 这是因为使用 [`fseek`](fseek-fseeki64.md) 和 **`ftell`** 在以 **CTRL** Z 结尾的文件中移动时 + ，可能会导致 [`fseek`](fseek-fseeki64.md) 在文件末尾附近运行不当。
 
 此外，在文本模式中，回车符/换行符的组合在输入时转换为单行馈送，换行符转换为输出时的回车换行符组合。 当 Unicode 流 I/O 函数在文本模式（默认设置）下运行时，源或目标流将假定为一系列多字节字符。 Unicode 流输入函数将多字节字符转换为宽字符 (就像通过调用 **`mbtowc`** 函数) 。 出于同一原因，Unicode 流输出函数将宽字符转换为多字节字符， (就像通过调用 **`wctomb`** 函数) 。
 
@@ -172,7 +172,7 @@ errno_t _wfopen_s(
 |*`mode`* 组合键|行为|
 |-|-|
 | **`c`** | 启用关联 *文件名* 的提交标志，以便在 **`fflush`** 调用或时将文件缓冲区的内容直接写入磁盘 **`_flushall`** 。 |
-| **`n`** | 将关联的 *文件名* 的提交标志重置为 "无提交"。 这是默认设置。 如果将程序显式链接到 COMMODE.OBJ，它还将重写全局提交标志。 除非将程序显式链接到 COMMODE.OBJ，否则全局提交标志默认为“no-commit”（请参阅 [Link Options](../../c-runtime-library/link-options.md)）。 |
+| **`n`** | 将关联的 *文件名* 的提交标志重置为 "无提交"。 这是默认值。 如果将程序显式链接到 COMMODE.OBJ，它还将重写全局提交标志。 除非将程序显式链接到 COMMODE.OBJ，否则全局提交标志默认为“no-commit”（请参阅 [Link Options](../../c-runtime-library/link-options.md)）。 |
 | **`n`** | 指定文件不由子进程继承。 |
 | **`S`** | 指定缓存针对（但不限于）从磁盘的顺序访问进行优化。 |
 | **`R`** | 指定缓存针对（但不限于）从磁盘的随机访问进行优化。 |
@@ -283,13 +283,13 @@ The file 'data2' was opened
 Number of files closed by _fcloseall: 1
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 i/o](../../c-runtime-library/stream-i-o.md)\
-[`fclose, _fcloseall`](fclose-fcloseall.md)\
-[`_fdopen, _wfdopen`](fdopen-wfdopen.md)\
+[`fclose`, `_fcloseall`](fclose-fcloseall.md)\
+[`_fdopen`, `_wfdopen`](fdopen-wfdopen.md)\
 [`ferror`](ferror.md)\
 [`_fileno`](fileno.md)\
-[`freopen, _wfreopen`](freopen-wfreopen.md)\
-[`_open, _wopen`](open-wopen.md)\
+[`freopen`, `_wfreopen`](freopen-wfreopen.md)\
+[`_open`, `_wopen`](open-wopen.md)\
 [`_setmode`](setmode.md)
